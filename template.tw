@@ -1,0 +1,1515 @@
+:: StoryTitle
+Share Mile
+
+
+:: StoryData
+{
+	"ifid": "98D2404A-3A9E-49BD-98D2-23D5E1FCC2A4",
+	"format": "SugarCube",
+	"format-version": "2.36.1",
+	"start": "landing",
+	"zoom": 0.6
+}
+
+
+:: Story Stylesheet [stylesheet]
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+
+/* GENERICS */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* Mostly equivalates to 10px but allows users accessibility zoom settings to work*/
+  /* font-size: 10px; */
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  font-size: 10px;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Try to keep your margins going in one direction to avoid margin collapase or grounding. I switch all the top margins off to avoid this issue. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+blockquote,
+address,
+article,
+aside,
+details,
+dialogue,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+header,
+hr,
+main,
+nav,
+pre,
+section,
+table,
+p {
+  margin-top: 0;
+  margin-block-start: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  /* You MUST make sure that links stand out from nomal text though...*/
+}
+
+
+img {
+  /* This means that it can be less than 100% of the width of its parent IF the image is INTRINSICALLY smaller */
+  max-width: 100%;
+
+  height: auto;
+  /* 'auto' is the initial value for height BUT for images (and other elements which have an intrinic height) that is not the case. To make an image responsive you set one dimension (usually width) to [max-]width: 100%; and the other to 'auto' to ensure it keeps aspect ratio. 'auto' basically tells the browser to decide. */
+  vertical-align: middle;
+  /* minor vertical centering. Works for images IF there is a baseline (i.e. they are displayed inline or inline-block) */
+}
+
+/* Because we us <ul>s for lists that we don't always want bulletted. */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* To make actual bulletted lists */
+ul.typographic {
+  list-style: initial;
+  padding-inline-start: 20px;
+}
+
+/* stops icons being the target of JS click events */
+a.btn *,
+button * {
+  pointer-events: null;
+}
+
+/* For 'accessibility text'. If your button only has an image inside it that isn't good for accessibility. Put a span inside there and give it this class and put some descriptive text for what the button does into the span. */
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  -webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  clip-path: auto;
+  -webkit-clip-path: auto;
+  white-space: normal;
+}
+
+/* GET RID OF TWINE STYLES */
+#story{
+  margin:0
+}
+
+#passages {
+	max-width: 100%;
+
+}
+
+#story a.link-external:after {
+	content: "";
+}
+
+button{
+    background-color: transparent;
+    border: #fff 1px solid;
+    border-radius: 3px;
+}
+
+button:hover{
+	background-color:#cf1b98;
+	border: #fff 1px solid;
+	color: #fff;
+}
+
+a {
+  color: #f2647d;
+}
+
+a:active {
+  background-color: #f2647d;
+}
+
+a:hover {
+  color: #fff;
+}
+
+#story a.link-external:after {
+	content: "";
+}
+
+#story {
+	margin: 0
+}
+
+/* GENERAL STYLES */
+body{
+  font-size: 1.6rem;
+  font-family: "Space Grotesk";
+  overflow:scroll;
+  background:#000;
+  /* padding: 1.5rem */
+  display:flex;
+  flex-direction: column
+}
+
+header{
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+    padding: 2rem
+}
+
+main{
+   padding: 2rem;
+   margin-block-end: 4rem
+}
+
+footer{
+   display:flex;
+  justify-content: space-between;
+  align-items: flex-end; 
+  position:fixed;
+  bottom: 0;
+  padding: 2rem;
+  width: 100%;
+  background-color: #000
+}
+
+nav{
+  display:flex;
+    justify-content: space-between;
+}
+
+.nav-wrapper{
+display:flex;
+  flex-direction:column;
+align-items: flex-start
+}
+
+.nav-wrapper:last-child{
+align-items: flex-end
+}
+
+.nav-item{
+  margin-block-end: 1.5rem
+}
+
+.nav-item:last-child{
+  margin-block-end: 0
+}
+
+
+.nav-wrapper:last-child{
+display:flex;
+align-items: flex-end
+}
+
+.menu-wrapper{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu-wrapper > button{
+margin-inline-end: 10px;
+margin-block-end: 10px
+}
+
+.door-container{
+  display:flex;
+  flex-direction: row;
+justify-content: space-around;
+  align-items:center;
+  text-align: right;
+}
+
+.door-item{
+  display:flex;
+  flex-direction:column
+}
+
+.door-item > button > img {
+  max-width: 7rem
+}
+
+.door-item > span {
+  text-align: center
+}
+
+textarea{
+  min-width: 60vw
+}
+
+.wordcontainer{
+  display:flex;
+  flex-direction: row;
+}
+
+.letter-item > input[type=text]{
+    min-width: 2em;
+  	max-width: 2em;
+  	margin-inline-end:10px;
+}
+
+.letter-item > .correct-letter{
+  min-width: 2em;
+  	max-width: 2em;
+  	margin-inline-end:10px;
+}
+
+.detector{
+ width: 50%;
+}
+
+.spinning{
+
+  animation-name: spin;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+  /* transform: rotate(3deg); */
+   /* transform: rotate(0.3rad);/ */
+   /* transform: rotate(3grad); */ 
+   /* transform: rotate(.03turn);  */
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+
+/* MAP */
+	.map{
+width: 100%;
+    height: 60vh;
+    border: 0;
+    margin: auto;
+    }
+
+
+.directions-card {
+    display: none!important
+}
+
+@media screen and (min-width: 450px) {
+.map{
+	max-width:60vw;
+	height:50vh;
+	border:0
+}
+}
+
+
+:: Story JavaScript [script]
+$('#ui-bar').remove();
+$(document.head).find('#style-ui-bar').remove();
+// TYPEWRITER FN
+!function() {
+    postrender.typewriter = function (b) {
+        if (this.tags) {
+            var r = new RegExp("t8n.typewriter.([0-9]+)(?:[^0-9]|$)","g");
+            var t = r.exec(this.tags.toString());
+            if (t) {
+                typeout(b, t[1]+0);
+            }
+        }
+        return b;
+    };
+    var typeout = function(c,t) {
+        var Furl = function(current) {
+            this.n = current;
+            this.out = false;
+            this.data = current.nodeValue;
+            current.nodeValue = "";
+            this.kids = [];
+            var cn = current.childNodes;
+            if (current.style && current.style.display=="none") {
+                return;
+            }
+            while (cn.length>0) {
+                var f = new Furl(cn[0]);
+                current.removeChild(cn[0]);
+                f.out = true;this.kids.push(f);
+            }
+        };
+        var nodes = new Furl(c);
+        var unfurl = function(furled,d) {
+            var n = furled.n;
+            if (furled.out) {
+                d.appendChild(n);
+                furled.out = false;
+            }
+            if (furled.data) {
+                n.nodeValue += furled.data[0];
+                furled.data = furled.data.slice(1);
+                return true;
+            }
+            for (var j=0; j<furled.kids.length; j++) {
+                var ret = unfurl(furled.kids[j],n);
+                if (ret) {
+                    return true;
+                }
+            }
+            return false;
+        };
+        var title = passage();
+        var intr = setInterval (
+            function() {
+                if (passage() == title && unfurl(nodes,null)) {
+                    return;
+                }
+                clearInterval(intr);
+            }
+        ,t);
+    };
+}();
+
+// MAKE MAP FUNCTION
+
+setup.generateDirectionsMap = function (latorg, longorg, latdest, longdest){
+const iFrame = document.createElement("iframe")
+iFrame.classList.add("map")
+iFrame.setAttribute("loading", "lazy")
+iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
+// iFrame.setAttribute("allowfullscreen")
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${latorg},${longorg}&zoom=17&origin=${latorg},${longorg}&destination=${latdest},${longdest}&mode=walking`)
+const mount = document.getElementById("mapMount")
+return iFrame
+}
+
+//Get random 5 letter word
+
+setup.generate5LetterCode = () => {
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+let word = ""
+for (let i =0 ; i < 5 ; i++){
+word += alphabet[Math.round((alphabet.length-1)*Math.random())];
+}
+  return word;
+}
+
+//Check if an array contains multiple instances of an element
+
+setup.checkForRepeats = (array,element) => {
+ const arrayCopy = [...array];
+ const duplicates = arrayCopy.filter((item, index) => index !== arrayCopy.indexOf(item));
+ return duplicates.contains(element)
+}
+
+
+:: StoryInit {"position":"100,100","size":"100,100"}
+<<cacheaudio "badjoke" "https://youhavefoundconey.net/CG/what/assets/audio/badjoke.mp3">>
+<<waitforaudio>>
+
+
+:: header {"position":"100,225","size":"100,100"}
+<header>Adventure Functionality /
+ Structure Template</header>
+
+
+:: footer {"position":"100,375","size":"100,100"}
+<footer><div class="nav-wrapper "><div class="nav-item"><<button "Replay">><<goto $passage>><</button>> </div><div class="nav-item"><<button "Back">><<goto $prevpass>><</button>></div></div><div class="nav-wrapper"><div class="nav-item"><<button "I'm lost">><<goto "lost">><</button>></div></div></footer>
+
+
+:: lost {"position":"450,50","size":"100,100"}
+<<set $passage to "lost">><<include "header">>
+<main>
+Sorry to hear that you're lost! 
+You have two options:
+
+<<button "Begin the adventure again">><<goto "landing">><</button>>
+
+<<button "Take me straight to the end location!">><<goto "end">><</button>>
+</main>
+<<include "footer">>
+
+
+:: landing {"position":"450,50","size":"100,100"}
+<<set $passage to "landing">>
+<<include "header">>
+<main>
+  menu
+
+<<button "start">><<set $prevpass to $passage>><<goto "SM-05">><</button>>
+
+</main>
+<<include "footer">>
+
+
+:: SM-05 {"position":"450,225","size":"100,100"}
+<<set $passage to "SM-05">>
+<<include "header">>
+<main>
+
+There you are, thank the Collective! Thought I’d lost you before we’d even started.
+
+Welcome to the Golden Key walking tour, a whistlestop history of the festival that
+sparked great change in the City... turning London’s ‘Square Mile’ into London’s ‘Share Mile’! 
+
+... Get it?
+
+Coz it was called the square mile before, but now it belongs to us all?
+
+OK, never mind. I’m Mariam Samir, one of a few guides you’ve probably seen showing people round the city. I study physics and history, so I can pretend to know the answer to most of your questions.
+
+Great! Let’s get going. Of course no tour is complete without a glance at the world famous Tower of London. A building with a complex and rich history, it has stood for nearly 1000 years and seen a staggering 42 monarchs.
+
+Normally I’d take you in, but the building is shut while some exciting work happens inside! See, we’re drawing from the Tower’s history and reinventing it for 2042. Instead of prison for traitors, the new Tower of London will focus on rehabilitation: Safe housing, education, vocational training, physical and mental healthcare... I was at the Folkmoot that voted unanimously in favour of this idea so I’m happy to answer any questions about the project?
+
+
+<<button "What is a FolkMoot?">><<set $prevpass to $passage>><<goto "SM-06">><</button>>
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-06 {"position":"450,350","size":"100,100"}
+<<set $passage to "SM-06">>
+<<include "header">>
+<main>
+
+Wait, are you joking? I know I’m meant to say there’s no such thing as a stupid question, but that is a stupid question.
+
+... Seriously?
+
+(sigh) OK... The Folkmoot is a tri-annual meeting where selected delegates from local businesses, communities and institutions meet to decide how the City should be run. It’s inspired by an old Anglo-Saxon practice. Throughout history, the City has been given licence to act outside of feudal law, in its own interests. We’ve taken that and run with it. Folkmoots are for all of us. Sharing the ideas of the people, acting for the people. How do you not know about it?
+
+Right, moving on. If you could follow me across the road, heading towards Tower Hill
+Station. When you spot the sundial, press continue.
+
+
+<<button "Continue">><<set $prevpass to $passage>><<goto "SM-07">><</button>>
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-07 {"position":"450,475","size":"100,100"}
+<<set $passage to "SM-07">>
+<<include "header">>
+<main>
+
+<div class="sm07container">
+Everyone here? OK! Photo opp number 1! Gather together! Whoever’s got a phone handy and not using it for this tour, why not snap a group selfie? Everyone say non-dairy cheese!
+
+Are you done?
+
+<<button "Yep!">>
+  <<replace ".sm07container">>
+Brilliant, you look just like our founders! Can anyone tell me why taking a photo here is significant?
+
+<<button "We don't know">><<set $prevpass to $passage>><<goto "SM-08">><</button>>
+
+<<button "A nice souvenir?">><<set $prevpass to $passage>><<goto "SM-08">><</button>>
+  
+  <</replace>>
+<</button>>
+</div>
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-08 {"position":"450,600","size":"100,100"}
+<<set $passage to "SM-08">>
+<<include "header">>
+<main>
+
+Wow.
+
+Well, this sundial is rumoured to be where it all began. A group of ordinary Londoners met during the 2022 Golden Key Festival, and were inspired to change this city for the better. They took a selfie right in this spot, just like you just did. There’s lots of theories as to why.
+
+Was it a warning to the corrupt? Progress is coming, don’t stand in the way? Was it a message of hope for future generations? Was it a rip in the space-time continuum, a temporal crossover opening up multiple dimensions and realities that may or may not come to be?
+
+I mean that last one is a little far fetched but...
+
+You know... the group of you standing there... it’s really uncanny. I never asked for
+your names. What are they?
+
+<div class = "namespace">
+  <<textarea "$names" "">>
+  <<button "enter">>
+  	<<replace ".namespace">>
+Right... right, OK, and why are you here?
+
+<<button "For the 2022 Golden Key Festival.">><<set $prevpass to $passage>><<goto "SM-09">><</button>>
+    <</replace>>
+  <</button>>
+</div>
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-09 {"position":"450,725","size":"100,100"}
+<<set $passage to "SM-09">>
+<<include "header">>
+<main>
+
+No, you gotta be fucking with me, surely that’s not - that this would happen to me... It’s an honour to meet you. I’m so sorry I didn’t recognise you sooner, I mean I have that very photo of you on my wall! You’re my heroes. You’re everyone’s heroes...
+
+Welcome to 2042! How did you get here?
+
+<<button "We were guided to a secret door by a dragon.">><<set $prevpass to $passage>><<goto "SM-10">><</button>>
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-10 {"position":"450,850","size":"100,100"}
+<<set $passage to "SM-09">>
+<<include "header">>
+<main>
+
+There’s a temporal guide?
+And it’s a dragon?
+What does it look like?
+
+
+/*These are placeholder images*/
+
+<div class = "dragonpictures">
+<<link "<img src='https://i.imgur.com/uBgQ2Lu.jpg' style='width:100px'>">>
+  <<replace ".dragonpictures">>
+Holy shit I’ve seen it!!! I thought I was crazy! It was over there, the Tower Hill memorial in Trinity Gardens... I’ll show you!
+/*MAP NEEDED*/
+<<button "We're here.">><<set $prevpass to $passage>><<goto "SM-11">><</button>>
+<</replace>>
+<</link>>
+
+<<link "<img src='https://i.imgur.com/uBgQ2Lu.jpg' style='width:100px'>">>
+<<replace ".dragonpictures">>
+Holy shit I’ve seen it!!! I thought I was crazy! It was over there, the Tower Hill memorial in Trinity Gardens... I’ll show you!
+/*MAP NEEDED*/
+<<button "We're here.">><<set $prevpass to $passage>><<goto "SM-11">><</button>>
+<</replace>>
+<</link>>
+
+<<link "<img src='https://i.imgur.com/uBgQ2Lu.jpg' style='width:100px'>">>
+<<replace ".dragonpictures">>
+Holy shit I’ve seen it!!! I thought I was crazy! It was over there, the Tower Hill memorial in Trinity Gardens... I’ll show you!
+/*MAP NEEDED*/
+<<button "We're here.">><<set $prevpass to $passage>><<goto "SM-11">><</button>>
+<</replace>>
+<</link>>
+</div>
+
+
+
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-11 {"position":"450,975","size":"100,100"}
+<<set $passage to "SM-11">>
+<<include "header">>
+<main>
+
+Here! Right in the centre of the memorial. I was showing some school kids around, explaining the Four R’s, and I saw it - darting through the archways and then just like that - pfft! - vanished into thin air. I nearly lost my shit - what?
+
+
+<<button "What are the 4 R's?">><<set $prevpass to $passage>><<goto "SM-12">><</button>>
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-12 {"position":"450,1100","size":"100,100"}
+<<set $passage to "SM-12">>
+<<include "header">>
+<main>
+
+Haha - very funny. You must have at least discussed the four R’s by now... You know, the pillars of our movement?! It was you that came up with them - a plan for our future led by four guiding principles, the first being-
+
+Wait, maybe I shouldn’t tell you. Perhaps it disrupts the timeline too drastically,
+causes temporal chaos... Unless it’s predestined? You’re meant to meet me, and I’m meant to tell you, and if I don't you won't know how to make the 2042 I know a reality?
+
+Agh, my head hurts! This never came up in lectures! I should call a Folkmoot! What can one guide do in this situation?
+
+
+<<button "Guide us?">><<set $prevpass to $passage>><<goto "SM-13">><</button>>
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-13 {"position":"450,1225","size":"100,100"}
+<<set $passage to "SM-13">>
+<<include "header">>
+<main>
+
+It’s not that simple!
+
+Wait, you’re right. It is! The ideas came from you anyway. There’s nothing wrong with me guiding you round and letting you come up with them again. It’s the perfect compromise!
+
+You’re geniuses! I mean obviously you are, you’re the founders.
+
+OK, where to begin? I suppose the first R is as good as any. It’s very much a reaction to your time - to the distancing, political division, and digital realities of 2022. The first R is about getting together. So while we head onwards with our tour, I’d like to set some tasks for you to do as a team. Let’s go.
+
+Gather your group and start walking to 1 Sky Garden Walk, EC3M 8AF. Once you have walked for 2 minutes, press continue:
+
+/*MAP NEEDED*/
+
+<<button "Continue">><<set $prevpass to $passage>><<goto "SM-14-1">><</button>>
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-14-1 {"position":"450,1350","size":"100,100"}
+<<set $passage to "SM-14-1">>
+<<include "header">>
+<main>
+
+/*MAP NEEDED*/
+
+OK, here’s your first task. Look for a place where people meet. Decide between you,
+and try to make sure everyone has a voice in the choice.
+
+
+<<button "Done!">><<set $prevpass to $passage>><<goto "SM-14-2">><</button>>
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-14-2 {"position":"575,1350","size":"100,100"}
+<<set $passage to "SM-14-2">>
+<<include "header">>
+<main>
+
+/*MAP NEEDED*/
+
+Great! Keep heading to your destination. But now, keep your eyes peeled for a place where people share ideas.
+
+<<button "Done!">><<set $prevpass to $passage>><<goto "SM-14-3">><</button>>
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-14-3 {"position":"700,1350","size":"100,100"}
+<<set $passage to "SM-14-3">>
+<<include "header">>
+<main>
+
+/*MAP NEEDED*/
+
+Yes! OK, keep heading to your destination. But now, how about: Spy a thing that connects us, no matter how different we are. It can be unusual!
+
+<<button "Done!">><<set $prevpass to $passage>><<goto "SM-14-4">><</button>>
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-14-4 {"position":"825,1350","size":"100,100"}
+<<set $passage to "SM-14-4">>
+<<include "header">>
+<main>
+
+/*MAP NEEDED*/
+
+What is it?
+
+<<textarea "$connection" "">>
+<<button "Done!">><<set $prevpass to $passage>><<goto "SM-14-5">><</button>>
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-14-5 {"position":"950,1350","size":"100,100"}
+<<set $passage to "SM-14-5">>
+<<include "header">>
+<main>
+
+
+Funny, I don’t often think of that. OK...  How about some other ways people could be brought together? If they don’t exist yet, create them. Let your imagination run free!
+
+Try to make sure everyone is heard, and we can share ideas when we reach our next stop. We’re going to gather outside the building, by some trees.
+
+Once you arrive at Sky Gardens, don’t head inside. Stop by the trees at the entrance and press continue.
+
+<<button "Continue">><<set $prevpass to $passage>><<goto "SM-15-1">><</button>>
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-15-1 {"position":"450,1475","size":"100,100"}
+<<set $passage to "SM-15-1">>
+<<include "header">>
+<main>
+
+
+So, what ideas did you come up with?
+
+•<<textbox "$1" "">>
+•<<textbox "$2" "">>
+•<<textbox "$3" "">>
+•<<textbox "$4" "">>
+
+<<button "Enter">><<set $prevpass to $passage>><<goto "SM-15-2">><</button>>
+
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-15-2 {"position":"575,1475","size":"100,100"}
+<<set $passage to "SM-15-1">>
+<<include "header">>
+<main>
+
+
+You came up with all that in a few minutes? Incredible! Though I shouldn’t be surprised. You’re getting so close to the first R! I wonder if you can guess it yet?
+
+It was about getting together
+Collective endeavours
+Finding common ground instead of a fight
+It was the R we all needed
+And it was called Re_ _ _ _ _
+
+<div class="wordcontainer">
+  <div class = "letter-item r">
+      R
+  </div>
+  <div class = "letter-item e">
+      E
+  </div>
+  <div class = "letter-item u">
+    <<textbox "$u" "">>
+  </div>
+  <div class = "letter-item n">
+    <<textbox "$n" "">>
+  </div>
+  <div class = "letter-item i">
+    <<textbox "$i" "">>
+  </div>
+  <div class = "letter-item t">
+    <<textbox "$t" "">>
+  </div>
+  <div class = "letter-item e">
+    <<textbox "$e" "">>
+  </div>
+</div>
+
+
+<div class = "nextplaceholder">
+	<<button "Submit">>
+  <<if $u.toUpperCase() is  "U">>
+      <<replace ".u">>
+        U
+      <</replace>>
+  <</if>>
+  <<if $n.toUpperCase() is  "N">>
+      <<replace ".n">>
+          N
+      <</replace>>
+  <</if>>
+  <<if $i.toUpperCase() is  "I">>
+      <<replace ".i">>
+          I
+      <</replace>>
+  <</if>>
+  <<if $t.toUpperCase() is  "T">>
+      <<replace ".t">>
+          T
+      <</replace>>
+  <</if>>
+   <<if $e.toUpperCase() is  "E">>
+      <<replace ".e">>
+          E
+      <</replace>>
+  <</if>>
+    <<if $u.toUpperCase() is "U" and $n.toUpperCase() is "N" and $i.toUpperCase() is "I" and $t.toUpperCase() is "T" and $e.toUpperCase() is "E">>
+   	 <<set $prevpass to $passage>><<goto "SM-16">>  
+  <</if>>
+<</button>>
+</div>
+
+
+<<button "Enter">><<set $prevpass to $passage>><<goto "SM-15-2">><</button>>
+
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-16 {"position":"450,1600","size":"100,100"}
+<<set $passage to "SM-16">>
+<<include "header">>
+<main>
+
+
+That’s right! Reunite is a key element in every Folkmoot decision. We try to create accessible communal spaces for all - ones that respect the needs of the people and of our environment.
+
+Which brings me to our next stop. The Sky Garden. Have any of you ever been up?
+
+
+<<button "Yes">><<set $prevpass to $passage>><<goto "SM-17">><</button>>
+
+<<button "No">><<set $prevpass to $passage>><<goto "SM-18">><</button>>
+
+
+
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-17 {"position":"450,1725","size":"100,100"}
+<<set $passage to "SM-17">>
+<<include "header">>
+<main>
+
+What was it like?
+
+<<textbox "$skygarden" "">>
+
+<<button "Continue">><<set $prevpass to $passage>><<goto "SM-18">><</button>>
+
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-18 {"position":"450,1850","size":"100,100"}
+<<set $passage to "SM-18">>
+<<include "header">>
+<main>
+
+My mum said the sky garden used to be a beautifully manicured green space towering above the rest of the city. People paid P to queue for a view or sip overpriced cocktails. You changed all that with the second R. Right now, a group of volunteers are working hard up there to turn Sky Garden into one of the city’s growing number of ‘wildspaces’ - green hubs where plant, insect, and animal life thrive, and local citizens can enjoy being close to nature.
+
+It’s a project we’re very excited about... And we’re always looking for new sites.
+
+I have an idea. Let’s not disturb our gardeners while they’re at work. I’ve got a task for you while we head to our next stop...
+
+Head to Lime St, EC3V 1LT. Once you’ve been walking for a minute, press continue.
+
+/*MAP NEEDED*/
+
+<<button "Continue">><<set $prevpass to $passage>><<goto "SM-19">><</button>>
+
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-19 {"position":"450,1975","size":"100,100"}
+<<set $passage to "SM-19">>
+<<include "header">>
+<main>
+
+/*MAP NEEDED*/
+
+I’m sure you’re aware how crucial the 20’s are for humanity. A time when decisive action is needed. From all of us.
+
+Here’s an action I want from you. Take a look around. Find a green space you never noticed before. It can be tiny. A tree. A blade of grass. A bush. Decide together and press continue when you’ve found it.
+
+<<button "Continue">><<set $prevpass to $passage>><<goto "SM-20">><</button>>
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-20 {"position":"450,2100","size":"100,100"}
+<<set $passage to "SM-20">>
+<<include "header">>
+<main>
+
+What do you like about this bit of greenery? What could be better? Discuss it together and press continue when you have some thoughts you’d like to share.
+
+<div class="greenanswer">
+<<button "Continue">>
+	<<replace ".greenanswer">>
+What we like about the green space:
+<<textarea "$likeaboutgreenspace" "">>
+
+What we don't like about green space:
+<<textarea "$dontlikeaboutgreenspace" "">>
+
+<<button "Done">><<set $prevpass to $passage>><<goto "SM-21">><</button>>
+
+    <</replace>>
+<</button>>
+</div>
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-21 {"position":"450,2225","size":"100,100"}
+<<set $passage to "SM-21">>
+<<include "header">>
+<main>
+
+<div class = "sm21container">
+Interesting how evocative green spaces are for people! Here’s another challenge. Look for a grey space you think could benefit from some green. It can be anything. A pavement. A roof. An abandoned trainer. Press continue once you’ve all agreed on somewhere.
+
+<<button "Continue">>
+	<<replace ".sm21container">>
+Great! A new green space! What will you call it? How will you make it as beneficial to Londoners as possible? Try to hear everyone’s ideas. They might spark something really exciting! We’ll share them when we reach Leadenhall.  
+
+What will you call your green space? How will you make it beneficial to Londoners? Discuss as you head to Lime St, EC3V 1LT. Stop at the entrance to Leadenhall.
+
+/*MAP NEEDED*/
+
+<<button "We're here">><<set $prevpass to $passage>><<goto "SM-22-1">><</button>>
+
+
+    <</replace>>
+<</button>>
+
+</div>
+
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-22-1 {"position":"450,2350","size":"100,100"}
+<<set $passage to "SM-22-1">>
+<<include "header">>
+<main>
+
+So, what did you call your green space?
+
+<<textbox "$greenspacename" "">>
+
+<<button "Enter">><<set $prevpass to $passage>><<goto "SM-22-2">><</button>>
+
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-22-2 {"position":"575,2350","size":"100,100"}
+<<set $passage to "SM-22-2">>
+<<include "header">>
+<main>
+
+That’s a great name! Any special things about your green space you’d like to share?
+
+
+•<<textbox "$22-1" "">>
+•<<textbox "$22-2" "">>
+•<<textbox "$22-3" "">>
+•<<textbox "$22-4" "">>
+
+
+<<button "Continue">><<set $prevpass to $passage>><<goto "SM-22-3">><</button>>
+
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-22-3 {"position":"700,2350","size":"100,100"}
+<<set $passage to "SM-22-3">>
+<<include "header">>
+<main>
+
+
+What did I tell you? Ideas for the people! Have you guessed the second R yet?
+
+... It was about giving free reign to green
+Concrete yields to birds and bees
+Plants colour the once grey mile
+Yep, the second’s R’s Re_ _ _ _ _
+
+Any ideas?
+
+<div class="wordcontainer">
+  <div class = "letter-item r">
+      R
+  </div>
+  <div class = "letter-item e">
+      E
+  </div>
+  <div class = "letter-item w">
+    <<textbox "$w" "">>
+  </div>
+  <div class = "letter-item i">
+    <<textbox "$i" "">>
+  </div>
+  <div class = "letter-item l">
+    <<textbox "$l" "">>
+  </div>
+  <div class = "letter-item d">
+    <<textbox "$d" "">>
+  </div>
+</div>
+
+
+<div class = "nextplaceholder">
+	<<button "Submit">>
+  <<if $w.toUpperCase() is  "W">>
+      <<replace ".w">>
+       W
+      <</replace>>
+  <</if>>
+  <<if $i.toUpperCase() is  "I">>
+      <<replace ".i">>
+          I
+      <</replace>>
+  <</if>>
+  <<if $l.toUpperCase() is  "L">>
+      <<replace ".l">>
+         L
+      <</replace>>
+  <</if>>
+  <<if $d.toUpperCase() is  "D">>
+      <<replace ".d">>
+          D
+      <</replace>>
+  <</if>>
+ 
+    <<if $w.toUpperCase() is "W" and $i.toUpperCase() is "I" and $l.toUpperCase() is "L" and $d.toUpperCase() is "D">>
+   	 <<set $prevpass to $passage>><<goto "SM-23">>  
+  <</if>>
+<</button>>
+</div>
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-23 {"position":"450,2475","size":"100,100"}
+<<set $passage to "SM-23">>
+<<include "header">>
+<main>
+
+Correct! And I know you shouldn’t have favourites, but Rewild kind of is mine. In Folkmoots we always try to find a balance, between allocating green spaces that to free, and spaces we responsibly farm to feed the community,
+
+Which brings me nicely to Leadenhall market. Smells good right? What’s food like in 2022? Mum tells me horror stories of chickens pumped with antibiotics and 9 quid for a sourdough fish finger sandwich. Was she right?
+
+
+<<button "Yes">><<set $prevpass to $passage>><<goto "SM-24A">><</button>>
+
+<<button "No">><<set $prevpass to $passage>><<goto "SM-25B">><</button>>
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-24A {"position":"450,2600","size":"100,100"}
+<<set $passage to "SM-24A">>
+<<include "header">>
+<main>
+
+Well you know what they say: Mum is always right.
+
+
+<<timed 5s>><<set $prevpass to $passage>><<goto "SM-26">><</timed>>
+
+
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-25B {"position":"575,2600","size":"100,100"}
+<<set $passage to "SM-25B">>
+<<include "header">>
+<main>
+
+Well you know what they say: Mums love to exaggerate.
+
+
+<<timed 5s>><<set $prevpass to $passage>><<goto "SM-26">><</timed>>
+
+
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-26 {"position":"450,2725","size":"100,100"}
+<<set $passage to "SM-26">>
+<<include "header">>
+<main>
+
+Leadenhall Market is one of my favourite spots in the city. A crossroads where London’s past, present and future meet. Skyscrapers looming above, the ruins of Roman London below... the legacy of this buzzing mediaeval market right in front of us.
+
+Would you like some history?
+
+<<button "Yes, we love history.">><<set $prevpass to $passage>><<goto "SM-27">><</button>>
+
+<<button "If we must.">><<set $prevpass to $passage>><<goto "SM-27">><</button>>
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-27 {"position":"450,2850","size":"100,100"}
+<<set $passage to "SM-27">>
+<<include "header">>
+<main>
+
+I’ll keep if brief and interesting, honest!
+
+<<timed 5s>><<set $prevpass to $passage>><<goto "SM-28">><</timed>>
+
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-28 {"position":"450,2975","size":"100,100"}
+<<set $passage to "SM-28">>
+<<include "header">>
+<main>
+
+OK. So, in 49AD London was a Roman colony. Leadenhall was the Forum and Basilica - a communal space where issues of the day were decided and discussed. It fell into disuse when the Romans left Britain but as the economy revived during the Anglo Saxon period, so did this market. Sellers spilled over from Cheapside nearby and this became THE spot to get your meat, eggs, and dairy. Leadenhall grew and thrived. There were performers in the streets, a school onsite, a chapel, a pub... the market was about more than buying and selling, it belonged to the local community.
+
+That is an ideal we’ve tried to return to in 2042, stocking Leadenhall with locally grown, high quality and affordable food. The market is run by a cooperative, with nobody undercut or oversold.
+
+Since the 2022 Golden Key event, Leadenhall has hosted regular festivals, educational events, meetings... We think of it as nutrition for both the mind and the body. We believe it’s a right, not a luxury. And that’s an idea that came from you. There are many who say it’s the most important one.
+
+/*pause*/
+
+There’s one more place I’d like to show you, just round the corner. Somewhere very
+significant. As we head there, take a look around. What would you change about this city to make sure everyone had a fair slice? We’ll share ideas at the next stop:
+
+Lloyds building. 113-116 Leadenhall St, London EC3A 4AX. Meet at the entrance and press continue.
+
+/* MAP NEEDED*/
+
+<<button "Continue">><<set $prevpass to $passage>><<goto "SM-29-1">><</button>>
+
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-29-1 {"position":"450,3100","size":"100,100"}
+<<set $passage to "SM-29-1">>
+<<include "header">>
+<main>
+
+So... any ideas you’d like to share?
+
+•<<textbox "$29-1" "">>
+•<<textbox "$29-2" "">>
+•<<textbox "$29-3" "">>
+•<<textbox "$29-4" "">>
+
+<<button "Continue">><<set $prevpass to $passage>><<goto "SM-29-2">><</button>>
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-29-2 {"position":"575,3100","size":"100,100"}
+<<set $passage to "SM-29-1">>
+<<include "header">>
+<main>
+
+I can’t tell you how inspiring it is, seeing you come up with these thoughts first hand. Better than I could have imagined. I bet you’ve already guessed what the third R is:
+
+It’s about making sure we all have enough
+None go without, none have too much
+Access to resources, learning and food
+Made equal, with Re_ _ _ _ _ _ _ _ _ _
+
+... Any ideas?
+
+<div class="wordcontainer">
+  <div class = "letter-item r">
+      R
+  </div>
+  <div class = "letter-item e">
+      E
+  </div>
+  <div class = "letter-item d">
+    <<textbox "$d" "">>
+  </div>
+  <div class = "letter-item i">
+    <<textbox "$i" "">>
+  </div>
+  <div class = "letter-item s">
+    <<textbox "$s" "">>
+  </div>
+  <div class = "letter-item t">
+    <<textbox "$t" "">>
+  </div>
+    <div class = "letter-item r">
+    <<textbox "$r" "">>
+  </div>
+    <div class = "letter-item i2">
+    <<textbox "$i2" "">>
+  </div>
+    <div class = "letter-item b">
+    <<textbox "$b" "">>
+  </div>
+   <div class = "letter-item u">
+    <<textbox "$u" "">>
+  </div>
+   <div class = "letter-item t2">
+    <<textbox "$t2" "">>
+  </div>
+     <div class = "letter-item e">
+    <<textbox "$e" "">>
+  </div>
+</div>
+
+
+<div class = "nextplaceholder">
+	<<button "Submit">>
+  <<if $d.toUpperCase() is  "D">>
+      <<replace ".d">>
+       D
+      <</replace>>
+  <</if>>
+  <<if $i.toUpperCase() is  "I">>
+      <<replace ".i">>
+          I
+      <</replace>>
+  <</if>>
+  <<if $s.toUpperCase() is  "S">>
+      <<replace ".s">>
+         S
+      <</replace>>
+  <</if>>
+  <<if $t.toUpperCase() is  "T">>
+      <<replace ".t">>
+          T
+      <</replace>>
+  <</if>>
+  <<if $r.toUpperCase() is  "R">>
+      <<replace ".r">>
+          R
+      <</replace>>
+  <</if>>
+  <<if $i2.toUpperCase() is  "I">>
+      <<replace ".i2">>
+          I
+      <</replace>>
+  <</if>>
+  <<if $b.toUpperCase() is  "B">>
+      <<replace ".b">>
+          B
+      <</replace>>
+  <</if>>
+  <<if $u.toUpperCase() is  "U">>
+      <<replace ".u">>
+          U
+      <</replace>>
+  <</if>>
+  <<if $t2.toUpperCase() is  "T">>
+      <<replace ".t2">>
+          T
+      <</replace>>
+  <</if>>
+  <<if $e.toUpperCase() is  "E">>
+      <<replace ".e">>
+          E
+      <</replace>>
+  <</if>>
+  
+  <<if $d.toUpperCase() is "D" and $i.toUpperCase() is "I" and $s.toUpperCase() is "S" and $t.toUpperCase() is "T" and $r.toUpperCase() is "R" and $i2.toUpperCase() is "I" and $b.toUpperCase() is "B" and $u.toUpperCase() is "U" and $t2.toUpperCase() is "T" and $e.toUpperCase() is "E">>
+   	 <<set $prevpass to $passage>><<goto "SM-30">>  
+  <</if>>
+  <</button>>
+  </div>
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-30 {"position":"450,3225","size":"100,100"}
+HERE
+
+

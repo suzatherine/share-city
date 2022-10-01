@@ -530,6 +530,7 @@ Wait, are you joking? I know I’m meant to say there’s no such thing as a stu
 Right, moving on. If you could follow me across the road, heading towards Tower Hill
 Station. When you spot the sundial, press continue.
 
+/*MAP NEEDED*/
 
 <<button "Continue">><<set $prevpass to $passage>><<goto "SM-07">><</button>>
 
@@ -576,7 +577,7 @@ Brilliant, you look just like our founders! Can anyone tell me why taking a phot
 <<set $passage to "SM-08">>
 <<include "header">>
 <main>
-
+<div class = "namespace">
 Wow.
 
 Well, this sundial is rumoured to be where it all began. A group of ordinary Londoners met during the 2022 Golden Key Festival, and were inspired to change this city for the better. They took a selfie right in this spot, just like you just did. There’s lots of theories as to why.
@@ -588,7 +589,7 @@ I mean that last one is a little far fetched but...
 You know... the group of you standing there... it’s really uncanny. I never asked for
 your names. What are they?
 
-<div class = "namespace">
+
   <<textarea "$names" "">>
   <<button "enter">>
   	<<replace ".namespace">>
@@ -632,6 +633,7 @@ Welcome to 2042! How did you get here?
 <<include "header">>
 <main>
 
+<div class = "dragonpictures">
 There’s a temporal guide?
 And it’s a dragon?
 What does it look like?
@@ -639,7 +641,6 @@ What does it look like?
 
 /*These are placeholder images*/
 
-<div class = "dragonpictures">
 <<link "<img src='https://i.imgur.com/uBgQ2Lu.jpg' style='width:100px'>">>
   <<replace ".dragonpictures">>
 Holy shit I’ve seen it!!! I thought I was crazy! It was over there, the Tower Hill memorial in Trinity Gardens... I’ll show you!
@@ -751,8 +752,7 @@ Gather your group and start walking to 1 Sky Garden Walk, EC3M 8AF. Once you hav
 
 /*MAP NEEDED*/
 
-OK, here’s your first task. Look for a place where people meet. Decide between you,
-and try to make sure everyone has a voice in the choice.
+OK, here’s your first task. Look for a place where people meet. Decide between you, and try to make sure everyone has a voice in the choice.
 
 
 <<button "Done!">><<set $prevpass to $passage>><<goto "SM-14-2">><</button>>
@@ -828,6 +828,8 @@ Try to make sure everyone is heard, and we can share ideas when we reach our nex
 
 Once you arrive at Sky Gardens, don’t head inside. Stop by the trees at the entrance and press continue.
 
+/*MAP NEEDED*/
+
 <<button "Continue">><<set $prevpass to $passage>><<goto "SM-15-1">><</button>>
 
 
@@ -862,7 +864,7 @@ So, what ideas did you come up with?
 
 
 :: SM-15-2 {"position":"575,1475","size":"100,100"}
-<<set $passage to "SM-15-1">>
+<<set $passage to "SM-15-2">>
 <<include "header">>
 <main>
 
@@ -900,6 +902,8 @@ And it was called Re_ _ _ _ _
 </div>
 
 
+
+
 <div class = "nextplaceholder">
 	<<button "Submit">>
   <<if $u.toUpperCase() is  "U">>
@@ -931,7 +935,50 @@ And it was called Re_ _ _ _ _
    	 <<set $prevpass to $passage>><<goto "SM-16">>  
   <</if>>
 <</button>>
+
+<<button "Clue, please">>
+<<if $u is "">>
+    <<set $u to "u">>
+<<elseif $n is "">>
+    <<set $n to "n">>
+<elseif $i is "">>
+	<<set $i to "i">>
+<<elseif $t is "">>
+	<<set $t to "t">>
+<<elseif $e is "">>
+	<<set $e to "e">>    
+<</if>>
+
+ <<if $u.toUpperCase() is  "U">>
+      <<replace ".u">>
+        U
+      <</replace>>
+  <</if>>
+  <<if $n.toUpperCase() is  "N">>
+      <<replace ".n">>
+          N
+      <</replace>>
+  <</if>>
+  <<if $i.toUpperCase() is  "I">>
+      <<replace ".i">>
+          I
+      <</replace>>
+  <</if>>
+  <<if $t.toUpperCase() is  "T">>
+      <<replace ".t">>
+          T
+      <</replace>>
+  <</if>>
+   <<if $e.toUpperCase() is  "E">>
+      <<replace ".e">>
+          E
+      <</replace>>
+  <</if>>
+
+<</button>>
 </div>
+
+
 
 
 <<button "Enter">><<set $prevpass to $passage>><<goto "SM-15-2">><</button>>
@@ -1192,6 +1239,7 @@ Any ideas?
 </div>
 
 
+
 <div class = "nextplaceholder">
 	<<button "Submit">>
   <<if $w.toUpperCase() is  "W">>
@@ -1219,6 +1267,41 @@ Any ideas?
    	 <<set $prevpass to $passage>><<goto "SM-23">>  
   <</if>>
 <</button>>
+
+<<button "Clue, please">>
+	<<if $w is "">>
+    	<<set $w to "w">>
+    <<elseif $i is "">>
+   	    <<set $i to "i">>
+    <<elseif $l is "">>
+   		 <<set $l to "l">>
+    <<elseif $d is "">>
+    	<<set $d to "d">>
+    <</if>>
+ 	
+    <<if $w.toUpperCase() is  "W">>
+      <<replace ".w">>
+       W
+      <</replace>>
+  <</if>>
+  <<if $i.toUpperCase() is  "I">>
+      <<replace ".i">>
+          I
+      <</replace>>
+  <</if>>
+  <<if $l.toUpperCase() is  "L">>
+      <<replace ".l">>
+         L
+      <</replace>>
+  <</if>>
+  <<if $d.toUpperCase() is  "D">>
+      <<replace ".d">>
+          D
+      <</replace>>
+  <</if>>
+<</button>>
+
+
 </div>
 
 
@@ -1304,7 +1387,7 @@ Leadenhall Market is one of my favourite spots in the city. A crossroads where L
 
 Would you like some history?
 
-<<button "Yes, we love history.">><<set $prevpass to $passage>><<goto "SM-27">><</button>>
+<<button "Yes, we love history.">><<set $prevpass to $passage>><<goto "SM-28">><</button>>
 
 <<button "If we must.">><<set $prevpass to $passage>><<goto "SM-27">><</button>>
 
@@ -1500,6 +1583,84 @@ Made equal, with Re_ _ _ _ _ _ _ _ _ _
    	 <<set $prevpass to $passage>><<goto "SM-30">>  
   <</if>>
   <</button>>
+  
+  <<button "Clue, please">>
+  	<<if $d is "">>
+   	 <<set $d to "d">>
+    <<elseif $i is "">>
+    	<<set $i to "i">>
+   	<<elseif $s is "">>
+    	<<set $s to "s">>
+    <<elseif $t is "">>
+    	<<set $t to "t">>
+    <<elseif $r is "">>
+    	<<set $r to "r">>
+    <<elseif $i2 is "">>
+    	<<set $i2 to "i">>
+    <<elseif $b is "">>
+  	  <<set $b to "b">>
+    <<elseif $u is "">>
+		<<set $u to "u">>
+    <<elseif $t2 is "">>
+    	<<set $t2 to "t">>
+    <<elseif $e is "">>
+		<<set $e to "e">>
+    <</if>>
+    
+     <<if $d.toUpperCase() is  "D">>
+      <<replace ".d">>
+       D
+      <</replace>>
+  <</if>>
+  <<if $i.toUpperCase() is  "I">>
+      <<replace ".i">>
+          I
+      <</replace>>
+  <</if>>
+  <<if $s.toUpperCase() is  "S">>
+      <<replace ".s">>
+         S
+      <</replace>>
+  <</if>>
+  <<if $t.toUpperCase() is  "T">>
+      <<replace ".t">>
+          T
+      <</replace>>
+  <</if>>
+  <<if $r.toUpperCase() is  "R">>
+      <<replace ".r">>
+          R
+      <</replace>>
+  <</if>>
+  <<if $i2.toUpperCase() is  "I">>
+      <<replace ".i2">>
+          I
+      <</replace>>
+  <</if>>
+  <<if $b.toUpperCase() is  "B">>
+      <<replace ".b">>
+          B
+      <</replace>>
+  <</if>>
+  <<if $u.toUpperCase() is  "U">>
+      <<replace ".u">>
+          U
+      <</replace>>
+  <</if>>
+  <<if $t2.toUpperCase() is  "T">>
+      <<replace ".t2">>
+          T
+      <</replace>>
+  <</if>>
+  <<if $e.toUpperCase() is  "E">>
+      <<replace ".e">>
+          E
+      <</replace>>
+  <</if>>
+  
+  <</button>>
+  
+  
   </div>
 
 
@@ -1510,6 +1671,435 @@ Made equal, with Re_ _ _ _ _ _ _ _ _ _
 
 
 :: SM-30 {"position":"450,3225","size":"100,100"}
-HERE
+<<set $passage to "SM-30">>
+<<include "header">>
+<main>
+
+Exactly! Redistribute! Because collectively we have the resources, we just need to share them fairly. Everything is a team effort...
+
+Which brings us here - the Lloyds Bank building.
+The sight of our first ever Folkmoot.
+Not what you expected, right?
+But see, in order for the four R’s to work, it has to involve EVERYONE. That’s what you were so good at. Bringing us all together for the greater good.
+
+... I shouldn’t really tell you this. History has turned the events of that day into folklore that may not even be true. But my Mum used to recite this to me at bedtime. The first time she saw you speak, right here in this spot. You had quite a following by then, hundreds of people gathered, and you said this:
+
+(image placeholder)
+<img src="https://i.imgur.com/ALuDx0I.png">
+
+I wrote it down. Keep a copy in my bag. A reminder of all the progress that’s been
+made these last 20 years.
+
+This might be awkward but would you... would you mind reading it aloud? One line each between you? It would just... make my year, my life even - to hear it in your voices?
+
+
+<<button "We'll read it aloud">>
+  <<set $prevpass to $passage>>
+  <<goto "SM-31B">>
+<</button>>
+
+<<button "Could you read it aloud?">>
+  <<set $prevpass to $passage>>
+  <<goto "SM-31A">>
+<</button>>
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-31A {"position":"375,3350","size":"100,100"}
+<<set $passage to "SM-31A">>
+<<include "header">>
+<main>
+
+/*Miriam reads this one*/
+
+No-one should live in a city where spaces don’t belong to them. Where doors are
+closed and entrances barred. Too long we have been told that this centre of commerce and wealth, where decisions are made that affect us all, is not <strong>for</strong> us.
+
+It does not have to be that way
+
+We want a London that is truly free. Where citizens of all backgrounds meet and decide our future. Where we reunite, rewild, redistribute and...
+
+<<button "Continue">>
+  <<set $prevpass to $passage>>
+  <<goto "SM-32">>
+<</button>>
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-31B {"position":"525,3350","size":"100,100"}
+<<set $passage to "SM-31B">>
+<<include "header">>
+<main>
+
+/*No audio as audience reads this one*/
+
+No-one should live in a city where spaces don’t belong to them. Where doors are
+closed and entrances barred. Too long we have been told that this centre of commerce and wealth, where decisions are made that affect us all, is not <strong>for</strong> us.
+
+It does not have to be that way
+
+We want a London that is truly free. Where citizens of all backgrounds meet and decide our future. Where we reunite, rewild, redistribute and...
+
+<<button "Continue">>
+  <<set $prevpass to $passage>>
+  <<goto "SM-32">>
+<</button>>
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-32 {"position":"450,3475","size":"100,100"}
+<<set $passage to "SM-32">>
+<<include "header">>
+<main>
+
+What’s wrong?
+
+<<button "There’s nothing left to read.">>
+  <<set $prevpass to $passage>>
+  <<goto "SM-33">>
+<</button>>
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-33 {"position":"450,3600","size":"100,100"}
+<<set $passage to "SM-33">>
+<<include "header">>
+<main>
+
+Ah. Yeah. Well I guess that’s coz it’s up to you.
+The fourth R. I think you’re ready to decide it without my help.
+After all, the 2042 I live in is yours to build.
+
+
+I completely agree. No time like the present to start. Or the past. Or the future. But then again, that’s the nature of dragon time. Hello Mariam.
+
+
+Hi Felix.
+
+How did your tour go?
+
+They were <strong>brilliant</strong>.
+
+Excellent. Though not surprising. This group is clearly a special bunch. 
+Sorry for messing about with the space-time continuum, folks. But, would you have believed us if we’d just told you you were tomorrow’s revolutionaries?
+
+It had to come from you.
+
+With the help of a guide of course.
+
+I just led you to your own ideas. A plan of action for you to use in 2022. And that fourth R to decide on together as you head to your final stop...
+
+And an entirely new adventure.
+
+The Ned, 27 Poultry, EC2R 8AJ.
+
+It’s been a pleasure guiding you. Hope you take those exciting discussions and ideas and energy with you in 2022. They’re needed. Urgently. And if you struggle for R ideas, I might have a few games to get you going!
+
+<<timed 5s>>
+  <<set $prevpass to $passage>>
+  <<goto "SM-34">>
+<</timed>>
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-34 {"position":"450,3725","size":"100,100"}
+<<set $passage to "SM-34">>
+<<include "header">>
+<main>
+
+
+
+<<button "Reunite">>
+  <<set $prevpass to $passage>>
+  <<goto "SM-35A">>
+<</button>>
+
+<<button "Rewild">>
+  <<set $prevpass to $passage>>
+  <<goto "SM-35B">>
+<</button>>
+
+
+<<button "Redistribute">>
+  <<set $prevpass to $passage>>
+  <<goto "SM-35C">>
+<</button>>
+
+
+<<button "Head to Ned">>
+  <<set $prevpass to $passage>>
+  <<goto "SM-36">>
+<</button>>
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-35A {"position":"325,3850","size":"100,100"}
+<<set $passage to "SM-35A">>
+<<include "header">>
+<main>
+
+<strong>Reunite:</strong> Turn to the person beside you. Say hi. Now share two happy memories. Take your time, and remember, it doesn’t have to be perfect, or even deep.
+
+
+<<button "Okay, done">>
+  <<set $prevpass to $passage>>
+  <<goto "SM-34">>
+<</button>>
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-35B {"position":"450,3850","size":"100,100"}
+<<set $passage to "SM-35B">>
+<<include "header">>
+<main>
+
+<strong>Rewild:</strong> As a group, list all the natural living objects you see and one positive thing about them. Yes, even pigeons. Maybe there’s more than you thought?
+
+
+<<button "Okay, done">>
+  <<set $prevpass to $passage>>
+  <<goto "SM-34">>
+<</button>>
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-35C {"position":"575,3850","size":"100,100"}
+<<set $passage to "SM-35C">>
+<<include "header">>
+<main>
+
+<strong>Redistribute:</strong> Remember when I told you the Tower of London was now a communal resource? Take a look at some of the buildings you pass. What else could they be used for?
+
+<<button "Okay, done">>
+  <<set $prevpass to $passage>>
+  <<goto "SM-34">>
+<</button>>
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-36 {"position":"450,3975","size":"100,100"}
+<<set $passage to "SM-36">>
+<<include "header">>
+<main>
+
+Course. You’ve got enough of your own ideas to discuss! Just press continue
+when you reach Ned to head to your next adventure!
+
+/*MAP NEEDED*/
+
+
+
+<<button "We're here">>
+  <<set $prevpass to $passage>>
+  <<goto "SM-37">>
+<</button>>
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-37 {"position":"450,4100","size":"100,100"}
+<<set $passage to "SM-37">>
+<<include "header">>
+<main>
+
+Welcome to the Ned! Have you thought of a fourth R on your travels?
+
+<<button "Yes">>
+  <<set $prevpass to $passage>>
+  <<goto "SM-38">>
+<</button>>
+
+<<button "We need to think about it some more.">>
+  <<set $prevpass to $passage>>
+  <<goto "SM-39B">>
+<</button>>
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-38 {"position":"375,4225","size":"100,100"}
+<<set $passage to "SM-37">>
+<<include "header">>
+<main>
+
+What is your 4th R?
+
+<<textbox "$4thR" "">>
+
+<<button "Enter">>
+  <<set $prevpass to $passage>>
+  <<goto "SM-39A">>
+<</button>>
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-39A {"position":"375,4350","size":"100,100"}
+<<set $passage to "SM-39A">>
+<<include "header">>
+<main>
+
+Congratulations! I knew you could do it! Four R’s to base our future on - the work
+starts now.
+
+<<timed 3s>>
+  <<set $prevpass to $passage>>
+  <<goto "SM-40">>
+<</timed>>
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-39B {"position":"525,4350","size":"100,100"}
+<<set $passage to "SM-39B">>
+<<include "header">>
+<main>
+
+That’s OK - Londinium wasn’t built in a day, and nor is any movement. But with the future in your hands, I have hope we can get there.
+
+<<timed 3s>>
+  <<set $prevpass to $passage>>
+  <<goto "SM-40">>
+<</timed>>
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-40 {"position":"450,4475","size":"100,100"}
+<<set $passage to "SM-40">>
+<<include "header">>
+<main>
+
+So... I guess this is it... the end...
+
+/*alarm goes off*/
+
+Oh shit, I’m late for my next tour! Hope these ones know what decade they’re in!
+
+It's been a dream come true meeting you and sharing ideas. Can’t wait to find out what you do with the next 20 years!
+
+Quite the character, Mariam Samir. Fantastic things in store for her.
+
+<<button "Like what?">>
+  <<set $prevpass to $passage>>
+  <<goto "SM-41">>
+<</button>>
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-41 {"position":"450,4600","size":"100,100"}
+<<set $passage to "SM-40">>
+<<include "header">>
+<main>
+
+Don’t be silly, of course I’m not telling you. It’s not like I’d reveal her future job contains the initials P and M.
+
+I hope you’ve enjoyed your Maze adventure and been left with food for thought.
+
+Now it’s time to experience something very different - So find and step through the next door to see what more we have in store!
+
+Catch you soon!
+
+
+
+
+
+</main>
+<<include "footer">>
 
 

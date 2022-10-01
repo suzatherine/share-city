@@ -586,8 +586,7 @@ Was it a warning to the corrupt? Progress is coming, don’t stand in the way? W
 
 I mean that last one is a little far fetched but...
 
-You know... the group of you standing there... it’s really uncanny. I never asked for
-your names. What are they?
+You know... the group of you standing there... it’s really uncanny. I never asked for your names. What are they?
 
 
   <<textarea "$names" "">>
@@ -1718,6 +1717,9 @@ This might be awkward but would you... would you mind reading it aloud? One line
 
 /*Miriam reads this one*/
 
+(image placeholder)
+<img src="https://i.imgur.com/ALuDx0I.png">
+
 No-one should live in a city where spaces don’t belong to them. Where doors are
 closed and entrances barred. Too long we have been told that this centre of commerce and wealth, where decisions are made that affect us all, is not <strong>for</strong> us.
 
@@ -1745,12 +1747,8 @@ We want a London that is truly free. Where citizens of all backgrounds meet and 
 
 /*No audio as audience reads this one*/
 
-No-one should live in a city where spaces don’t belong to them. Where doors are
-closed and entrances barred. Too long we have been told that this centre of commerce and wealth, where decisions are made that affect us all, is not <strong>for</strong> us.
-
-It does not have to be that way
-
-We want a London that is truly free. Where citizens of all backgrounds meet and decide our future. Where we reunite, rewild, redistribute and...
+(image placeholder)
+<img src="https://i.imgur.com/ALuDx0I.png">
 
 <<button "Continue">>
   <<set $prevpass to $passage>>
@@ -2015,8 +2013,7 @@ What is your 4th R?
 <<include "header">>
 <main>
 
-Congratulations! I knew you could do it! Four R’s to base our future on - the work
-starts now.
+Congratulations! I knew you could do it! Four R’s to base our future on - the work starts now.
 
 <<timed 3s>>
   <<set $prevpass to $passage>>

@@ -4,7 +4,7 @@ Share Mile
 
 :: StoryData
 {
-	"ifid": "98D2404A-3A9E-49BD-98D2-23D5E1FCC2A4",
+	"ifid": "98D2404A-3A9E-49BD-99D2-23D5E1FCC2A4",
 	"format": "SugarCube",
 	"format-version": "2.36.1",
 	"start": "landing",
@@ -160,17 +160,17 @@ button{
 }
 
 button:hover{
-	background-color:#cf1b98;
+	background-color:#ea9e25;
 	border: #fff 1px solid;
 	color: #fff;
 }
 
 a {
-  color: #f2647d;
+  color:#ea9e25;;
 }
 
 a:active {
-  background-color: #f2647d;
+  background-color: #ea9e25;;
 }
 
 a:hover {
@@ -187,10 +187,13 @@ a:hover {
 
 /* GENERAL STYLES */
 body{
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  font-weight: 600;
   font-family: "Space Grotesk";
+  color:#fff;
+  /* color:#000; */
   overflow:scroll;
-  background:#000;
+  background: #1c8f93;
   /* padding: 1.5rem */
   display:flex;
   flex-direction: column
@@ -205,18 +208,19 @@ header{
 
 main{
    padding: 2rem;
-   margin-block-end: 4rem
+   margin-block-end: 10rem
 }
+/* FOOTER  */
 
 footer{
    display:flex;
   justify-content: space-between;
-  align-items: flex-end; 
+align-items: end;
   position:fixed;
   bottom: 0;
   padding: 2rem;
   width: 100%;
-  background-color: #000
+background: #1c8f93;
 }
 
 nav{
@@ -235,17 +239,32 @@ align-items: flex-end
 }
 
 .nav-item{
-  margin-block-end: 1.5rem
+  margin-block-end: 0.5rem;
+  width:100%;
+  display:flex
 }
 
-.nav-item:last-child{
-  margin-block-end: 0
+.nav-item.replay, .nav-item.end{
+justify-content: center
+}
+.nav-item.replay, .nav-item.forward{
+justify-content: end
 }
 
+.nav-item.replay, .nav-item.back{
+justify-content: start
+}
 
-.nav-wrapper:last-child{
-display:flex;
-align-items: flex-end
+.nav-item.forward > button, 
+.nav-item.back > button{
+  font-size:2rem
+}
+footer > button:first-child,  {
+  font-size:2rem
+}
+
+.nav-item > button{
+ font-size: 1.3rem
 }
 
 .menu-wrapper{
@@ -453,16 +472,20 @@ setup.checkForRepeats = (array,element) => {
 
 
 :: header {"position":"100,225","size":"100,100"}
-<header>Adventure Functionality /
- Structure Template</header>
+<header>Share Mile</header>
 
 
 :: footer {"position":"100,375","size":"100,100"}
-<footer><div class="nav-wrapper "><div class="nav-item"><<button "Replay">><<goto $passage>><</button>> </div><div class="nav-item"><<button "Back">><<goto $prevpass>><</button>></div></div><div class="nav-wrapper"><div class="nav-item"><<button "I'm lost">><<goto "lost">><</button>></div></div></footer>
+<footer>
+<div class="nav-item back"><<button "<">><<goto $prevpass>><</button>></div>
+<div class="nav-item replay"><<button "Replay">><<goto $passage>><</button>> </div>
+<div class="nav-item end"><<button "Take me to the end">><<set $prevpass to $passage>><<goto "lost">><</button>></div>
+<div class="nav-item forward"><<button ">">><<set $prevpass to $passage>><<goto $nextpassage>><</button>></div>
+</footer>
 
 
 :: lost {"position":"450,50","size":"100,100"}
-<<set $passage to "lost">><<include "header">>
+<<set $passage to "lost">>
 <main>
 Sorry to hear that you're lost! 
 You have two options:
@@ -476,7 +499,7 @@ You have two options:
 
 :: landing {"position":"450,50","size":"100,100"}
 <<set $passage to "landing">>
-<<include "header">>
+
 <main>
   menu
 
@@ -487,8 +510,8 @@ You have two options:
 
 
 :: SM-05 {"position":"450,225","size":"100,100"}
-<<set $passage to "SM-05">>
-<<include "header">>
+<<set $passage to "SM-05">><<set $nextpassage to "SM-06">>
+
 <main>
 
 There you are, thank the Collective! Thought I’d lost you before we’d even started.
@@ -517,8 +540,8 @@ Normally I’d take you in, but the building is shut while some exciting work ha
 
 
 :: SM-06 {"position":"450,350","size":"100,100"}
-<<set $passage to "SM-06">>
-<<include "header">>
+<<set $passage to "SM-06">><<set $nextpassage to "SM-07">><<set $map1 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)>>
+
 <main>
 
 Wait, are you joking? I know I’m meant to say there’s no such thing as a stupid question, but that is a stupid question.
@@ -530,7 +553,7 @@ Wait, are you joking? I know I’m meant to say there’s no such thing as a stu
 Right, moving on. If you could follow me across the road, heading towards Tower Hill
 Station. When you spot the sundial, press continue.
 
-/*MAP NEEDED*/
+$map1
 
 <<button "Continue">><<set $prevpass to $passage>><<goto "SM-07">><</button>>
 
@@ -543,8 +566,8 @@ Station. When you spot the sundial, press continue.
 
 
 :: SM-07 {"position":"450,475","size":"100,100"}
-<<set $passage to "SM-07">>
-<<include "header">>
+<<set $passage to "SM-07">><<set $nextpassage to "SM-08">>
+
 <main>
 
 <div class="sm07container">
@@ -552,13 +575,15 @@ Everyone here? OK! Photo opp number 1! Gather together! Whoever’s got a phone 
 
 Are you done?
 
-<<button "Yep!">>
-  <<replace ".sm07container">>
-Brilliant, you look just like our founders! Can anyone tell me why taking a photo here is significant?
-
-<<button "We don't know">><<set $prevpass to $passage>><<goto "SM-08">><</button>>
-
-<<button "A nice souvenir?">><<set $prevpass to $passage>><<goto "SM-08">><</button>>
+<div class="menu-wrapper">
+  <<button "Yep!">>
+    <<replace ".sm07container">>
+  Brilliant, you look just like our founders! Can anyone tell me why taking a photo here is significant?
+  
+  <<button "We don't know">><<set $prevpass to $passage>><<goto "SM-08">><</button>>
+  
+  <<button "A nice souvenir?">><<set $prevpass to $passage>><<goto "SM-08">><</button>>
+</div>
   
   <</replace>>
 <</button>>
@@ -574,8 +599,8 @@ Brilliant, you look just like our founders! Can anyone tell me why taking a phot
 
 
 :: SM-08 {"position":"450,600","size":"100,100"}
-<<set $passage to "SM-08">>
-<<include "header">>
+<<set $passage to "SM-08">><<set $nextpassage to "SM-09">>
+
 <main>
 <div class = "namespace">
 Wow.
@@ -609,8 +634,8 @@ Right... right, OK, and why are you here?
 
 
 :: SM-09 {"position":"450,725","size":"100,100"}
-<<set $passage to "SM-09">>
-<<include "header">>
+<<set $passage to "SM-09">><<set $nextpassage to "SM-10">>
+
 <main>
 
 No, you gotta be fucking with me, surely that’s not - that this would happen to me... It’s an honour to meet you. I’m so sorry I didn’t recognise you sooner, I mean I have that very photo of you on my wall! You’re my heroes. You’re everyone’s heroes...
@@ -628,8 +653,8 @@ Welcome to 2042! How did you get here?
 
 
 :: SM-10 {"position":"450,850","size":"100,100"}
-<<set $passage to "SM-09">>
-<<include "header">>
+<<set $passage to "SM-09">><<set $nextpassage to "SM-11">><<set $map2 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)>>
+
 <main>
 
 <div class = "dragonpictures">
@@ -643,7 +668,7 @@ What does it look like?
 <<link "<img src='https://i.imgur.com/uBgQ2Lu.jpg' style='width:100px'>">>
   <<replace ".dragonpictures">>
 Holy shit I’ve seen it!!! I thought I was crazy! It was over there, the Tower Hill memorial in Trinity Gardens... I’ll show you!
-/*MAP NEEDED*/
+$map2
 <<button "We're here.">><<set $prevpass to $passage>><<goto "SM-11">><</button>>
 <</replace>>
 <</link>>
@@ -651,7 +676,7 @@ Holy shit I’ve seen it!!! I thought I was crazy! It was over there, the Tower 
 <<link "<img src='https://i.imgur.com/uBgQ2Lu.jpg' style='width:100px'>">>
 <<replace ".dragonpictures">>
 Holy shit I’ve seen it!!! I thought I was crazy! It was over there, the Tower Hill memorial in Trinity Gardens... I’ll show you!
-/*MAP NEEDED*/
+$map2
 <<button "We're here.">><<set $prevpass to $passage>><<goto "SM-11">><</button>>
 <</replace>>
 <</link>>
@@ -659,7 +684,7 @@ Holy shit I’ve seen it!!! I thought I was crazy! It was over there, the Tower 
 <<link "<img src='https://i.imgur.com/uBgQ2Lu.jpg' style='width:100px'>">>
 <<replace ".dragonpictures">>
 Holy shit I’ve seen it!!! I thought I was crazy! It was over there, the Tower Hill memorial in Trinity Gardens... I’ll show you!
-/*MAP NEEDED*/
+$map2
 <<button "We're here.">><<set $prevpass to $passage>><<goto "SM-11">><</button>>
 <</replace>>
 <</link>>
@@ -678,8 +703,8 @@ Holy shit I’ve seen it!!! I thought I was crazy! It was over there, the Tower 
 
 
 :: SM-11 {"position":"450,975","size":"100,100"}
-<<set $passage to "SM-11">>
-<<include "header">>
+<<set $passage to "SM-11">><<set $nextpassage to "SM-12">>
+
 <main>
 
 Here! Right in the centre of the memorial. I was showing some school kids around, explaining the Four R’s, and I saw it - darting through the archways and then just like that - pfft! - vanished into thin air. I nearly lost my shit - what?
@@ -695,8 +720,8 @@ Here! Right in the centre of the memorial. I was showing some school kids around
 
 
 :: SM-12 {"position":"450,1100","size":"100,100"}
-<<set $passage to "SM-12">>
-<<include "header">>
+<<set $passage to "SM-12">><<set $nextpassage to "SM-13">>
+
 <main>
 
 Haha - very funny. You must have at least discussed the four R’s by now... You know, the pillars of our movement?! It was you that came up with them - a plan for our future led by four guiding principles, the first being-
@@ -718,8 +743,8 @@ Agh, my head hurts! This never came up in lectures! I should call a Folkmoot! Wh
 
 
 :: SM-13 {"position":"450,1225","size":"100,100"}
-<<set $passage to "SM-13">>
-<<include "header">>
+<<set $passage to "SM-13">><<set $nextpassage to "SM-14-1">>
+
 <main>
 
 It’s not that simple!
@@ -745,8 +770,8 @@ Gather your group and start walking to 1 Sky Garden Walk, EC3M 8AF. Once you hav
 
 
 :: SM-14-1 {"position":"450,1350","size":"100,100"}
-<<set $passage to "SM-14-1">>
-<<include "header">>
+<<set $passage to "SM-14-1">><<set $nextpassage to "SM-14-2">>
+
 <main>
 
 /*MAP NEEDED*/
@@ -763,11 +788,11 @@ OK, here’s your first task. Look for a place where people meet. Decide between
 
 
 :: SM-14-2 {"position":"575,1350","size":"100,100"}
-<<set $passage to "SM-14-2">>
-<<include "header">>
+<<set $passage to "SM-14-2">><<set $nextpassage to "SM-14-3">><<set $map3 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)>>
+
 <main>
 
-/*MAP NEEDED*/
+$map3
 
 Great! Keep heading to your destination. But now, keep your eyes peeled for a place where people share ideas.
 
@@ -780,11 +805,11 @@ Great! Keep heading to your destination. But now, keep your eyes peeled for a pl
 
 
 :: SM-14-3 {"position":"700,1350","size":"100,100"}
-<<set $passage to "SM-14-3">>
-<<include "header">>
+<<set $passage to "SM-14-3">><<set $nextpassage to "SM-14-4">><<set $map4 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)>>
+
 <main>
 
-/*MAP NEEDED*/
+$map4
 
 Yes! OK, keep heading to your destination. But now, how about: Spy a thing that connects us, no matter how different we are. It can be unusual!
 
@@ -797,11 +822,11 @@ Yes! OK, keep heading to your destination. But now, how about: Spy a thing that 
 
 
 :: SM-14-4 {"position":"825,1350","size":"100,100"}
-<<set $passage to "SM-14-4">>
-<<include "header">>
+<<set $passage to "SM-14-4">><<set $nextpassage to "SM-14-5">><<set $map5 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)>>
+
 <main>
 
-/*MAP NEEDED*/
+$map5
 
 What is it?
 
@@ -816,8 +841,8 @@ What is it?
 
 
 :: SM-14-5 {"position":"950,1350","size":"100,100"}
-<<set $passage to "SM-14-5">>
-<<include "header">>
+<<set $passage to "SM-14-5">><<set $nextpassage to "SM-15-1">><<set $map6 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)>>
+
 <main>
 
 
@@ -827,7 +852,7 @@ Try to make sure everyone is heard, and we can share ideas when we reach our nex
 
 Once you arrive at Sky Gardens, don’t head inside. Stop by the trees at the entrance and press continue.
 
-/*MAP NEEDED*/
+$map6
 
 <<button "Continue">><<set $prevpass to $passage>><<goto "SM-15-1">><</button>>
 
@@ -838,8 +863,8 @@ Once you arrive at Sky Gardens, don’t head inside. Stop by the trees at the en
 
 
 :: SM-15-1 {"position":"450,1475","size":"100,100"}
-<<set $passage to "SM-15-1">>
-<<include "header">>
+<<set $passage to "SM-15-1">><<set $nextpassage to "SM-15-2">>
+
 <main>
 
 
@@ -863,8 +888,8 @@ So, what ideas did you come up with?
 
 
 :: SM-15-2 {"position":"575,1475","size":"100,100"}
-<<set $passage to "SM-15-2">>
-<<include "header">>
+<<set $passage to "SM-15-2">><<set $nextpassage to $passage>>
+
 <main>
 
 
@@ -993,8 +1018,8 @@ And it was called Re_ _ _ _ _
 
 
 :: SM-16 {"position":"450,1600","size":"100,100"}
-<<set $passage to "SM-16">>
-<<include "header">>
+<<set $passage to "SM-16">><<set $nextpassage to $passage>>
+
 <main>
 
 
@@ -1020,8 +1045,8 @@ Which brings me to our next stop. The Sky Garden. Have any of you ever been up?
 
 
 :: SM-17 {"position":"450,1725","size":"100,100"}
-<<set $passage to "SM-17">>
-<<include "header">>
+<<set $passage to "SM-17">><<set $nextpassage to "SM-18">>
+
 <main>
 
 What was it like?
@@ -1041,8 +1066,8 @@ What was it like?
 
 
 :: SM-18 {"position":"450,1850","size":"100,100"}
-<<set $passage to "SM-18">>
-<<include "header">>
+<<set $passage to "SM-18">><<set $nextpassage to "SM-19">><<set $map7 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)>>
+
 <main>
 
 My mum said the sky garden used to be a beautifully manicured green space towering above the rest of the city. People paid P to queue for a view or sip overpriced cocktails. You changed all that with the second R. Right now, a group of volunteers are working hard up there to turn Sky Garden into one of the city’s growing number of ‘wildspaces’ - green hubs where plant, insect, and animal life thrive, and local citizens can enjoy being close to nature.
@@ -1053,7 +1078,7 @@ I have an idea. Let’s not disturb our gardeners while they’re at work. I’v
 
 Head to Lime St, EC3V 1LT. Once you’ve been walking for a minute, press continue.
 
-/*MAP NEEDED*/
+$map7
 
 <<button "Continue">><<set $prevpass to $passage>><<goto "SM-19">><</button>>
 
@@ -1068,11 +1093,11 @@ Head to Lime St, EC3V 1LT. Once you’ve been walking for a minute, press contin
 
 
 :: SM-19 {"position":"450,1975","size":"100,100"}
-<<set $passage to "SM-19">>
-<<include "header">>
+<<set $passage to "SM-19">><<set $map8 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)>><<set $nextpassage to "SM-20">>
+
 <main>
 
-/*MAP NEEDED*/
+$map8
 
 I’m sure you’re aware how crucial the 20’s are for humanity. A time when decisive action is needed. From all of us.
 
@@ -1090,8 +1115,8 @@ Here’s an action I want from you. Take a look around. Find a green space you n
 
 
 :: SM-20 {"position":"450,2100","size":"100,100"}
-<<set $passage to "SM-20">>
-<<include "header">>
+<<set $passage to "SM-20">><<set $nextpassage to $passage>>
+
 <main>
 
 What do you like about this bit of greenery? What could be better? Discuss it together and press continue when you have some thoughts you’d like to share.
@@ -1121,8 +1146,8 @@ What we don't like about green space:
 
 
 :: SM-21 {"position":"450,2225","size":"100,100"}
-<<set $passage to "SM-21">>
-<<include "header">>
+<<set $passage to "SM-21">><<set $nextpassage to "SM-22-1">><<set $map9 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)>>
+
 <main>
 
 <div class = "sm21container">
@@ -1134,7 +1159,7 @@ Great! A new green space! What will you call it? How will you make it as benefic
 
 What will you call your green space? How will you make it beneficial to Londoners? Discuss as you head to Lime St, EC3V 1LT. Stop at the entrance to Leadenhall.
 
-/*MAP NEEDED*/
+$map9
 
 <<button "We're here">><<set $prevpass to $passage>><<goto "SM-22-1">><</button>>
 
@@ -1155,8 +1180,8 @@ What will you call your green space? How will you make it beneficial to Londoner
 
 
 :: SM-22-1 {"position":"450,2350","size":"100,100"}
-<<set $passage to "SM-22-1">>
-<<include "header">>
+<<set $passage to "SM-22-1">><<set $nextpassage to "SM-22-2">>
+
 <main>
 
 So, what did you call your green space?
@@ -1176,8 +1201,8 @@ So, what did you call your green space?
 
 
 :: SM-22-2 {"position":"575,2350","size":"100,100"}
-<<set $passage to "SM-22-2">>
-<<include "header">>
+<<set $passage to "SM-22-2">><<set $nextpassage to "SM-22-3">>
+
 <main>
 
 That’s a great name! Any special things about your green space you’d like to share?
@@ -1202,8 +1227,8 @@ That’s a great name! Any special things about your green space you’d like to
 
 
 :: SM-22-3 {"position":"700,2350","size":"100,100"}
-<<set $passage to "SM-22-3">>
-<<include "header">>
+<<set $passage to "SM-22-3">><<set $nextpassage to $passage>>
+
 <main>
 
 
@@ -1313,8 +1338,8 @@ Any ideas?
 
 
 :: SM-23 {"position":"450,2475","size":"100,100"}
-<<set $passage to "SM-23">>
-<<include "header">>
+<<set $passage to "SM-23">><<set $nextpassage to $passage>>
+
 <main>
 
 Correct! And I know you shouldn’t have favourites, but Rewild kind of is mine. In Folkmoots we always try to find a balance, between allocating green spaces that to free, and spaces we responsibly farm to feed the community,
@@ -1336,8 +1361,8 @@ Which brings me nicely to Leadenhall market. Smells good right? What’s food li
 
 
 :: SM-24A {"position":"450,2600","size":"100,100"}
-<<set $passage to "SM-24A">>
-<<include "header">>
+<<set $passage to "SM-24A">><<set $nextpassage to "SM-26">>
+
 <main>
 
 Well you know what they say: Mum is always right.
@@ -1357,8 +1382,8 @@ Well you know what they say: Mum is always right.
 
 
 :: SM-25B {"position":"575,2600","size":"100,100"}
-<<set $passage to "SM-25B">>
-<<include "header">>
+<<set $passage to "SM-25B">><<set $nextpassage to "SM-26">>
+
 <main>
 
 Well you know what they say: Mums love to exaggerate.
@@ -1378,8 +1403,8 @@ Well you know what they say: Mums love to exaggerate.
 
 
 :: SM-26 {"position":"450,2725","size":"100,100"}
-<<set $passage to "SM-26">>
-<<include "header">>
+<<set $passage to "SM-26">><<set $nextpassage to $passage>
+
 <main>
 
 Leadenhall Market is one of my favourite spots in the city. A crossroads where London’s past, present and future meet. Skyscrapers looming above, the ruins of Roman London below... the legacy of this buzzing mediaeval market right in front of us.
@@ -1400,8 +1425,8 @@ Would you like some history?
 
 
 :: SM-27 {"position":"450,2850","size":"100,100"}
-<<set $passage to "SM-27">>
-<<include "header">>
+<<set $passage to "SM-27">><<set $nextpassage to "SM-28">>
+
 <main>
 
 I’ll keep if brief and interesting, honest!
@@ -1419,8 +1444,8 @@ I’ll keep if brief and interesting, honest!
 
 
 :: SM-28 {"position":"450,2975","size":"100,100"}
-<<set $passage to "SM-28">>
-<<include "header">>
+<<set $passage to "SM-28">><<set $nextpassage to "SM-29-1">><<set $map10 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)>>
+
 <main>
 
 OK. So, in 49AD London was a Roman colony. Leadenhall was the Forum and Basilica - a communal space where issues of the day were decided and discussed. It fell into disuse when the Romans left Britain but as the economy revived during the Anglo Saxon period, so did this market. Sellers spilled over from Cheapside nearby and this became THE spot to get your meat, eggs, and dairy. Leadenhall grew and thrived. There were performers in the streets, a school onsite, a chapel, a pub... the market was about more than buying and selling, it belonged to the local community.
@@ -1429,14 +1454,12 @@ That is an ideal we’ve tried to return to in 2042, stocking Leadenhall with lo
 
 Since the 2022 Golden Key event, Leadenhall has hosted regular festivals, educational events, meetings... We think of it as nutrition for both the mind and the body. We believe it’s a right, not a luxury. And that’s an idea that came from you. There are many who say it’s the most important one.
 
-/*pause*/
-
 There’s one more place I’d like to show you, just round the corner. Somewhere very
 significant. As we head there, take a look around. What would you change about this city to make sure everyone had a fair slice? We’ll share ideas at the next stop:
 
 Lloyds building. 113-116 Leadenhall St, London EC3A 4AX. Meet at the entrance and press continue.
 
-/* MAP NEEDED*/
+$map10
 
 <<button "Continue">><<set $prevpass to $passage>><<goto "SM-29-1">><</button>>
 
@@ -1451,8 +1474,8 @@ Lloyds building. 113-116 Leadenhall St, London EC3A 4AX. Meet at the entrance an
 
 
 :: SM-29-1 {"position":"450,3100","size":"100,100"}
-<<set $passage to "SM-29-1">>
-<<include "header">>
+<<set $passage to "SM-29-1">><<set $nextpassage to "SM-29-2">>
+
 <main>
 
 So... any ideas you’d like to share?
@@ -1472,8 +1495,8 @@ So... any ideas you’d like to share?
 
 
 :: SM-29-2 {"position":"575,3100","size":"100,100"}
-<<set $passage to "SM-29-1">>
-<<include "header">>
+<<set $passage to "SM-29-1">><<set $nextpassage to $passage>>
+
 <main>
 
 I can’t tell you how inspiring it is, seeing you come up with these thoughts first hand. Better than I could have imagined. I bet you’ve already guessed what the third R is:
@@ -1670,8 +1693,8 @@ Made equal, with Re_ _ _ _ _ _ _ _ _ _
 
 
 :: SM-30 {"position":"450,3225","size":"100,100"}
-<<set $passage to "SM-30">>
-<<include "header">>
+<<set $passage to "SM-30">><<set $nextpassage to $passage>>
+
 <main>
 
 Exactly! Redistribute! Because collectively we have the resources, we just need to share them fairly. Everything is a team effort...
@@ -1711,8 +1734,8 @@ This might be awkward but would you... would you mind reading it aloud? One line
 
 
 :: SM-31A {"position":"375,3350","size":"100,100"}
-<<set $passage to "SM-31A">>
-<<include "header">>
+<<set $passage to "SM-31A">><<set $nextpassage to "SM-32">>
+
 <main>
 
 /*Miriam reads this one*/
@@ -1741,8 +1764,8 @@ We want a London that is truly free. Where citizens of all backgrounds meet and 
 
 
 :: SM-31B {"position":"525,3350","size":"100,100"}
-<<set $passage to "SM-31B">>
-<<include "header">>
+<<set $passage to "SM-31B">><<set $nextpassage to "SM-32">>
+
 <main>
 
 /*No audio as audience reads this one*/
@@ -1764,8 +1787,8 @@ We want a London that is truly free. Where citizens of all backgrounds meet and 
 
 
 :: SM-32 {"position":"450,3475","size":"100,100"}
-<<set $passage to "SM-32">>
-<<include "header">>
+<<set $passage to "SM-32">><<set $nextpassage to "SM-33">>
+
 <main>
 
 What’s wrong?
@@ -1784,8 +1807,8 @@ What’s wrong?
 
 
 :: SM-33 {"position":"450,3600","size":"100,100"}
-<<set $passage to "SM-33">>
-<<include "header">>
+<<set $passage to "SM-33">><<set $nextpassage to "SM-34">>
+
 <main>
 
 Ah. Yeah. Well I guess that’s coz it’s up to you.
@@ -1831,8 +1854,8 @@ It’s been a pleasure guiding you. Hope you take those exciting discussions and
 
 
 :: SM-34 {"position":"450,3725","size":"100,100"}
-<<set $passage to "SM-34">>
-<<include "header">>
+<<set $passage to "SM-34">><<set $nextpassage to $passage>>
+
 <main>
 
 
@@ -1869,8 +1892,8 @@ It’s been a pleasure guiding you. Hope you take those exciting discussions and
 
 
 :: SM-35A {"position":"325,3850","size":"100,100"}
-<<set $passage to "SM-35A">>
-<<include "header">>
+<<set $passage to "SM-35A">><<set $nextpassage to "SM-34">>
+
 <main>
 
 <strong>Reunite:</strong> Turn to the person beside you. Say hi. Now share two happy memories. Take your time, and remember, it doesn’t have to be perfect, or even deep.
@@ -1891,8 +1914,8 @@ It’s been a pleasure guiding you. Hope you take those exciting discussions and
 
 
 :: SM-35B {"position":"450,3850","size":"100,100"}
-<<set $passage to "SM-35B">>
-<<include "header">>
+<<set $passage to "SM-35B">><<set $nextpassage to "SM-34">>
+
 <main>
 
 <strong>Rewild:</strong> As a group, list all the natural living objects you see and one positive thing about them. Yes, even pigeons. Maybe there’s more than you thought?
@@ -1913,8 +1936,8 @@ It’s been a pleasure guiding you. Hope you take those exciting discussions and
 
 
 :: SM-35C {"position":"575,3850","size":"100,100"}
-<<set $passage to "SM-35C">>
-<<include "header">>
+<<set $passage to "SM-35C">><<set $nextpassage to "SM-34">>
+
 <main>
 
 <strong>Redistribute:</strong> Remember when I told you the Tower of London was now a communal resource? Take a look at some of the buildings you pass. What else could they be used for?
@@ -1934,14 +1957,14 @@ It’s been a pleasure guiding you. Hope you take those exciting discussions and
 
 
 :: SM-36 {"position":"450,3975","size":"100,100"}
-<<set $passage to "SM-36">>
-<<include "header">>
+<<set $passage to "SM-36">><<set $nextpassage to "SM-37">><<set $map11 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)>>
+
 <main>
 
 Course. You’ve got enough of your own ideas to discuss! Just press continue
 when you reach Ned to head to your next adventure!
 
-/*MAP NEEDED*/
+$map11
 
 
 
@@ -1960,8 +1983,8 @@ when you reach Ned to head to your next adventure!
 
 
 :: SM-37 {"position":"450,4100","size":"100,100"}
-<<set $passage to "SM-37">>
-<<include "header">>
+<<set $passage to "SM-37">><<set $nextpassage to $passage>>
+
 <main>
 
 Welcome to the Ned! Have you thought of a fourth R on your travels?
@@ -1986,8 +2009,8 @@ Welcome to the Ned! Have you thought of a fourth R on your travels?
 
 
 :: SM-38 {"position":"375,4225","size":"100,100"}
-<<set $passage to "SM-37">>
-<<include "header">>
+<<set $passage to "SM-37">><<set $nextpassage to "SM-39A">>
+
 <main>
 
 What is your 4th R?
@@ -2009,8 +2032,8 @@ What is your 4th R?
 
 
 :: SM-39A {"position":"375,4350","size":"100,100"}
-<<set $passage to "SM-39A">>
-<<include "header">>
+<<set $passage to "SM-39A">><<set $nextpassage to "SM-40">>
+
 <main>
 
 Congratulations! I knew you could do it! Four R’s to base our future on - the work starts now.
@@ -2030,8 +2053,8 @@ Congratulations! I knew you could do it! Four R’s to base our future on - the 
 
 
 :: SM-39B {"position":"525,4350","size":"100,100"}
-<<set $passage to "SM-39B">>
-<<include "header">>
+<<set $passage to "SM-39B">><<set $nextpassage to "SM-40">>
+
 <main>
 
 That’s OK - Londinium wasn’t built in a day, and nor is any movement. But with the future in your hands, I have hope we can get there.
@@ -2051,13 +2074,11 @@ That’s OK - Londinium wasn’t built in a day, and nor is any movement. But wi
 
 
 :: SM-40 {"position":"450,4475","size":"100,100"}
-<<set $passage to "SM-40">>
-<<include "header">>
+<<set $passage to "SM-40">><<set $nextpassage to "SM-41">>
+
 <main>
 
 So... I guess this is it... the end...
-
-/*alarm goes off*/
 
 Oh shit, I’m late for my next tour! Hope these ones know what decade they’re in!
 
@@ -2080,8 +2101,8 @@ Quite the character, Mariam Samir. Fantastic things in store for her.
 
 
 :: SM-41 {"position":"450,4600","size":"100,100"}
-<<set $passage to "SM-40">>
-<<include "header">>
+<<set $passage to "SM-40">><<set $nextpassage to "end">>
+
 <main>
 
 Don’t be silly, of course I’m not telling you. It’s not like I’d reveal her future job contains the initials P and M.
@@ -2093,10 +2114,18 @@ Now it’s time to experience something very different - So find and step throug
 Catch you soon!
 
 
-
+<<button "end">><<goto "end">><</button>>
 
 
 </main>
 <<include "footer">>
 
 
+:: end {"position":"100,700","size":"100,100"}
+<<set $passage to "end">><<set $endMap = setup.generateDirectionsMap(51.50975237659481, -0.0824661751178505,51.50975237659481, -0.0824661751178505)>>
+<main>End location
+
+$endMap
+  
+</main>
+<<include "footer">>

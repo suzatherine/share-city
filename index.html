@@ -98,7 +98,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Share Mile" startnode="5" creator="Twine" creator-version="2.5.1" format="SugarCube" format-version="2.36.1" ifid="98d2404a-3a9e-49bd-98d2-23d5e1fcc2a4" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+	<!-- UUID://98D2404A-3A9E-49BD-99D2-23D5E1FCC2A4// --><tw-storydata name="Share Mile" startnode="5" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="98D2404A-3A9E-49BD-99D2-23D5E1FCC2A4" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
 
 /* GENERICS */
 html {
@@ -245,17 +245,17 @@ button{
 }
 
 button:hover{
-	background-color:#cf1b98;
+	background-color:#ea9e25;
 	border: #fff 1px solid;
 	color: #fff;
 }
 
 a {
-  color: #f2647d;
+  color:#ea9e25;;
 }
 
 a:active {
-  background-color: #f2647d;
+  background-color: #ea9e25;;
 }
 
 a:hover {
@@ -272,10 +272,13 @@ a:hover {
 
 /* GENERAL STYLES */
 body{
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  font-weight: 600;
   font-family: "Space Grotesk";
+  color:#fff;
+  /* color:#000; */
   overflow:scroll;
-  background:#000;
+  background: #1c8f93;
   /* padding: 1.5rem */
   display:flex;
   flex-direction: column
@@ -290,18 +293,19 @@ header{
 
 main{
    padding: 2rem;
-   margin-block-end: 4rem
+   margin-block-end: 10rem
 }
+/* FOOTER  */
 
 footer{
    display:flex;
   justify-content: space-between;
-  align-items: flex-end; 
+align-items: end;
   position:fixed;
   bottom: 0;
   padding: 2rem;
   width: 100%;
-  background-color: #000
+background: #1c8f93;
 }
 
 nav{
@@ -320,17 +324,32 @@ align-items: flex-end
 }
 
 .nav-item{
-  margin-block-end: 1.5rem
+  margin-block-end: 0.5rem;
+  width:100%;
+  display:flex
 }
 
-.nav-item:last-child{
-  margin-block-end: 0
+.nav-item.replay, .nav-item.end{
+justify-content: center
+}
+.nav-item.replay, .nav-item.forward{
+justify-content: end
 }
 
+.nav-item.replay, .nav-item.back{
+justify-content: start
+}
 
-.nav-wrapper:last-child{
-display:flex;
-align-items: flex-end
+.nav-item.forward > button, 
+.nav-item.back > button{
+  font-size:2rem
+}
+footer > button:first-child,  {
+  font-size:2rem
+}
+
+.nav-item > button{
+ font-size: 1.3rem
 }
 
 .menu-wrapper{
@@ -526,10 +545,12 @@ setup.checkForRepeats = (array,element) => {
  const duplicates = arrayCopy.filter((item, index) => index !== arrayCopy.indexOf(item));
  return duplicates.contains(element)
 }</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;badjoke&quot; &quot;https://youhavefoundconey.net/CG/what/assets/audio/badjoke.mp3&quot;&gt;&gt;
-&lt;&lt;waitforaudio&gt;&gt;
-
-</tw-passagedata><tw-passagedata pid="2" name="header" tags="" position="100,225" size="100,100">&lt;header&gt;Adventure Functionality /
- Structure Template&lt;/header&gt;</tw-passagedata><tw-passagedata pid="3" name="footer" tags="" position="100,375" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-wrapper &quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Replay&quot;&gt;&gt;&lt;&lt;goto $passage&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Back&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;nav-wrapper&quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;I&#39;m lost&quot;&gt;&gt;&lt;&lt;goto &quot;lost&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="4" name="lost" tags="" position="450,50" size="100,100">&lt;&lt;set $passage to &quot;lost&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;waitforaudio&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="header" tags="" position="100,225" size="100,100">&lt;header&gt;Share Mile&lt;/header&gt;</tw-passagedata><tw-passagedata pid="3" name="footer" tags="" position="100,375" size="100,100">&lt;footer&gt;
+&lt;div class=&quot;nav-item back&quot;&gt;&lt;&lt;button &quot;&lt;&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;nav-item replay&quot;&gt;&lt;&lt;button &quot;Replay&quot;&gt;&gt;&lt;&lt;goto $passage&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;
+&lt;div class=&quot;nav-item end&quot;&gt;&lt;&lt;button &quot;Take me to the end&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;lost&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;nav-item forward&quot;&gt;&lt;&lt;button &quot;&gt;&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpassage&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
+&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="4" name="lost" tags="" position="450,50" size="100,100">&lt;&lt;set $passage to &quot;lost&quot;&gt;&gt;
 &lt;main&gt;
 Sorry to hear that you&#39;re lost! 
 You have two options:
@@ -539,15 +560,15 @@ You have two options:
 &lt;&lt;button &quot;Take me straight to the end location!&quot;&gt;&gt;&lt;&lt;goto &quot;end&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="landing" tags="" position="450,50" size="100,100">&lt;&lt;set $passage to &quot;landing&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+
 &lt;main&gt;
   menu
 
 &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-05&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="SM-05" tags="" position="450,225" size="100,100">&lt;&lt;set $passage to &quot;SM-05&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="SM-05" tags="" position="450,225" size="100,100">&lt;&lt;set $passage to &quot;SM-05&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-06&quot;&gt;&gt;
+
 &lt;main&gt;
 
 There you are, thank the Collective! Thought I’d lost you before we’d even started.
@@ -572,8 +593,8 @@ Normally I’d take you in, but the building is shut while some exciting work ha
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="SM-06" tags="" position="450,350" size="100,100">&lt;&lt;set $passage to &quot;SM-06&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="SM-06" tags="" position="450,350" size="100,100">&lt;&lt;set $passage to &quot;SM-06&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-07&quot;&gt;&gt;&lt;&lt;set $map1 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)&gt;&gt;
+
 &lt;main&gt;
 
 Wait, are you joking? I know I’m meant to say there’s no such thing as a stupid question, but that is a stupid question.
@@ -585,7 +606,7 @@ Wait, are you joking? I know I’m meant to say there’s no such thing as a stu
 Right, moving on. If you could follow me across the road, heading towards Tower Hill
 Station. When you spot the sundial, press continue.
 
-/*MAP NEEDED*/
+$map1
 
 &lt;&lt;button &quot;Continue&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-07&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
@@ -594,8 +615,8 @@ Station. When you spot the sundial, press continue.
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="SM-07" tags="" position="450,475" size="100,100">&lt;&lt;set $passage to &quot;SM-07&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="SM-07" tags="" position="450,475" size="100,100">&lt;&lt;set $passage to &quot;SM-07&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-08&quot;&gt;&gt;
+
 &lt;main&gt;
 
 &lt;div class=&quot;sm07container&quot;&gt;
@@ -603,13 +624,15 @@ Everyone here? OK! Photo opp number 1! Gather together! Whoever’s got a phone 
 
 Are you done?
 
-&lt;&lt;button &quot;Yep!&quot;&gt;&gt;
-  &lt;&lt;replace &quot;.sm07container&quot;&gt;&gt;
-Brilliant, you look just like our founders! Can anyone tell me why taking a photo here is significant?
-
-&lt;&lt;button &quot;We don&#39;t know&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-08&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-
-&lt;&lt;button &quot;A nice souvenir?&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-08&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;div class=&quot;menu-wrapper&quot;&gt;
+  &lt;&lt;button &quot;Yep!&quot;&gt;&gt;
+    &lt;&lt;replace &quot;.sm07container&quot;&gt;&gt;
+  Brilliant, you look just like our founders! Can anyone tell me why taking a photo here is significant?
+  
+  &lt;&lt;button &quot;We don&#39;t know&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-08&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+  
+  &lt;&lt;button &quot;A nice souvenir?&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-08&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;
   
   &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/button&gt;&gt;
@@ -621,8 +644,8 @@ Brilliant, you look just like our founders! Can anyone tell me why taking a phot
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="SM-08" tags="" position="450,600" size="100,100">&lt;&lt;set $passage to &quot;SM-08&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="SM-08" tags="" position="450,600" size="100,100">&lt;&lt;set $passage to &quot;SM-08&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-09&quot;&gt;&gt;
+
 &lt;main&gt;
 &lt;div class = &quot;namespace&quot;&gt;
 Wow.
@@ -652,8 +675,8 @@ Right... right, OK, and why are you here?
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="SM-09" tags="" position="450,725" size="100,100">&lt;&lt;set $passage to &quot;SM-09&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="SM-09" tags="" position="450,725" size="100,100">&lt;&lt;set $passage to &quot;SM-09&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-10&quot;&gt;&gt;
+
 &lt;main&gt;
 
 No, you gotta be fucking with me, surely that’s not - that this would happen to me... It’s an honour to meet you. I’m so sorry I didn’t recognise you sooner, I mean I have that very photo of you on my wall! You’re my heroes. You’re everyone’s heroes...
@@ -667,8 +690,8 @@ Welcome to 2042! How did you get here?
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="SM-10" tags="" position="450,850" size="100,100">&lt;&lt;set $passage to &quot;SM-09&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="SM-10" tags="" position="450,850" size="100,100">&lt;&lt;set $passage to &quot;SM-09&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-11&quot;&gt;&gt;&lt;&lt;set $map2 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)&gt;&gt;
+
 &lt;main&gt;
 
 &lt;div class = &quot;dragonpictures&quot;&gt;
@@ -682,7 +705,7 @@ What does it look like?
 &lt;&lt;link &quot;&lt;img src=&#39;https://i.imgur.com/uBgQ2Lu.jpg&#39; style=&#39;width:100px&#39;&gt;&quot;&gt;&gt;
   &lt;&lt;replace &quot;.dragonpictures&quot;&gt;&gt;
 Holy shit I’ve seen it!!! I thought I was crazy! It was over there, the Tower Hill memorial in Trinity Gardens... I’ll show you!
-/*MAP NEEDED*/
+$map2
 &lt;&lt;button &quot;We&#39;re here.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-11&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/link&gt;&gt;
@@ -690,7 +713,7 @@ Holy shit I’ve seen it!!! I thought I was crazy! It was over there, the Tower 
 &lt;&lt;link &quot;&lt;img src=&#39;https://i.imgur.com/uBgQ2Lu.jpg&#39; style=&#39;width:100px&#39;&gt;&quot;&gt;&gt;
 &lt;&lt;replace &quot;.dragonpictures&quot;&gt;&gt;
 Holy shit I’ve seen it!!! I thought I was crazy! It was over there, the Tower Hill memorial in Trinity Gardens... I’ll show you!
-/*MAP NEEDED*/
+$map2
 &lt;&lt;button &quot;We&#39;re here.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-11&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/link&gt;&gt;
@@ -698,7 +721,7 @@ Holy shit I’ve seen it!!! I thought I was crazy! It was over there, the Tower 
 &lt;&lt;link &quot;&lt;img src=&#39;https://i.imgur.com/uBgQ2Lu.jpg&#39; style=&#39;width:100px&#39;&gt;&quot;&gt;&gt;
 &lt;&lt;replace &quot;.dragonpictures&quot;&gt;&gt;
 Holy shit I’ve seen it!!! I thought I was crazy! It was over there, the Tower Hill memorial in Trinity Gardens... I’ll show you!
-/*MAP NEEDED*/
+$map2
 &lt;&lt;button &quot;We&#39;re here.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-11&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/link&gt;&gt;
@@ -713,8 +736,8 @@ Holy shit I’ve seen it!!! I thought I was crazy! It was over there, the Tower 
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="SM-11" tags="" position="450,975" size="100,100">&lt;&lt;set $passage to &quot;SM-11&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="SM-11" tags="" position="450,975" size="100,100">&lt;&lt;set $passage to &quot;SM-11&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-12&quot;&gt;&gt;
+
 &lt;main&gt;
 
 Here! Right in the centre of the memorial. I was showing some school kids around, explaining the Four R’s, and I saw it - darting through the archways and then just like that - pfft! - vanished into thin air. I nearly lost my shit - what?
@@ -726,8 +749,8 @@ Here! Right in the centre of the memorial. I was showing some school kids around
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="SM-12" tags="" position="450,1100" size="100,100">&lt;&lt;set $passage to &quot;SM-12&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="SM-12" tags="" position="450,1100" size="100,100">&lt;&lt;set $passage to &quot;SM-12&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-13&quot;&gt;&gt;
+
 &lt;main&gt;
 
 Haha - very funny. You must have at least discussed the four R’s by now... You know, the pillars of our movement?! It was you that came up with them - a plan for our future led by four guiding principles, the first being-
@@ -745,8 +768,8 @@ Agh, my head hurts! This never came up in lectures! I should call a Folkmoot! Wh
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="SM-13" tags="" position="450,1225" size="100,100">&lt;&lt;set $passage to &quot;SM-13&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="SM-13" tags="" position="450,1225" size="100,100">&lt;&lt;set $passage to &quot;SM-13&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-14-1&quot;&gt;&gt;
+
 &lt;main&gt;
 
 It’s not that simple!
@@ -768,8 +791,8 @@ Gather your group and start walking to 1 Sky Garden Walk, EC3M 8AF. Once you hav
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="SM-14-1" tags="" position="450,1350" size="100,100">&lt;&lt;set $passage to &quot;SM-14-1&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="SM-14-1" tags="" position="450,1350" size="100,100">&lt;&lt;set $passage to &quot;SM-14-1&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-14-2&quot;&gt;&gt;
+
 &lt;main&gt;
 
 /*MAP NEEDED*/
@@ -782,11 +805,11 @@ OK, here’s your first task. Look for a place where people meet. Decide between
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="SM-14-2" tags="" position="575,1350" size="100,100">&lt;&lt;set $passage to &quot;SM-14-2&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="SM-14-2" tags="" position="575,1350" size="100,100">&lt;&lt;set $passage to &quot;SM-14-2&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-14-3&quot;&gt;&gt;&lt;&lt;set $map3 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)&gt;&gt;
+
 &lt;main&gt;
 
-/*MAP NEEDED*/
+$map3
 
 Great! Keep heading to your destination. But now, keep your eyes peeled for a place where people share ideas.
 
@@ -795,11 +818,11 @@ Great! Keep heading to your destination. But now, keep your eyes peeled for a pl
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="SM-14-3" tags="" position="700,1350" size="100,100">&lt;&lt;set $passage to &quot;SM-14-3&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="SM-14-3" tags="" position="700,1350" size="100,100">&lt;&lt;set $passage to &quot;SM-14-3&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-14-4&quot;&gt;&gt;&lt;&lt;set $map4 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)&gt;&gt;
+
 &lt;main&gt;
 
-/*MAP NEEDED*/
+$map4
 
 Yes! OK, keep heading to your destination. But now, how about: Spy a thing that connects us, no matter how different we are. It can be unusual!
 
@@ -808,11 +831,11 @@ Yes! OK, keep heading to your destination. But now, how about: Spy a thing that 
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="SM-14-4" tags="" position="825,1350" size="100,100">&lt;&lt;set $passage to &quot;SM-14-4&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="SM-14-4" tags="" position="825,1350" size="100,100">&lt;&lt;set $passage to &quot;SM-14-4&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-14-5&quot;&gt;&gt;&lt;&lt;set $map5 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)&gt;&gt;
+
 &lt;main&gt;
 
-/*MAP NEEDED*/
+$map5
 
 What is it?
 
@@ -823,8 +846,8 @@ What is it?
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="SM-14-5" tags="" position="950,1350" size="100,100">&lt;&lt;set $passage to &quot;SM-14-5&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="SM-14-5" tags="" position="950,1350" size="100,100">&lt;&lt;set $passage to &quot;SM-14-5&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-15-1&quot;&gt;&gt;&lt;&lt;set $map6 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)&gt;&gt;
+
 &lt;main&gt;
 
 
@@ -834,15 +857,15 @@ Try to make sure everyone is heard, and we can share ideas when we reach our nex
 
 Once you arrive at Sky Gardens, don’t head inside. Stop by the trees at the entrance and press continue.
 
-/*MAP NEEDED*/
+$map6
 
 &lt;&lt;button &quot;Continue&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-15-1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="SM-15-1" tags="" position="450,1475" size="100,100">&lt;&lt;set $passage to &quot;SM-15-1&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="SM-15-1" tags="" position="450,1475" size="100,100">&lt;&lt;set $passage to &quot;SM-15-1&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-15-2&quot;&gt;&gt;
+
 &lt;main&gt;
 
 
@@ -862,8 +885,8 @@ So, what ideas did you come up with?
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="SM-15-2" tags="" position="575,1475" size="100,100">&lt;&lt;set $passage to &quot;SM-15-2&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="SM-15-2" tags="" position="575,1475" size="100,100">&lt;&lt;set $passage to &quot;SM-15-2&quot;&gt;&gt;&lt;&lt;set $nextpassage to $passage&gt;&gt;
+
 &lt;main&gt;
 
 
@@ -988,8 +1011,8 @@ And it was called Re_ _ _ _ _
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="SM-16" tags="" position="450,1600" size="100,100">&lt;&lt;set $passage to &quot;SM-16&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="SM-16" tags="" position="450,1600" size="100,100">&lt;&lt;set $passage to &quot;SM-16&quot;&gt;&gt;&lt;&lt;set $nextpassage to $passage&gt;&gt;
+
 &lt;main&gt;
 
 
@@ -1011,8 +1034,8 @@ Which brings me to our next stop. The Sky Garden. Have any of you ever been up?
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="SM-17" tags="" position="450,1725" size="100,100">&lt;&lt;set $passage to &quot;SM-17&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="SM-17" tags="" position="450,1725" size="100,100">&lt;&lt;set $passage to &quot;SM-17&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-18&quot;&gt;&gt;
+
 &lt;main&gt;
 
 What was it like?
@@ -1028,8 +1051,8 @@ What was it like?
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="SM-18" tags="" position="450,1850" size="100,100">&lt;&lt;set $passage to &quot;SM-18&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="SM-18" tags="" position="450,1850" size="100,100">&lt;&lt;set $passage to &quot;SM-18&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-19&quot;&gt;&gt;&lt;&lt;set $map7 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)&gt;&gt;
+
 &lt;main&gt;
 
 My mum said the sky garden used to be a beautifully manicured green space towering above the rest of the city. People paid P to queue for a view or sip overpriced cocktails. You changed all that with the second R. Right now, a group of volunteers are working hard up there to turn Sky Garden into one of the city’s growing number of ‘wildspaces’ - green hubs where plant, insect, and animal life thrive, and local citizens can enjoy being close to nature.
@@ -1040,7 +1063,7 @@ I have an idea. Let’s not disturb our gardeners while they’re at work. I’v
 
 Head to Lime St, EC3V 1LT. Once you’ve been walking for a minute, press continue.
 
-/*MAP NEEDED*/
+$map7
 
 &lt;&lt;button &quot;Continue&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-19&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
@@ -1051,11 +1074,11 @@ Head to Lime St, EC3V 1LT. Once you’ve been walking for a minute, press contin
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="SM-19" tags="" position="450,1975" size="100,100">&lt;&lt;set $passage to &quot;SM-19&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="SM-19" tags="" position="450,1975" size="100,100">&lt;&lt;set $passage to &quot;SM-19&quot;&gt;&gt;&lt;&lt;set $map8 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-20&quot;&gt;&gt;
+
 &lt;main&gt;
 
-/*MAP NEEDED*/
+$map8
 
 I’m sure you’re aware how crucial the 20’s are for humanity. A time when decisive action is needed. From all of us.
 
@@ -1069,8 +1092,8 @@ Here’s an action I want from you. Take a look around. Find a green space you n
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="SM-20" tags="" position="450,2100" size="100,100">&lt;&lt;set $passage to &quot;SM-20&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="SM-20" tags="" position="450,2100" size="100,100">&lt;&lt;set $passage to &quot;SM-20&quot;&gt;&gt;&lt;&lt;set $nextpassage to $passage&gt;&gt;
+
 &lt;main&gt;
 
 What do you like about this bit of greenery? What could be better? Discuss it together and press continue when you have some thoughts you’d like to share.
@@ -1096,8 +1119,8 @@ What we don&#39;t like about green space:
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="SM-21" tags="" position="450,2225" size="100,100">&lt;&lt;set $passage to &quot;SM-21&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="SM-21" tags="" position="450,2225" size="100,100">&lt;&lt;set $passage to &quot;SM-21&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-22-1&quot;&gt;&gt;&lt;&lt;set $map9 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)&gt;&gt;
+
 &lt;main&gt;
 
 &lt;div class = &quot;sm21container&quot;&gt;
@@ -1109,7 +1132,7 @@ Great! A new green space! What will you call it? How will you make it as benefic
 
 What will you call your green space? How will you make it beneficial to Londoners? Discuss as you head to Lime St, EC3V 1LT. Stop at the entrance to Leadenhall.
 
-/*MAP NEEDED*/
+$map9
 
 &lt;&lt;button &quot;We&#39;re here&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-22-1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
@@ -1126,8 +1149,8 @@ What will you call your green space? How will you make it beneficial to Londoner
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="SM-22-1" tags="" position="450,2350" size="100,100">&lt;&lt;set $passage to &quot;SM-22-1&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="SM-22-1" tags="" position="450,2350" size="100,100">&lt;&lt;set $passage to &quot;SM-22-1&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-22-2&quot;&gt;&gt;
+
 &lt;main&gt;
 
 So, what did you call your green space?
@@ -1143,8 +1166,8 @@ So, what did you call your green space?
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="SM-22-2" tags="" position="575,2350" size="100,100">&lt;&lt;set $passage to &quot;SM-22-2&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="SM-22-2" tags="" position="575,2350" size="100,100">&lt;&lt;set $passage to &quot;SM-22-2&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-22-3&quot;&gt;&gt;
+
 &lt;main&gt;
 
 That’s a great name! Any special things about your green space you’d like to share?
@@ -1165,8 +1188,8 @@ That’s a great name! Any special things about your green space you’d like to
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="SM-22-3" tags="" position="700,2350" size="100,100">&lt;&lt;set $passage to &quot;SM-22-3&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="SM-22-3" tags="" position="700,2350" size="100,100">&lt;&lt;set $passage to &quot;SM-22-3&quot;&gt;&gt;&lt;&lt;set $nextpassage to $passage&gt;&gt;
+
 &lt;main&gt;
 
 
@@ -1272,8 +1295,8 @@ Any ideas?
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="SM-23" tags="" position="450,2475" size="100,100">&lt;&lt;set $passage to &quot;SM-23&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="SM-23" tags="" position="450,2475" size="100,100">&lt;&lt;set $passage to &quot;SM-23&quot;&gt;&gt;&lt;&lt;set $nextpassage to $passage&gt;&gt;
+
 &lt;main&gt;
 
 Correct! And I know you shouldn’t have favourites, but Rewild kind of is mine. In Folkmoots we always try to find a balance, between allocating green spaces that to free, and spaces we responsibly farm to feed the community,
@@ -1291,8 +1314,8 @@ Which brings me nicely to Leadenhall market. Smells good right? What’s food li
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="SM-24A" tags="" position="450,2600" size="100,100">&lt;&lt;set $passage to &quot;SM-24A&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="SM-24A" tags="" position="450,2600" size="100,100">&lt;&lt;set $passage to &quot;SM-24A&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-26&quot;&gt;&gt;
+
 &lt;main&gt;
 
 Well you know what they say: Mum is always right.
@@ -1308,8 +1331,8 @@ Well you know what they say: Mum is always right.
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="SM-25B" tags="" position="575,2600" size="100,100">&lt;&lt;set $passage to &quot;SM-25B&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="SM-25B" tags="" position="575,2600" size="100,100">&lt;&lt;set $passage to &quot;SM-25B&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-26&quot;&gt;&gt;
+
 &lt;main&gt;
 
 Well you know what they say: Mums love to exaggerate.
@@ -1325,8 +1348,8 @@ Well you know what they say: Mums love to exaggerate.
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="SM-26" tags="" position="450,2725" size="100,100">&lt;&lt;set $passage to &quot;SM-26&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="SM-26" tags="" position="450,2725" size="100,100">&lt;&lt;set $passage to &quot;SM-26&quot;&gt;&gt;&lt;&lt;set $nextpassage to $passage&gt;
+
 &lt;main&gt;
 
 Leadenhall Market is one of my favourite spots in the city. A crossroads where London’s past, present and future meet. Skyscrapers looming above, the ruins of Roman London below... the legacy of this buzzing mediaeval market right in front of us.
@@ -1343,8 +1366,8 @@ Would you like some history?
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="SM-27" tags="" position="450,2850" size="100,100">&lt;&lt;set $passage to &quot;SM-27&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="SM-27" tags="" position="450,2850" size="100,100">&lt;&lt;set $passage to &quot;SM-27&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-28&quot;&gt;&gt;
+
 &lt;main&gt;
 
 I’ll keep if brief and interesting, honest!
@@ -1358,8 +1381,8 @@ I’ll keep if brief and interesting, honest!
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="SM-28" tags="" position="450,2975" size="100,100">&lt;&lt;set $passage to &quot;SM-28&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="SM-28" tags="" position="450,2975" size="100,100">&lt;&lt;set $passage to &quot;SM-28&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-29-1&quot;&gt;&gt;&lt;&lt;set $map10 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)&gt;&gt;
+
 &lt;main&gt;
 
 OK. So, in 49AD London was a Roman colony. Leadenhall was the Forum and Basilica - a communal space where issues of the day were decided and discussed. It fell into disuse when the Romans left Britain but as the economy revived during the Anglo Saxon period, so did this market. Sellers spilled over from Cheapside nearby and this became THE spot to get your meat, eggs, and dairy. Leadenhall grew and thrived. There were performers in the streets, a school onsite, a chapel, a pub... the market was about more than buying and selling, it belonged to the local community.
@@ -1368,14 +1391,12 @@ That is an ideal we’ve tried to return to in 2042, stocking Leadenhall with lo
 
 Since the 2022 Golden Key event, Leadenhall has hosted regular festivals, educational events, meetings... We think of it as nutrition for both the mind and the body. We believe it’s a right, not a luxury. And that’s an idea that came from you. There are many who say it’s the most important one.
 
-/*pause*/
-
 There’s one more place I’d like to show you, just round the corner. Somewhere very
 significant. As we head there, take a look around. What would you change about this city to make sure everyone had a fair slice? We’ll share ideas at the next stop:
 
 Lloyds building. 113-116 Leadenhall St, London EC3A 4AX. Meet at the entrance and press continue.
 
-/* MAP NEEDED*/
+$map10
 
 &lt;&lt;button &quot;Continue&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-29-1&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
@@ -1386,8 +1407,8 @@ Lloyds building. 113-116 Leadenhall St, London EC3A 4AX. Meet at the entrance an
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="SM-29-1" tags="" position="450,3100" size="100,100">&lt;&lt;set $passage to &quot;SM-29-1&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="SM-29-1" tags="" position="450,3100" size="100,100">&lt;&lt;set $passage to &quot;SM-29-1&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-29-2&quot;&gt;&gt;
+
 &lt;main&gt;
 
 So... any ideas you’d like to share?
@@ -1403,8 +1424,8 @@ So... any ideas you’d like to share?
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="SM-29-2" tags="" position="575,3100" size="100,100">&lt;&lt;set $passage to &quot;SM-29-1&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="SM-29-2" tags="" position="575,3100" size="100,100">&lt;&lt;set $passage to &quot;SM-29-1&quot;&gt;&gt;&lt;&lt;set $nextpassage to $passage&gt;&gt;
+
 &lt;main&gt;
 
 I can’t tell you how inspiring it is, seeing you come up with these thoughts first hand. Better than I could have imagined. I bet you’ve already guessed what the third R is:
@@ -1597,8 +1618,8 @@ Made equal, with Re_ _ _ _ _ _ _ _ _ _
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="SM-30" tags="" position="450,3225" size="100,100">&lt;&lt;set $passage to &quot;SM-30&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="SM-30" tags="" position="450,3225" size="100,100">&lt;&lt;set $passage to &quot;SM-30&quot;&gt;&gt;&lt;&lt;set $nextpassage to $passage&gt;&gt;
+
 &lt;main&gt;
 
 Exactly! Redistribute! Because collectively we have the resources, we just need to share them fairly. Everything is a team effort...
@@ -1634,8 +1655,8 @@ This might be awkward but would you... would you mind reading it aloud? One line
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="SM-31A" tags="" position="375,3350" size="100,100">&lt;&lt;set $passage to &quot;SM-31A&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="SM-31A" tags="" position="375,3350" size="100,100">&lt;&lt;set $passage to &quot;SM-31A&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-32&quot;&gt;&gt;
+
 &lt;main&gt;
 
 /*Miriam reads this one*/
@@ -1660,8 +1681,8 @@ We want a London that is truly free. Where citizens of all backgrounds meet and 
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="SM-31B" tags="" position="525,3350" size="100,100">&lt;&lt;set $passage to &quot;SM-31B&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="SM-31B" tags="" position="525,3350" size="100,100">&lt;&lt;set $passage to &quot;SM-31B&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-32&quot;&gt;&gt;
+
 &lt;main&gt;
 
 /*No audio as audience reads this one*/
@@ -1679,8 +1700,8 @@ We want a London that is truly free. Where citizens of all backgrounds meet and 
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="SM-32" tags="" position="450,3475" size="100,100">&lt;&lt;set $passage to &quot;SM-32&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="SM-32" tags="" position="450,3475" size="100,100">&lt;&lt;set $passage to &quot;SM-32&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-33&quot;&gt;&gt;
+
 &lt;main&gt;
 
 What’s wrong?
@@ -1695,8 +1716,8 @@ What’s wrong?
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="SM-33" tags="" position="450,3600" size="100,100">&lt;&lt;set $passage to &quot;SM-33&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="43" name="SM-33" tags="" position="450,3600" size="100,100">&lt;&lt;set $passage to &quot;SM-33&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-34&quot;&gt;&gt;
+
 &lt;main&gt;
 
 Ah. Yeah. Well I guess that’s coz it’s up to you.
@@ -1738,8 +1759,8 @@ It’s been a pleasure guiding you. Hope you take those exciting discussions and
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="SM-34" tags="" position="450,3725" size="100,100">&lt;&lt;set $passage to &quot;SM-34&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="SM-34" tags="" position="450,3725" size="100,100">&lt;&lt;set $passage to &quot;SM-34&quot;&gt;&gt;&lt;&lt;set $nextpassage to $passage&gt;&gt;
+
 &lt;main&gt;
 
 
@@ -1772,8 +1793,8 @@ It’s been a pleasure guiding you. Hope you take those exciting discussions and
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="45" name="SM-35A" tags="" position="325,3850" size="100,100">&lt;&lt;set $passage to &quot;SM-35A&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="45" name="SM-35A" tags="" position="325,3850" size="100,100">&lt;&lt;set $passage to &quot;SM-35A&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-34&quot;&gt;&gt;
+
 &lt;main&gt;
 
 &lt;strong&gt;Reunite:&lt;/strong&gt; Turn to the person beside you. Say hi. Now share two happy memories. Take your time, and remember, it doesn’t have to be perfect, or even deep.
@@ -1790,8 +1811,8 @@ It’s been a pleasure guiding you. Hope you take those exciting discussions and
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="46" name="SM-35B" tags="" position="450,3850" size="100,100">&lt;&lt;set $passage to &quot;SM-35B&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="46" name="SM-35B" tags="" position="450,3850" size="100,100">&lt;&lt;set $passage to &quot;SM-35B&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-34&quot;&gt;&gt;
+
 &lt;main&gt;
 
 &lt;strong&gt;Rewild:&lt;/strong&gt; As a group, list all the natural living objects you see and one positive thing about them. Yes, even pigeons. Maybe there’s more than you thought?
@@ -1808,8 +1829,8 @@ It’s been a pleasure guiding you. Hope you take those exciting discussions and
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="47" name="SM-35C" tags="" position="575,3850" size="100,100">&lt;&lt;set $passage to &quot;SM-35C&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="47" name="SM-35C" tags="" position="575,3850" size="100,100">&lt;&lt;set $passage to &quot;SM-35C&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-34&quot;&gt;&gt;
+
 &lt;main&gt;
 
 &lt;strong&gt;Redistribute:&lt;/strong&gt; Remember when I told you the Tower of London was now a communal resource? Take a look at some of the buildings you pass. What else could they be used for?
@@ -1825,14 +1846,14 @@ It’s been a pleasure guiding you. Hope you take those exciting discussions and
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="48" name="SM-36" tags="" position="450,3975" size="100,100">&lt;&lt;set $passage to &quot;SM-36&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="48" name="SM-36" tags="" position="450,3975" size="100,100">&lt;&lt;set $passage to &quot;SM-36&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-37&quot;&gt;&gt;&lt;&lt;set $map11 = setup.generateDirectionsMap(51.51273574253808, -0.09190867122182791,51.51318914905516, -0.09147383074234947)&gt;&gt;
+
 &lt;main&gt;
 
 Course. You’ve got enough of your own ideas to discuss! Just press continue
 when you reach Ned to head to your next adventure!
 
-/*MAP NEEDED*/
+$map11
 
 
 
@@ -1847,8 +1868,8 @@ when you reach Ned to head to your next adventure!
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="49" name="SM-37" tags="" position="450,4100" size="100,100">&lt;&lt;set $passage to &quot;SM-37&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="49" name="SM-37" tags="" position="450,4100" size="100,100">&lt;&lt;set $passage to &quot;SM-37&quot;&gt;&gt;&lt;&lt;set $nextpassage to $passage&gt;&gt;
+
 &lt;main&gt;
 
 Welcome to the Ned! Have you thought of a fourth R on your travels?
@@ -1869,8 +1890,8 @@ Welcome to the Ned! Have you thought of a fourth R on your travels?
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="50" name="SM-38" tags="" position="375,4225" size="100,100">&lt;&lt;set $passage to &quot;SM-37&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="50" name="SM-38" tags="" position="375,4225" size="100,100">&lt;&lt;set $passage to &quot;SM-37&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-39A&quot;&gt;&gt;
+
 &lt;main&gt;
 
 What is your 4th R?
@@ -1888,8 +1909,8 @@ What is your 4th R?
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="SM-39A" tags="" position="375,4350" size="100,100">&lt;&lt;set $passage to &quot;SM-39A&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="51" name="SM-39A" tags="" position="375,4350" size="100,100">&lt;&lt;set $passage to &quot;SM-39A&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-40&quot;&gt;&gt;
+
 &lt;main&gt;
 
 Congratulations! I knew you could do it! Four R’s to base our future on - the work starts now.
@@ -1905,8 +1926,8 @@ Congratulations! I knew you could do it! Four R’s to base our future on - the 
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="52" name="SM-39B" tags="" position="525,4350" size="100,100">&lt;&lt;set $passage to &quot;SM-39B&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="52" name="SM-39B" tags="" position="525,4350" size="100,100">&lt;&lt;set $passage to &quot;SM-39B&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-40&quot;&gt;&gt;
+
 &lt;main&gt;
 
 That’s OK - Londinium wasn’t built in a day, and nor is any movement. But with the future in your hands, I have hope we can get there.
@@ -1922,13 +1943,11 @@ That’s OK - Londinium wasn’t built in a day, and nor is any movement. But wi
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="53" name="SM-40" tags="" position="450,4475" size="100,100">&lt;&lt;set $passage to &quot;SM-40&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="53" name="SM-40" tags="" position="450,4475" size="100,100">&lt;&lt;set $passage to &quot;SM-40&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-41&quot;&gt;&gt;
+
 &lt;main&gt;
 
 So... I guess this is it... the end...
-
-/*alarm goes off*/
 
 Oh shit, I’m late for my next tour! Hope these ones know what decade they’re in!
 
@@ -1947,8 +1966,8 @@ Quite the character, Mariam Samir. Fantastic things in store for her.
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="54" name="SM-41" tags="" position="450,4600" size="100,100">&lt;&lt;set $passage to &quot;SM-40&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="54" name="SM-41" tags="" position="450,4600" size="100,100">&lt;&lt;set $passage to &quot;SM-40&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;end&quot;&gt;&gt;
+
 &lt;main&gt;
 
 Don’t be silly, of course I’m not telling you. It’s not like I’d reveal her future job contains the initials P and M.
@@ -1960,9 +1979,15 @@ Now it’s time to experience something very different - So find and step throug
 Catch you soon!
 
 
+&lt;&lt;button &quot;end&quot;&gt;&gt;&lt;&lt;goto &quot;end&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
 
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="55" name="end" tags="" position="100,700" size="100,100">&lt;&lt;set $passage to &quot;end&quot;&gt;&gt;&lt;&lt;set $endMap = setup.generateDirectionsMap(51.50975237659481, -0.0824661751178505,51.50975237659481, -0.0824661751178505)&gt;&gt;
+&lt;main&gt;End location
 
+$endMap
+  
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">

@@ -583,10 +583,11 @@ Are you done?
   <<button "We don't know">><<set $prevpass to $passage>><<goto "SM-08">><</button>>
   
   <<button "A nice souvenir?">><<set $prevpass to $passage>><<goto "SM-08">><</button>>
-</div>
+
   
   <</replace>>
 <</button>>
+</div>
 </div>
 
 
@@ -1005,7 +1006,7 @@ And it was called Re_ _ _ _ _
 
 
 
-<<button "Enter">><<set $prevpass to $passage>><<goto "SM-15-2">><</button>>
+<<button "Enter">><<set $prevpass to $passage>><<timed 2s>><<goto "SM-15-2">><</timed>><</button>>
 
 
 
@@ -1027,10 +1028,12 @@ That’s right! Reunite is a key element in every Folkmoot decision. We try to c
 
 Which brings me to our next stop. The Sky Garden. Have any of you ever been up?
 
-
-<<button "Yes">><<set $prevpass to $passage>><<goto "SM-17">><</button>>
-
-<<button "No">><<set $prevpass to $passage>><<goto "SM-18">><</button>>
+<div class="menu-wrapper">
+  
+  <<button "Yes">><<set $prevpass to $passage>><<goto "SM-17">><</button>>
+  
+  <<button "No">><<set $prevpass to $passage>><<goto "SM-18">><</button>>
+</div>
 
 
 
@@ -1288,7 +1291,7 @@ Any ideas?
   <</if>>
  
     <<if $w.toUpperCase() is "W" and $i.toUpperCase() is "I" and $l.toUpperCase() is "L" and $d.toUpperCase() is "D">>
-   	 <<set $prevpass to $passage>><<goto "SM-23">>  
+   	 <<set $prevpass to $passage>><<timed 2s>><<goto "SM-23">><</timed>>  
   <</if>>
 <</button>>
 
@@ -1347,9 +1350,11 @@ Correct! And I know you shouldn’t have favourites, but Rewild kind of is mine.
 Which brings me nicely to Leadenhall market. Smells good right? What’s food like in 2022? Mum tells me horror stories of chickens pumped with antibiotics and 9 quid for a sourdough fish finger sandwich. Was she right?
 
 
-<<button "Yes">><<set $prevpass to $passage>><<goto "SM-24A">><</button>>
-
-<<button "No">><<set $prevpass to $passage>><<goto "SM-25B">><</button>>
+<div class="menu-wrapper">
+  <<button "Yes">><<set $prevpass to $passage>><<goto "SM-24A">><</button>>
+  
+  <<button "No">><<set $prevpass to $passage>><<goto "SM-25B">><</button>>
+</div>
 
 
 
@@ -1870,12 +1875,10 @@ It’s been a pleasure guiding you. Hope you take those exciting discussions and
   <<goto "SM-35B">>
 <</button>>
 
-
 <<button "Redistribute">>
   <<set $prevpass to $passage>>
   <<goto "SM-35C">>
 <</button>>
-
 
 <<button "Head to Ned">>
   <<set $prevpass to $passage>>

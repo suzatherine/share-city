@@ -632,10 +632,11 @@ Are you done?
   &lt;&lt;button &quot;We don&#39;t know&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-08&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
   
   &lt;&lt;button &quot;A nice souvenir?&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-08&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;
+
   
   &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/button&gt;&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 
 
@@ -1002,7 +1003,7 @@ And it was called Re_ _ _ _ _
 
 
 
-&lt;&lt;button &quot;Enter&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-15-2&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;button &quot;Enter&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;timed 2s&gt;&gt;&lt;&lt;goto &quot;SM-15-2&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
 
 
 
@@ -1020,10 +1021,12 @@ That’s right! Reunite is a key element in every Folkmoot decision. We try to c
 
 Which brings me to our next stop. The Sky Garden. Have any of you ever been up?
 
-
-&lt;&lt;button &quot;Yes&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-17&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-
-&lt;&lt;button &quot;No&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-18&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;div class=&quot;menu-wrapper&quot;&gt;
+  
+  &lt;&lt;button &quot;Yes&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-17&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+  
+  &lt;&lt;button &quot;No&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-18&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;
 
 
 
@@ -1249,7 +1252,7 @@ Any ideas?
   &lt;&lt;/if&gt;&gt;
  
     &lt;&lt;if $w.toUpperCase() is &quot;W&quot; and $i.toUpperCase() is &quot;I&quot; and $l.toUpperCase() is &quot;L&quot; and $d.toUpperCase() is &quot;D&quot;&gt;&gt;
-   	 &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-23&quot;&gt;&gt;  
+   	 &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;timed 2s&gt;&gt;&lt;&lt;goto &quot;SM-23&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;  
   &lt;&lt;/if&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 
@@ -1304,9 +1307,11 @@ Correct! And I know you shouldn’t have favourites, but Rewild kind of is mine.
 Which brings me nicely to Leadenhall market. Smells good right? What’s food like in 2022? Mum tells me horror stories of chickens pumped with antibiotics and 9 quid for a sourdough fish finger sandwich. Was she right?
 
 
-&lt;&lt;button &quot;Yes&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-24A&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-
-&lt;&lt;button &quot;No&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-25B&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;div class=&quot;menu-wrapper&quot;&gt;
+  &lt;&lt;button &quot;Yes&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-24A&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+  
+  &lt;&lt;button &quot;No&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-25B&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/div&gt;
 
 
 
@@ -1775,12 +1780,10 @@ It’s been a pleasure guiding you. Hope you take those exciting discussions and
   &lt;&lt;goto &quot;SM-35B&quot;&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 
-
 &lt;&lt;button &quot;Redistribute&quot;&gt;&gt;
   &lt;&lt;set $prevpass to $passage&gt;&gt;
   &lt;&lt;goto &quot;SM-35C&quot;&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-
 
 &lt;&lt;button &quot;Head to Ned&quot;&gt;&gt;
   &lt;&lt;set $prevpass to $passage&gt;&gt;

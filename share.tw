@@ -1408,7 +1408,7 @@ Well you know what they say: Mums love to exaggerate.
 
 
 :: SM-26 {"position":"450,2725","size":"100,100"}
-<<set $passage to "SM-26">><<set $nextpassage to $passage>
+<<set $passage to "SM-26">><<set $nextpassage to $passage>>
 
 <main>
 
@@ -2131,4 +2131,9 @@ Catch you soon!
 $endMap
   
 </main>
-<<include "footer">>
+<<include "footerend">>
+
+:: footerend {"position":"99,485","size":"100,100"}
+<footer>
+<div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div>
+</footer>

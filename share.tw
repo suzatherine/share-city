@@ -625,7 +625,7 @@ You have two options:
 <main>
 
 $endMap
-  
+<<button "Next">><<goto "SM-42">><</button>>
 </main>
 <<include "footerend">>
 
@@ -2175,10 +2175,7 @@ Made equal with Re _ _ _ _ _ _ _ _ _
  
 <<timed 42s>><<replace "#mount">><<type 50ms>>The first time she saw you speak, right here in this spot. You had quite a following by then, hundreds of people gathered, and you said this.<</type>><</replace>><</timed>>
 
-<<timed 52s>>
 
-(image placeholder)
-/* an image appears of a worn out piece of paper with a manifesto written on it.  */
 <p><img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX5714368.jpg"></p>
 
 <<timed 52s>><<replace "#mount">><<type 50ms>>I wrote it down. Keep a copy in my bag. A reminder of all the progress that's been made these last 20 years.<</type>><</replace>><</timed>>
@@ -2607,7 +2604,7 @@ Catch you soon!
 
 
 :: SM-42 {"position":"520,2113","size":"100,100"}
-<<set $passage to "SM-31">><<set $nextpassage to "SM-32">><<set $map6 = setup.generateDirectionsMap([], [])>><<audio ":all" stop>>
+<<set $passage to "SM-31">><<set $nextpassage to "SM-43">><<set $map6 = setup.generateDirectionsMap([], [])>><<audio ":all" stop>>
 <main>
 <div id="mount"></div>
 Now it’s time to experience something very different -
@@ -2616,7 +2613,7 @@ So let’s find the next door to see what more we have in store!
 
 We’re going into The Ned Hotel. 
 
-Once inside the front lobby, show this <<button "key">><<set $prevpass to $passage>><<goto "SM-32">><</button>> to one of the staff members, and they’ll show you where to go.
+Once inside the front lobby, show this <<button "key">><<set $prevpass to $passage>><<goto "SM-43">><</button>> to one of the staff members, and they’ll show you where to go.
 
 </main>
 <<include "footer">>

@@ -510,7 +510,6 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 .paperold{
 background-image: url("./assets/paperbackground.jpg");
     width: 90vw;
-
     padding: 2rem;
     color: black;
     transform: skewY(0.9deg);
@@ -2107,41 +2106,46 @@ We want a London that is truly free. Where citizens of all backgrounds meet and 
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="63" name="SM-33" tags="" position="450,3600" size="100,100">&lt;&lt;set $passage to &quot;SM-33&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-34&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM_33&quot; play&gt;&gt;
-/* TODO MISSING AUDIO  */
+/* TODO NEED TO CHECK CAPTIONS  */
 
 &lt;main&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
-Ah. Yeah. Well I guess that’s coz it’s up to you.
-The fourth R. I think you’re ready to decide it without my help.
-After all, the 2042 I live in is yours to build.
+&lt;&lt;timed 0.2s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 60ms&gt;&gt;MARIAM: Ah. Yeah. Well I guess that’s coz it’s up to you.
+The fourth R. I think you’re ready to decide it without my help.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 
-I completely agree. No time like the present to start. Or the past. Or the future. But then again, that’s the nature of dragon time. Hello Mariam.
+&lt;&lt;timed 11s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 60ms&gt;&gt;After all, the 2042 I live in is yours to build.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 18s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;FELIX: I completely agree. No time like the present to start. Or the past. Or the future. But then again, that’s the nature of dragon time. &lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 
-Hi Felix.
+&lt;&lt;timed 27s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;F: Hello, Mariam.
 
-How did your tour go?
+M: Hi, Felix&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-They were &lt;strong&gt;brilliant&lt;/strong&gt;.
+&lt;&lt;timed 30s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;F: How did the tour go? 
 
-Excellent. Though not surprising. This group is clearly a special bunch. 
-Sorry for messing about with the space-time continuum, folks. But, would you have believed us if we’d just told you you were tomorrow’s revolutionaries?
+M: They were brilliant.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-It had to come from you.
+&lt;&lt;timed 34s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;F: Excellent. Though not surprising. This group is clearly a special bunch. &lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-With the help of a guide of course.
+&lt;&lt;timed 39s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;M: Sorry for messing about with the space-time continuum, folks. But, would you have believed us if we’d just told you you were tomorrow’s revolutionaries?&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-I just led you to your own ideas. A plan of action for you to use in 2022. And that fourth R to decide on together as you head to your final stop...
+&lt;&lt;timed 49s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;It had to come from you.
 
-And an entirely new adventure.
+With the help of a guide of course.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-The Ned, 27 Poultry, EC2R 8AJ.
+&lt;&lt;timed 55s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 60ms&gt;&gt;M: I just led you to your own ideas. A plan of action for you to use in 2022. And that fourth R to decide on together as you head to your final stop...&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-It’s been a pleasure guiding you. Hope you take those exciting discussions and ideas and energy with you in 2022. They’re needed. Urgently. And if you struggle for R ideas, I might have a few games to get you going!
+&lt;&lt;timed 61s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;And an entirely new adventure.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 5s&gt;&gt;
+&lt;&lt;timed 68s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 60ms&gt;&gt;M: It’s been a pleasure guiding you. Hope you take those exciting discussions and ideas and energy with you in 2022. &lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+&lt;&lt;timed 77s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 60ms&gt;&gt;They’re needed. Urgently. And if you struggle for R ideas, I might have a few games to get you going!&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+
+&lt;&lt;timed 80s&gt;&gt;
   &lt;&lt;set $prevpass to $passage&gt;&gt;
   &lt;&lt;goto &quot;SM-34&quot;&gt;&gt;
 &lt;&lt;/timed&gt;&gt;

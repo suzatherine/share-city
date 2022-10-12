@@ -425,7 +425,6 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 .paperold{
 background-image: url("./assets/paperbackground.jpg");
     width: 90vw;
-
     padding: 2rem;
     color: black;
     transform: skewY(0.9deg);
@@ -2263,41 +2262,46 @@ We want a London that is truly free. Where citizens of all backgrounds meet and 
 :: SM-33 {"position":"450,3600","size":"100,100"}
 <<set $passage to "SM-33">><<set $nextpassage to "SM-34">>
 <<audio ":all" stop>><<audio "SM_33" play>>
-/* TODO MISSING AUDIO  */
+/* TODO NEED TO CHECK CAPTIONS  */
 
 <main>
 <div id="mount"></div>
 
-Ah. Yeah. Well I guess that’s coz it’s up to you.
-The fourth R. I think you’re ready to decide it without my help.
-After all, the 2042 I live in is yours to build.
+<<timed 0.2s>><<replace "#mount">><<type 60ms>>MARIAM: Ah. Yeah. Well I guess that’s coz it’s up to you.
+The fourth R. I think you’re ready to decide it without my help.<</type>><</replace>><</timed>>
 
 
-I completely agree. No time like the present to start. Or the past. Or the future. But then again, that’s the nature of dragon time. Hello Mariam.
+<<timed 11s>><<replace "#mount">><<type 60ms>>After all, the 2042 I live in is yours to build.<</type>><</replace>><</timed>>
+
+<<timed 18s>><<replace "#mount">><<type 50ms>>FELIX: I completely agree. No time like the present to start. Or the past. Or the future. But then again, that’s the nature of dragon time. <</type>><</replace>><</timed>>
 
 
-Hi Felix.
+<<timed 27s>><<replace "#mount">><<type 50ms>>F: Hello, Mariam.
 
-How did your tour go?
+M: Hi, Felix<</type>><</replace>><</timed>>
 
-They were <strong>brilliant</strong>.
+<<timed 30s>><<replace "#mount">><<type 50ms>>F: How did the tour go? 
 
-Excellent. Though not surprising. This group is clearly a special bunch. 
-Sorry for messing about with the space-time continuum, folks. But, would you have believed us if we’d just told you you were tomorrow’s revolutionaries?
+M: They were brilliant.<</type>><</replace>><</timed>>
 
-It had to come from you.
+<<timed 34s>><<replace "#mount">><<type 50ms>>F: Excellent. Though not surprising. This group is clearly a special bunch. <</type>><</replace>><</timed>>
 
-With the help of a guide of course.
+<<timed 39s>><<replace "#mount">><<type 50ms>>M: Sorry for messing about with the space-time continuum, folks. But, would you have believed us if we’d just told you you were tomorrow’s revolutionaries?<</type>><</replace>><</timed>>
 
-I just led you to your own ideas. A plan of action for you to use in 2022. And that fourth R to decide on together as you head to your final stop...
+<<timed 49s>><<replace "#mount">><<type 50ms>>It had to come from you.
 
-And an entirely new adventure.
+With the help of a guide of course.<</type>><</replace>><</timed>>
 
-The Ned, 27 Poultry, EC2R 8AJ.
+<<timed 55s>><<replace "#mount">><<type 60ms>>M: I just led you to your own ideas. A plan of action for you to use in 2022. And that fourth R to decide on together as you head to your final stop...<</type>><</replace>><</timed>>
 
-It’s been a pleasure guiding you. Hope you take those exciting discussions and ideas and energy with you in 2022. They’re needed. Urgently. And if you struggle for R ideas, I might have a few games to get you going!
+<<timed 61s>><<replace "#mount">><<type 50ms>>And an entirely new adventure.<</type>><</replace>><</timed>>
 
-<<timed 5s>>
+<<timed 68s>><<replace "#mount">><<type 60ms>>M: It’s been a pleasure guiding you. Hope you take those exciting discussions and ideas and energy with you in 2022. <</type>><</replace>><</timed>>
+
+<<timed 77s>><<replace "#mount">><<type 60ms>>They’re needed. Urgently. And if you struggle for R ideas, I might have a few games to get you going!<</type>><</replace>><</timed>>
+
+
+<<timed 80s>>
   <<set $prevpass to $passage>>
   <<goto "SM-34">>
 <</timed>>

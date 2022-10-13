@@ -7,13 +7,19 @@ Share Mile
 	"ifid": "98D2404A-3A9E-49BD-99D2-23D5E1FCC2A4",
 	"format": "SugarCube",
 	"format-version": "2.36.1",
-	"start": "SM-31B",
+	"start": "landing",
 	"zoom": 0.6
 }
 
 
 :: Story Stylesheet [stylesheet]
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+
+@font-face {
+  font-family: "Big John";
+  src: url("/assets/fonts/bigjohn.otf") format("opentype");
+}
+
 
 /* GENERICS */
 html {
@@ -364,6 +370,12 @@ display: flex;
   text-align:center
 }
 
+.endpoint {
+  font-family: "Big John";
+  font-size:3rem;
+  text-align:center
+}
+
 .glowing {
   /* width: 100px;
   height: 100px; */
@@ -605,9 +617,10 @@ setup.checkForRepeats = (array,element) => {
 <main>
 You have two options:
 
-<<button "Begin the adventure again">><<goto "landing">><</button>>
+  <<button "Begin the adventure again">><<goto "landing">><</button>>
+  
+  <<button "Take me straight to the end location!">><<goto "end">><</button>>
 
-<<button "Take me straight to the end location!">><<goto "end">><</button>>
 </main>
 <<include "footer">>
 
@@ -625,7 +638,7 @@ You have two options:
 <main>
 
 $endMap
-<<button "Next">><<goto "SM-42">><</button>>
+<<button "Next">><<set $prevpass to $passage>><<goto "SM-42">><</button>>
 </main>
 <<include "footerend">>
 
@@ -640,7 +653,7 @@ $endMap
 
 
 :: footerkey
-<footer><div class="nav-wrapper"><div class="nav-item"><<button "<">><<goto $prevpass>><</button>></div><div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div></div><div class="nav-wrapper end"><div class="nav-item"><<button "Key">><<set $prevpass to $passage>><<goto "">><</button>> </div><div class="nav-item"><<button "Try another adventure">><<set $prevpass to $passage>><<goto "">><</button>></div></div></footer>
+<footer><div class="nav-wrapper"><div class="nav-item"><<button "<">><<goto $prevpass>><</button>></div><div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div></div><div class="nav-wrapper end"><div class="nav-item"><<button "Key">><<set $prevpass to $passage>><<goto "SM-43">><</button>> </div><div class="nav-item"><<button "Try another adventure">><<set $prevpass to $passage>><<goto "SM-43adventures">><</button>></div></div></footer>
 
 
 :: footersimple {"position":"100,353","size":"100,100"}
@@ -916,7 +929,7 @@ $map1
 
 
 <div class="menu-wrapper">
-  <<link "<img src='https://pngimg.com/uploads/dragon/dragon_PNG84545.png' class='dragon'>">><<audio ":all" stop>><<audio "SM_10.2" play>>
+  <<link "<img src='https://freepngimg.com/thumb/dragon/22094-7-dragon-file.png' class='dragon'>">><<audio ":all" stop>><<audio "SM_10.2" play>>
       <<replace ".dragonpictures">>  <</replace>>
       <<timed 0.1s>>
           <<replace "#mount">><<type 60ms>>Holy shit, I've seen it! I thought I was crazy!<</type>><</replace>><</timed>> 
@@ -934,7 +947,7 @@ $map1
           <<button "Show map">><<set $prevpass to $passage>><<goto "SM-10map">><</button>><</type>><</replace>><</timed>>
     <</link>>
     
-    <<link "<img src='https://pngimg.com/uploads/dragon/dragon_PNG84545.png' class='dragon'>">><<audio ":all" stop>><<audio "SM_10.2" play>>
+    <<link "<img src='https://pngimg.com/uploads/dragon/dragon_PNG84554.png' class='dragon'>">><<audio ":all" stop>><<audio "SM_10.2" play>>
       <<replace ".dragonpictures">>  <</replace>>
       <<timed 0.1s>>
           <<replace "#mount">><<type 60ms>>Holy shit, I've seen it! I thought I was crazy!<</type>><</replace>><</timed>> 
@@ -2219,8 +2232,7 @@ Made equal with Re _ _ _ _ _ _ _ _ _
 :: SM-31B {"position":"525,3350","size":"100,100"}
 <<set $passage to "SM-31B">><<set $nextpassage to "SM-32">>
 <<audio ":all" stop>><main><div class="paperold">
-No-one should live in a city where spaces don’t belong to them. Where doors are
-closed and entrances barred. Too long we have been told that this centre of commerce and wealth, where decisions are made that affect us all, is not for us.
+No-one should live in a city where spaces don’t belong to them. Where doors are closed and entrances barred. Too long we have been told that this centre of commerce and wealth, where decisions are made that affect us all, is not for us.
 
 It does not have to be that way.
 
@@ -2624,7 +2636,9 @@ Once inside the front lobby, show this <<button "key">><<set $prevpass to $passa
 <<audio ":all" stop>>
 /* <<audio "SM-32" play>> */
 <main>
-<div class="key-wrapper glowing"><img src="./assets/keys-34.png"></div>
+<div class="key-wrapper glowing"><img src="./assets/TheNed.png"></div>
+
+<h2 class="endpoint">THE NED</h2>
 
 </main>
 <<include "footerkey">>

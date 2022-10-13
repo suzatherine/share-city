@@ -98,7 +98,13 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://98D2404A-3A9E-49BD-99D2-23D5E1FCC2A4// --><tw-storydata name="Share Mile" startnode="61" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="98D2404A-3A9E-49BD-99D2-23D5E1FCC2A4" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+	<!-- UUID://98D2404A-3A9E-49BD-99D2-23D5E1FCC2A4// --><tw-storydata name="Share Mile" startnode="5" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="98D2404A-3A9E-49BD-99D2-23D5E1FCC2A4" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+
+@font-face {
+  font-family: "Big John";
+  src: url("/assets/fonts/bigjohn.otf") format("opentype");
+}
+
 
 /* GENERICS */
 html {
@@ -449,6 +455,12 @@ display: flex;
   text-align:center
 }
 
+.endpoint {
+  font-family: "Big John";
+  font-size:3rem;
+  text-align:center
+}
+
 .glowing {
   /* width: 100px;
   height: 100px; */
@@ -670,9 +682,10 @@ setup.checkForRepeats = (array,element) => {
 &lt;main&gt;
 You have two options:
 
-&lt;&lt;button &quot;Begin the adventure again&quot;&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+  &lt;&lt;button &quot;Begin the adventure again&quot;&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+  
+  &lt;&lt;button &quot;Take me straight to the end location!&quot;&gt;&gt;&lt;&lt;goto &quot;end&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
-&lt;&lt;button &quot;Take me straight to the end location!&quot;&gt;&gt;&lt;&lt;goto &quot;end&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="landing" tags="" position="450,50" size="100,100">&lt;&lt;set $passage to &quot;landing&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 
@@ -683,11 +696,11 @@ You have two options:
 &lt;main&gt;
 
 $endMap
-&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;goto &quot;SM-42&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-42&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerend&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="footerend" tags="" position="99,485" size="100,100">&lt;footer&gt;
 &lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Start again&quot;&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
-&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="8" name="footerlost" tags="" position="100,625" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-wrapper &quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Back&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="9" name="footerkey" tags="" position="1100,100" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-wrapper&quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;&lt;&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Start again&quot;&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;nav-wrapper end&quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Key&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Try another adventure&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="10" name="footersimple" tags="" position="100,353" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-item replay&quot;&gt;&lt;&lt;button &quot;Replay&quot;&gt;&gt;&lt;&lt;goto $passage&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;
+&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="8" name="footerlost" tags="" position="100,625" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-wrapper &quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Back&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="9" name="footerkey" tags="" position="1100,100" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-wrapper&quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;&lt;&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Start again&quot;&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;nav-wrapper end&quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Key&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-43&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Try another adventure&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-43adventures&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="10" name="footersimple" tags="" position="100,353" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-item replay&quot;&gt;&lt;&lt;button &quot;Replay&quot;&gt;&gt;&lt;&lt;goto $passage&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;
 &lt;div class=&quot;nav-item end&quot;&gt;&lt;&lt;button &quot;Take me to the end&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;lost&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="11" name="SM-01" tags="" position="449,226" size="100,100">&lt;&lt;set $passage to &quot;SM-01&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-02B&quot;&gt;&gt;
 /* &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM-01&quot; play&gt;&gt; */
 &lt;main&gt;
@@ -917,7 +930,7 @@ $map1
 
 
 &lt;div class=&quot;menu-wrapper&quot;&gt;
-  &lt;&lt;link &quot;&lt;img src=&#39;https://pngimg.com/uploads/dragon/dragon_PNG84545.png&#39; class=&#39;dragon&#39;&gt;&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM_10.2&quot; play&gt;&gt;
+  &lt;&lt;link &quot;&lt;img src=&#39;https://freepngimg.com/thumb/dragon/22094-7-dragon-file.png&#39; class=&#39;dragon&#39;&gt;&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM_10.2&quot; play&gt;&gt;
       &lt;&lt;replace &quot;.dragonpictures&quot;&gt;&gt;  &lt;&lt;/replace&gt;&gt;
       &lt;&lt;timed 0.1s&gt;&gt;
           &lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 60ms&gt;&gt;Holy shit, I&#39;ve seen it! I thought I was crazy!&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
@@ -935,7 +948,7 @@ $map1
           &lt;&lt;button &quot;Show map&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-10map&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/link&gt;&gt;
     
-    &lt;&lt;link &quot;&lt;img src=&#39;https://pngimg.com/uploads/dragon/dragon_PNG84545.png&#39; class=&#39;dragon&#39;&gt;&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM_10.2&quot; play&gt;&gt;
+    &lt;&lt;link &quot;&lt;img src=&#39;https://pngimg.com/uploads/dragon/dragon_PNG84554.png&#39; class=&#39;dragon&#39;&gt;&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM_10.2&quot; play&gt;&gt;
       &lt;&lt;replace &quot;.dragonpictures&quot;&gt;&gt;  &lt;&lt;/replace&gt;&gt;
       &lt;&lt;timed 0.1s&gt;&gt;
           &lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 60ms&gt;&gt;Holy shit, I&#39;ve seen it! I thought I was crazy!&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
@@ -2071,8 +2084,7 @@ Made equal with Re _ _ _ _ _ _ _ _ _
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="61" name="SM-31B" tags="" position="525,3350" size="100,100">&lt;&lt;set $passage to &quot;SM-31B&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-32&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;main&gt;&lt;div class=&quot;paperold&quot;&gt;
-No-one should live in a city where spaces don’t belong to them. Where doors are
-closed and entrances barred. Too long we have been told that this centre of commerce and wealth, where decisions are made that affect us all, is not for us.
+No-one should live in a city where spaces don’t belong to them. Where doors are closed and entrances barred. Too long we have been told that this centre of commerce and wealth, where decisions are made that affect us all, is not for us.
 
 It does not have to be that way.
 
@@ -2408,7 +2420,9 @@ Once inside the front lobby, show this &lt;&lt;button &quot;key&quot;&gt;&gt;&lt
 &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 /* &lt;&lt;audio &quot;SM-32&quot; play&gt;&gt; */
 &lt;main&gt;
-&lt;div class=&quot;key-wrapper glowing&quot;&gt;&lt;img src=&quot;./assets/keys-34.png&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;key-wrapper glowing&quot;&gt;&lt;img src=&quot;./assets/TheNed.png&quot;&gt;&lt;/div&gt;
+
+&lt;h2 class=&quot;endpoint&quot;&gt;THE NED&lt;/h2&gt;
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footerkey&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="78" name="SM-43adventures" tags="" position="520,2113" size="100,100">&lt;&lt;set $passage to &quot;SM-43adventures&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-23A&quot;&gt;&gt;

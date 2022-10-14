@@ -1699,8 +1699,7 @@ $map4
 
 :: SM-22-3 {"position":"700,2350","size":"100,100"}
 <<set $passage to "SM-22-3">><<set $nextpassage to "SM-23">><<audio ":all" stop>><<audio "SM_22.3" play>>
-<main>
-
+<main><div id="feedback" class="feedback"></div>
 <div id="mount"></div>
 
 <<timed 0.3s>><<replace "#mount">><<type 60ms>>What did I tell you? Ideas for the people!<</type>><</replace>><</timed>>
@@ -1745,21 +1744,45 @@ Yep, the second R's Re _ _ _ _
         <<replace ".w">>
          W
         <</replace>>
+         <<else>>
+      <<timed 0s>><<replace "#feedback">>
+          Not right.. try again!
+      <</replace>><</timed>>
+       <<timed 3s>><<replace "#feedback">>
+      <</replace>><</timed>>
     <</if>>
     <<if $i.toUpperCase() is  "I">>
         <<replace ".i">>
             I
         <</replace>>
+         <<else>>
+      <<timed 0s>><<replace "#feedback">>
+          Not right.. try again!
+      <</replace>><</timed>>
+       <<timed 3s>><<replace "#feedback">>
+      <</replace>><</timed>>
     <</if>>
     <<if $l.toUpperCase() is  "L">>
         <<replace ".l">>
            L
         <</replace>>
+         <<else>>
+      <<timed 0s>><<replace "#feedback">>
+          Not right.. try again!
+      <</replace>><</timed>>
+       <<timed 3s>><<replace "#feedback">>
+      <</replace>><</timed>>
     <</if>>
     <<if $d.toUpperCase() is  "D">>
         <<replace ".d">>
             D
         <</replace>>
+         <<else>>
+      <<timed 0s>><<replace "#feedback">>
+          Not right.. try again!
+      <</replace>><</timed>>
+       <<timed 3s>><<replace "#feedback">>
+      <</replace>><</timed>>
     <</if>>
    
       <<if $w.toUpperCase() is "W" and $i.toUpperCase() is "I" and $l.toUpperCase() is "L" and $d.toUpperCase() is "D">><<addclass ".wordcontainer" "correct">> 
@@ -2011,7 +2034,7 @@ $map5
 :: SM-29-2 {"position":"575,3100","size":"100,100"}
 <<set $passage to "SM-29-2">><<set $nextpassage to "SM-30">>
 <<audio ":all" stop>><<audio "SM_29.2" play>>
-<main>
+<main><div id="feedback" class="feedback"></div>
 <div id="mount"></div>
 
 <<timed 0.1s>><<replace "#mount">><<type 55ms>>I can't tell you how inspiring it is, seeing you come up with these thoughts first-hand. Better than I could have imagined.<</type>><</replace>><</timed>>
@@ -2075,51 +2098,111 @@ Made equal with Re _ _ _ _ _ _ _ _ _
         <<replace ".d">>
          D
         <</replace>>
+         <<else>>
+      <<timed 0s>><<replace "#feedback">>
+          Not right.. try again!
+      <</replace>><</timed>>
+       <<timed 3s>><<replace "#feedback">>
+      <</replace>><</timed>>
     <</if>>
     <<if $i.toUpperCase() is  "I">>
         <<replace ".i">>
             I
         <</replace>>
+         <<else>>
+      <<timed 0s>><<replace "#feedback">>
+          Not right.. try again!
+      <</replace>><</timed>>
+       <<timed 3s>><<replace "#feedback">>
+      <</replace>><</timed>>
     <</if>>
     <<if $s.toUpperCase() is  "S">>
         <<replace ".s">>
            S
         <</replace>>
+         <<else>>
+      <<timed 0s>><<replace "#feedback">>
+          Not right.. try again!
+      <</replace>><</timed>>
+       <<timed 3s>><<replace "#feedback">>
+      <</replace>><</timed>>
     <</if>>
     <<if $t.toUpperCase() is  "T">>
         <<replace ".t">>
             T
         <</replace>>
+         <<else>>
+      <<timed 0s>><<replace "#feedback">>
+          Not right.. try again!
+      <</replace>><</timed>>
+       <<timed 3s>><<replace "#feedback">>
+      <</replace>><</timed>>
     <</if>>
     <<if $r.toUpperCase() is  "R">>
         <<replace ".r">>
             R
         <</replace>>
+         <<else>>
+      <<timed 0s>><<replace "#feedback">>
+          Not right.. try again!
+      <</replace>><</timed>>
+       <<timed 3s>><<replace "#feedback">>
+      <</replace>><</timed>>
     <</if>>
     <<if $i2.toUpperCase() is  "I">>
         <<replace ".i2">>
             I
         <</replace>>
+         <<else>>
+      <<timed 0s>><<replace "#feedback">>
+          Not right.. try again!
+      <</replace>><</timed>>
+       <<timed 3s>><<replace "#feedback">>
+      <</replace>><</timed>>
     <</if>>
     <<if $b.toUpperCase() is  "B">>
         <<replace ".b">>
             B
         <</replace>>
+         <<else>>
+      <<timed 0s>><<replace "#feedback">>
+          Not right.. try again!
+      <</replace>><</timed>>
+       <<timed 3s>><<replace "#feedback">>
+      <</replace>><</timed>>
     <</if>>
     <<if $u.toUpperCase() is  "U">>
         <<replace ".u">>
             U
         <</replace>>
+         <<else>>
+      <<timed 0s>><<replace "#feedback">>
+          Not right.. try again!
+      <</replace>><</timed>>
+       <<timed 3s>><<replace "#feedback">>
+      <</replace>><</timed>>
     <</if>>
     <<if $t2.toUpperCase() is  "T">>
         <<replace ".t2">>
             T
         <</replace>>
+         <<else>>
+      <<timed 0s>><<replace "#feedback">>
+          Not right.. try again!
+      <</replace>><</timed>>
+       <<timed 3s>><<replace "#feedback">>
+      <</replace>><</timed>>
     <</if>>
     <<if $e.toUpperCase() is  "E">>
         <<replace ".e">>
             E
         <</replace>>
+         <<else>>
+      <<timed 0s>><<replace "#feedback">>
+          Not right.. try again!
+      <</replace>><</timed>>
+       <<timed 3s>><<replace "#feedback">>
+      <</replace>><</timed>>
     <</if>>
     
     <<if $d.toUpperCase() is "D" and $i.toUpperCase() is "I" and $s.toUpperCase() is "S" and $t.toUpperCase() is "T" and $r.toUpperCase() is "R" and $i2.toUpperCase() is "I" and $b.toUpperCase() is "B" and $u.toUpperCase() is "U" and $t2.toUpperCase() is "T" and $e.toUpperCase() is "E">><<addclass ".wordcontainer" "correct">> 

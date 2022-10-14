@@ -1590,8 +1590,7 @@ $map4
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="47" name="SM-22-3" tags="" position="700,2350" size="100,100">&lt;&lt;set $passage to &quot;SM-22-3&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-23&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM_22.3&quot; play&gt;&gt;
-&lt;main&gt;
-
+&lt;main&gt;&lt;div id=&quot;feedback&quot; class=&quot;feedback&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
 &lt;&lt;timed 0.3s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 60ms&gt;&gt;What did I tell you? Ideas for the people!&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
@@ -1636,21 +1635,45 @@ Yep, the second R&#39;s Re _ _ _ _
         &lt;&lt;replace &quot;.w&quot;&gt;&gt;
          W
         &lt;&lt;/replace&gt;&gt;
+         &lt;&lt;else&gt;&gt;
+      &lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+          Not right.. try again!
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $i.toUpperCase() is  &quot;I&quot;&gt;&gt;
         &lt;&lt;replace &quot;.i&quot;&gt;&gt;
             I
         &lt;&lt;/replace&gt;&gt;
+         &lt;&lt;else&gt;&gt;
+      &lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+          Not right.. try again!
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $l.toUpperCase() is  &quot;L&quot;&gt;&gt;
         &lt;&lt;replace &quot;.l&quot;&gt;&gt;
            L
         &lt;&lt;/replace&gt;&gt;
+         &lt;&lt;else&gt;&gt;
+      &lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+          Not right.. try again!
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $d.toUpperCase() is  &quot;D&quot;&gt;&gt;
         &lt;&lt;replace &quot;.d&quot;&gt;&gt;
             D
         &lt;&lt;/replace&gt;&gt;
+         &lt;&lt;else&gt;&gt;
+      &lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+          Not right.. try again!
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
    
       &lt;&lt;if $w.toUpperCase() is &quot;W&quot; and $i.toUpperCase() is &quot;I&quot; and $l.toUpperCase() is &quot;L&quot; and $d.toUpperCase() is &quot;D&quot;&gt;&gt;&lt;&lt;addclass &quot;.wordcontainer&quot; &quot;correct&quot;&gt;&gt; 
@@ -1866,7 +1889,7 @@ $map5
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="56" name="SM-29-2" tags="" position="575,3100" size="100,100">&lt;&lt;set $passage to &quot;SM-29-2&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-30&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM_29.2&quot; play&gt;&gt;
-&lt;main&gt;
+&lt;main&gt;&lt;div id=&quot;feedback&quot; class=&quot;feedback&quot;&gt;&lt;/div&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
 &lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 55ms&gt;&gt;I can&#39;t tell you how inspiring it is, seeing you come up with these thoughts first-hand. Better than I could have imagined.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
@@ -1930,51 +1953,111 @@ Made equal with Re _ _ _ _ _ _ _ _ _
         &lt;&lt;replace &quot;.d&quot;&gt;&gt;
          D
         &lt;&lt;/replace&gt;&gt;
+         &lt;&lt;else&gt;&gt;
+      &lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+          Not right.. try again!
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $i.toUpperCase() is  &quot;I&quot;&gt;&gt;
         &lt;&lt;replace &quot;.i&quot;&gt;&gt;
             I
         &lt;&lt;/replace&gt;&gt;
+         &lt;&lt;else&gt;&gt;
+      &lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+          Not right.. try again!
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $s.toUpperCase() is  &quot;S&quot;&gt;&gt;
         &lt;&lt;replace &quot;.s&quot;&gt;&gt;
            S
         &lt;&lt;/replace&gt;&gt;
+         &lt;&lt;else&gt;&gt;
+      &lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+          Not right.. try again!
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $t.toUpperCase() is  &quot;T&quot;&gt;&gt;
         &lt;&lt;replace &quot;.t&quot;&gt;&gt;
             T
         &lt;&lt;/replace&gt;&gt;
+         &lt;&lt;else&gt;&gt;
+      &lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+          Not right.. try again!
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $r.toUpperCase() is  &quot;R&quot;&gt;&gt;
         &lt;&lt;replace &quot;.r&quot;&gt;&gt;
             R
         &lt;&lt;/replace&gt;&gt;
+         &lt;&lt;else&gt;&gt;
+      &lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+          Not right.. try again!
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $i2.toUpperCase() is  &quot;I&quot;&gt;&gt;
         &lt;&lt;replace &quot;.i2&quot;&gt;&gt;
             I
         &lt;&lt;/replace&gt;&gt;
+         &lt;&lt;else&gt;&gt;
+      &lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+          Not right.. try again!
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $b.toUpperCase() is  &quot;B&quot;&gt;&gt;
         &lt;&lt;replace &quot;.b&quot;&gt;&gt;
             B
         &lt;&lt;/replace&gt;&gt;
+         &lt;&lt;else&gt;&gt;
+      &lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+          Not right.. try again!
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $u.toUpperCase() is  &quot;U&quot;&gt;&gt;
         &lt;&lt;replace &quot;.u&quot;&gt;&gt;
             U
         &lt;&lt;/replace&gt;&gt;
+         &lt;&lt;else&gt;&gt;
+      &lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+          Not right.. try again!
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $t2.toUpperCase() is  &quot;T&quot;&gt;&gt;
         &lt;&lt;replace &quot;.t2&quot;&gt;&gt;
             T
         &lt;&lt;/replace&gt;&gt;
+         &lt;&lt;else&gt;&gt;
+      &lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+          Not right.. try again!
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $e.toUpperCase() is  &quot;E&quot;&gt;&gt;
         &lt;&lt;replace &quot;.e&quot;&gt;&gt;
             E
         &lt;&lt;/replace&gt;&gt;
+         &lt;&lt;else&gt;&gt;
+      &lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+          Not right.. try again!
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
+      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
     &lt;&lt;/if&gt;&gt;
     
     &lt;&lt;if $d.toUpperCase() is &quot;D&quot; and $i.toUpperCase() is &quot;I&quot; and $s.toUpperCase() is &quot;S&quot; and $t.toUpperCase() is &quot;T&quot; and $r.toUpperCase() is &quot;R&quot; and $i2.toUpperCase() is &quot;I&quot; and $b.toUpperCase() is &quot;B&quot; and $u.toUpperCase() is &quot;U&quot; and $t2.toUpperCase() is &quot;T&quot; and $e.toUpperCase() is &quot;E&quot;&gt;&gt;&lt;&lt;addclass &quot;.wordcontainer&quot; &quot;correct&quot;&gt;&gt; 

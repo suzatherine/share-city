@@ -314,41 +314,6 @@ input[type=text]{
   	margin-inline-end:10px;
 }
 
-/* LANDING  */
-main.landing{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 95vh
-}
-
-.landing > h2 {
-  font-family: "Big John";
-  text-align:center;
-  margin-block-end: 0;
-}
-
-.landing > a {
-  display:flex;    
-  justify-content: center;
-  
-}
-
-.landing > a:active{
-  background-color: transparent;
-
-}
-
-.landing > a > img {
-  width: 80%;
-  max-width: 300px;
-}
-
-/* END */
-main.end > h2{
-  margin-block-end: 0;
-}
 
 /* MAP */
 	.map{
@@ -446,7 +411,7 @@ display: flex;
 /* SPEICIFCS */
 
 img.dragon{
- max-width: 150px;
+ max-width: 170px;
 }
 
 .wordcontainer{
@@ -459,9 +424,8 @@ img.dragon{
   font-size: 3rem;
 }
 
-.feedback{
-  text-align: right;
-  color: #ffe3b5
+.hide {
+	display: none;
 }
 
 
@@ -584,14 +548,11 @@ setup.checkForRepeats = (array,element) => {
 }
 
 
-:: StoryInit {"position":"100,100","size":"100,100"}
-<<cacheaudio "SM-01" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_01.mp3">>
-<<cacheaudio "SM-02A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_02_adventurerefer.mp3">>
-<<cacheaudio "SM-02B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_02_perfectgroup.mp3">>
-<<cacheaudio "SM-03" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_03.mp3">>
-<<cacheaudio "SM-04" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM-04.mp3">>
-<<cacheaudio "SM_05" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_05.mp3">>
 
+:: StoryInit {"position":"100,100","size":"100,100"}
+<<cacheaudio "SM_01" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_01.mp3">>
+<<cacheaudio "SM_04" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM-04.mp3">>
+<<cacheaudio "SM_05" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_05.mp3">>
 <<cacheaudio "SM_06" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM06.mp3">>
 <<cacheaudio "SM_07.1" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_07.1.mp3">>
 <<cacheaudio "SM_07.2" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_07.2.mp3">>
@@ -611,7 +572,7 @@ setup.checkForRepeats = (array,element) => {
 <<cacheaudio "SM_15.1" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_15.1.mp3">>
 <<cacheaudio "SM_15.2" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_15.2.mp3">>
 <<cacheaudio "SM_16" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_16.mp3">>
-<<cacheaudio "SM_17" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_17.mp3">>
+/* <<cacheaudio "SM_17" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_17.mp3">> */
 <<cacheaudio "SM_18" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_18.mp3">>
 <<cacheaudio "SM_19" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_19.mp3">>
 <<cacheaudio "SM_20" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_20.mp3">>
@@ -638,14 +599,18 @@ setup.checkForRepeats = (array,element) => {
 <<cacheaudio "SM_35C" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_35C.mp3">>
 <<cacheaudio "SM_36" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_36.mp3">>
 <<cacheaudio "SM_37" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_37.mp3">>
-<<cacheaudio "SM_38" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_38.mp3">>
+/* <<cacheaudio "SM_38" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_38.mp3">> */
 <<cacheaudio "SM_39" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_39.mp3">>
-<<cacheaudio "SM_39B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_39B.mp3">>
-<<cacheaudio "SM_40" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_40.mp3">>
+<<cacheaudio "SM_40_temp" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_40_temp.mp3">>
 <<cacheaudio "SM_41" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_41.mp3">>
-<<waitforaudio>>
 <<cacheaudio "SM_42" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM-42.mp3">>
+<<cacheaudio "group" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_02_perfectgroup.mp3">>
+<<cacheaudio "refer" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_02_adventurerefer.mp3">>
+<<cacheaudio "03" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_03.mp3">>
 <<waitforaudio>>
+
+
+
 
 
 :: header {"position":"100,225","size":"100,100"}
@@ -676,43 +641,33 @@ You have two options:
 
 :: landing {"position":"450,50","size":"100,100"}
 <<set $passage to "landing">><<audio ":all" stop>>
-<main class="landing">
+<main>
 <h2>Share Mile</h2>
- <<link "<img src='./assets/dragon2.gif'>">><<set $prevpass to $passage>><<goto "SM-01">><</link>>
 <<button "start">><<set $prevpass to $passage>><<goto "SM-01">><</button>>
 
 </main>
 
-
-
-
 :: end {"position":"100,700","size":"100,100"}
-<<set $passage to "end">><<set $endMap = setup.generateDirectionsMap([51.50919925287139, -0.07808732331249933],[51.51373546299455, -0.09011827297809721])>><<audio ":all" stop>>
-<main class="end"><h2>End location</h2>
-The Ned Hotel
-27 Poultry
-EC2R 8AJ
-
-<<button "Next">><<set $prevpass to $passage>><<goto "SM-42">><</button>>
+<<set $passage to "end">><<set $endMap = setup.generateDirectionsMap([51.51373546299455, -0.09011827297809721],[51.51373546299455, -0.09011827297809721])>><<audio ":all" stop>>
+<main>
 
 $endMap
-
+<<button "Next">><<set $prevpass to $passage>><<goto "SM-42">><</button>>
 </main>
-<<include "footerkey">>
+<<include "footerend">>
 
 
 :: footerend {"position":"99,485","size":"100,100"}
 <footer>
 <div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div>
 </footer>
-
-
 :: footerlost {"position":"100,625","size":"100,100"}
 <footer><div class="nav-wrapper "><div class="nav-item"><<button "Back">><<goto $prevpass>><</button>></div></div></footer>
 
 
-:: footerkey {"position":"225,100","size":"100,100"}
-<footer><div class="nav-wrapper"><div class="nav-item"><<button "<">><<goto $prevpass>><</button>></div><div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div></div><div class="nav-wrapper"><div class="nav-item"><<button "Show map">><<set $prevpass to $passage>><<goto "end">><</button>></div></div><div class="nav-wrapper end"><div class="nav-item"><<button "Key">><<set $prevpass to $passage>><<goto "SM-43">><</button>> </div><div class="nav-item"><<button "Try another adventure">><<set $prevpass to $passage>><<goto "SM-43adventures">><</button>></div></div></footer>
+
+:: footerkey
+<footer><div class="nav-wrapper"><div class="nav-item"><<button "<">><<goto $prevpass>><</button>></div><div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div></div><div class="nav-wrapper end"><div class="nav-item"><<button "Key">><<set $prevpass to $passage>><<goto "SM-43">><</button>> </div><div class="nav-item"><<button "Try another adventure">><<set $prevpass to $passage>><<goto "SM-43adventures">><</button>></div></div></footer>
 
 
 :: footersimple {"position":"100,353","size":"100,100"}
@@ -720,9 +675,9 @@ $endMap
 <div class="nav-item end"><<button "Take me to the end">><<set $prevpass to $passage>><<goto "lost">><</button>></div></footer>
 
 
-:: SM-01 {"position":"600,75","size":"100,100"}
+:: SM-01 {"position":"449,226","size":"100,100"}
 <<set $passage to "SM-01">><<set $nextpassage to "SM-02B">>
-<<audio ":all" stop>><<audio "SM-01" play>>
+<<audio ":all" stop>><<audio "SM_01" play>>
 <main>
 <div id="mount"></div> 
 <<timed 2s>><<replace "#mount">>
@@ -750,21 +705,21 @@ You'll be led presently through the streets of the City by a guide from one of i
 
 <<timed 57s>><<replace "#mount">>What kind of amazing experience? Well, it's a surprise. Otherwise this wouldn't be an adventure.
 
-Now - are you playing this adventure solo, or in a group?
+Now are you playing this adventure solo or with a group?
  
 <div class="menu-wrapper">
   <<button "Solo">><<set $prevpass to $passage>><<goto "SM-02A">><</button>>
   
   <<button "Group">><<set $prevpass to $passage>><<goto "SM-02B">><</button>></div>
- <</replace>><</timed>>
+   <</replace>><</timed>>
 </main>
- <<include "footer">>
+<<include "footer">>
 
-
-:: SM-02A {"position":"725,25","size":"100,100"}
+:: SM-02A {"position":"448,476","size":"100,100"}
 <<set $passage to "SM-02A">><<set $nextpassage to "SM-03.1">>
- <<audio ":all" stop>><<audio "SM-02A" play>>
+<<audio ":all" stop>><<audio "refer" play>>
 <main>
+<div id="mount"></div> 
 The adventure may sometimes refer to a group of people but don’t worry, you by yourself are plenty for a group.
 
 
@@ -773,11 +728,11 @@ The adventure may sometimes refer to a group of people but don’t worry, you by
 </main>
 <<include "footer">>
 
-
-:: SM-02B {"position":"725,150","size":"100,100"}
+:: SM-02B {"position":"448,476","size":"100,100"}
 <<set $passage to "SM-02B">><<set $nextpassage to "SM-03">>
-<<audio ":all" stop>><<audio "SM-02B" play>>
+<<audio ":all" stop>><<audio "group" play>>
 <main>
+<div id="mount"></div> 
 This is perfect for a group! If you’re playing on separate devices try to press your buttons at the same time to stay in sync.  
 
 <<button "Next">><<set $prevpass to $passage>><<goto "SM-03">><</button>>
@@ -786,11 +741,11 @@ This is perfect for a group! If you’re playing on separate devices try to pres
 </main>
 <<include "footer">>
 
-
-:: SM-03 {"position":"875,75","size":"100,100"}
+:: SM-03 {"position":"448,476","size":"100,100"}
 <<set $passage to "SM-03">><<set $nextpassage to "SM-04">>
- <<audio ":all" stop>><<audio "SM-03" play>>
+<<audio ":all" stop>><<audio "03" play>>
 <main>
+<div id="mount"></div> 
 You can always use the arrows or the replay button if you need to hear or read anything again. 
 
 I’ll provide maps when needed.
@@ -805,9 +760,8 @@ Are you ready?
 </main>
 <<include "footer">>
 
-
-:: SM-04 {"position":"1025,75","size":"100,100"}
-<<set $passage to "SM-04">><<set $nextpassage to "SM-05">> <<audio ":all" stop>><<audio "SM-04" play>>
+:: SM-04 {"position":"448,476","size":"100,100"}
+<<set $passage to "SM-04">><<set $nextpassage to "SM-05">><<audio ":all" stop>><<audio "SM_04" play>>
 <main>
 Right, let’s connect you to Mariam. She’s a City guide in the year 2042.
  
@@ -817,7 +771,6 @@ I think you might find her tour quite… inspirational.
 
 </main>
 <<include "footer">>
-
 
 :: SM-05 {"position":"450,225","size":"100,100"}
 <<set $passage to "SM-05">><<set $nextpassage to "SM-06">><<audio ":all" stop>><<audio "SM_05" play>>
@@ -850,7 +803,7 @@ I think you might find her tour quite… inspirational.
 <<include "footer">>
 
 
-:: SM-06 {"position":"425,350","size":"100,100"}
+:: SM-06 {"position":"450,350","size":"100,100"}
 <<set $passage to "SM-06">><<set $nextpassage to "SM-06map">><<audio ":all" stop>><<audio "SM_06" play>>
 <main>
 <div id="mount"></div>
@@ -879,7 +832,7 @@ I think you might find her tour quite… inspirational.
 <<include "footer">>
 
 
-:: SM-06map {"position":"575,350","size":"100,100"}
+:: SM-06map {"position":"450,350","size":"100,100"}
 <<set $passage to "SM-06map">><<set $nextpassage to "SM-07">><<set $map1 = setup.generateDirectionsMap([51.5091892366039, -0.07805916011793199],[51.50989173645571, -0.07654464172478957])>><<audio ":all" stop>>
 <main>
 Carefully cross Tower Hill St at the corner. You can walk through the park or along the sidewalk. We are heading to the
@@ -891,7 +844,6 @@ $map1
 
 </main>
 <<include "footer">>
-
 
 :: SM-07 {"position":"450,475","size":"100,100"}
 <<set $passage to "SM-07">><<set $nextpassage to "SM-08">><<audio ":all" stop>><<audio "SM_07.1" play>>
@@ -993,16 +945,12 @@ $map1
 
 :: SM-10 {"position":"450,850","size":"100,100"}
 <<set $passage to "SM-10">><<set $nextpassage to "SM-11">><<audio ":all" stop>><<audio "SM_10.1" play>><main>
-<div id="mount"></div>
-<div class = "dragonpictures">
+<div id="mount"></div><div class = "dragonpictures">
 <<timed 0.1s>><<replace "#mount">><<type 60ms>>There's a temporal guide? And it's a dragon?<</type>><</replace>><</timed>>
 
 <<timed 4s>><<replace "#mount">><<type 50ms>>What does it look like?
 
-
-
 <div class="menu-wrapper">
-  <div class="menu-wrapper">
   <<link "<img src='./assets/dragon-08.png' class='dragon'>">><<audio ":all" stop>><<audio "SM_10.2" play>>
       <<replace ".dragonpictures">>  <</replace>>
       <<timed 0.1s>>
@@ -1037,8 +985,7 @@ $map1
 </main>
 <<include "footer">>
 
-
-:: SM-10map {"position":"575,850","size":"100,100"}
+:: SM-10map {"position":"450,850","size":"100,100"}
 <<set $passage to "SM-10map">><<set $nextpassage to "SM-11">><<set $map2 = setup.generateDirectionsMap([51.50989173645571, -0.07654464172478957], [51.50961653495806, -0.07757412461863525])>><<audio ":all" stop>>
 
 <main>
@@ -1066,7 +1013,8 @@ $map2
 
 <<timed 17s>><<replace "#mount">>
 <<button "What are the 4 R's?">><<set $prevpass to $passage>><<goto "SM-12">><</button>>
-<</replace>>
+
+<<type 50ms>>What?<</type>><</replace>>
 
 
 <</timed>>
@@ -1138,14 +1086,15 @@ $map2
 
 <<timed 52s>><<replace "#mount">>
 
+Gather your group and start walking to 1 Sky Garden Walk, EC3M 8AF. Once you have walked for 2 minutes, press continue.
+
 <<button "Show map">><<set $prevpass to $passage>><<goto "SM-13map">><</button>><</replace>><</timed>>
 
 </main>
 <<include "footer">>
 
-
-:: SM-13map {"position":"575,1225","size":"100,100"}
-<<set $passage to "SM-13map">><<set $nextpassage to "SM-14-1">><<audio ":all" stop>><<set $map2 = setup.generateDirectionsMap([51.50961653495806, -0.07757412461863525], [51.509593, -0.078595])>>
+:: SM-13map {"position":"450,1225","size":"100,100"}
+<<set $passage to "SM-13map">><<set $nextpassage to "SM-14-1">><<audio ":all" stop>><<set $map2 = setup.generateDirectionsMap([51.50961653495806, -0.07757412461863525], [51.51128424081383, -0.0834840158340207])>>
 <main>
 Head out the far end of the garden. You should see a green spire with a rooster, head down that road (Bayward St).
 
@@ -1158,25 +1107,39 @@ $map2
 <<include "footer">>
 
 
-:: SM-14-1 {"position":"425,1350","size":"100,100"}
-<<set $passage to "SM-14-1">><<set $nextpassage to "SM-14-2">><<audio ":all" stop>><<audio "SM_14.1" play>>
+:: SM-14-1 {"position":"450,1350","size":"100,100"}
+<<set $passage to "SM-14-1">><<set $nextpassage to "SM-14-1map">><<audio ":all" stop>><<audio "SM_14.1" play>>
 <main>
 
 <div id="mount"></div>
 
 <<timed 0.1s>><<replace "#mount">><<type 50ms>>Okay, here's your first task.<</type>><</replace>><</timed>>
 
-<<timed 3s>><<replace "#mount">><<type 50ms>>Look for a place where people meet.
+<<timed 3s>><<replace "#mount">><<type 50ms>>Look for a place where people meet.<</type>><</replace>><</timed>>
 
-Decide between you, and try to make sure everyone has a voice in the choice.
+<<timed 6s>><<replace "#mount">><<type 50ms>>Decide between you, and try to make sure everyone has a voice in the choice.
 
-<<button "Got it!">><<set $prevpass to $passage>><<goto "SM-14-2">><</button>>
+<<button "Show map">><<set $prevpass to $passage>><<goto "SM-14-1map">><</button>>
 <</type>><</replace>><</timed>>
 </main>
 <<include "footer">>
 
+:: SM-14-1map {"position":"575,1350","size":"100,100"}
+<<set $passage to "SM-14-1map">><<set $nextpassage to "SM-14-2">><<set $map2 = setup.generateDirectionsMap([51.50961653495806, -0.07757412461863525], [51.51128424081383, -0.0834840158340207])>><<audio ":all" stop>>
+<main>
 
-:: SM-14-2 {"position":"550,1350","size":"100,100"}
+Head out the far end of the garden. You should see a green spire with a rooster, head down that road (Bayward St).
+
+$map2
+
+<<button "Done!">><<set $prevpass to $passage>><<goto "SM-14-2">><</button>>
+
+
+</main>
+<<include "footer">>
+
+
+:: SM-14-2 {"position":"575,1350","size":"100,100"}
 <<set $passage to "SM-14-2">><<set $nextpassage to "SM-14-2map">><<audio ":all" stop>><<audio "SM_14.2" play>>
 <main>
 
@@ -1184,19 +1147,21 @@ Decide between you, and try to make sure everyone has a voice in the choice.
 
 <<timed 0.5s>><<replace "#mount">><<type 70ms>>Great. Keep heading to your destination, but now keep your eyes peeled for a place where people share ideas.
 
-<<button "Continue journey">><<set $prevpass to $passage>><<goto "SM-14-2map">><</button>>
+<<button "Show map">><<set $prevpass to $passage>><<goto "SM-14-2map">><</button>>
 
 <</type>><</replace>><</timed>>
 
 </main>
 <<include "footer">>
 
+:: SM-14-2map {"position":"575,1350","size":"100,100"}
+<<set $passage to "SM-14-2map">><<set $nextpassage to "SM-14-3">><<set $map2 = setup.generateDirectionsMap([51.50961653495806, -0.07757412461863525], [51.51128424081383, -0.0834840158340207])>><<audio ":all" stop>>
+<main>
 
-:: SM-14-2map {"position":"675,1350","size":"100,100"}
-<<set $passage to "SM-14-2map">><<set $nextpassage to "SM-14-3">><<set $map2 = setup.generateDirectionsMap([51.509593, -0.078595], [51.509667, -0.080279])>><<audio ":all" stop>>
-<main>You’ll come to an intersection with a Pizza express and Hung Drawn and Quarted. Head down Great Tower St. The Brew Dog should be on you right as you walk.
+You’ll come to an intersection with a Pizza express and Hung Drawn and Quarted. Head down Great Tower St. The Brew Dog should be on you right as you walk.
+
 $map2
-*Task: Keep your eyes peeled for a place where people share ideas.
+
 <<button "Done!">><<set $prevpass to $passage>><<goto "SM-14-3">><</button>>
 
 
@@ -1204,7 +1169,8 @@ $map2
 <<include "footer">>
 
 
-:: SM-14-3 {"position":"800,1350","size":"100,100"}
+
+:: SM-14-3 {"position":"700,1350","size":"100,100"}
 <<set $passage to "SM-14-3">><<set $nextpassage to "SM-14-3map">><<audio ":all" stop>><<audio "SM_14.3" play>>
 <main>
 <div id="mount"></div>
@@ -1215,7 +1181,7 @@ $map2
 
 <<timed 6s>><<replace "#mount">><<type 60ms>>Spy a thing that connects us, no matter how different we are. It can be unusual!
 
-<<button "Continue journey">><<set $prevpass to $passage>><<goto "SM-14-3map">><</button>>
+<<button "Show map!">><<set $prevpass to $passage>><<goto "SM-14-3map">><</button>>
 
 <</type>><</replace>><</timed>>
 
@@ -1224,24 +1190,25 @@ $map2
 <<include "footer">>
 
 
-:: SM-14-3map {"position":"925,1350","size":"100,100"}
-<<set $passage to "SM-14-3map">><<set $nextpassage to "SM-14-4">><<set $map2 = setup.generateDirectionsMap([51.509667, -0.080279], [51.510655, -0.083114])>><<audio ":all" stop>>
-<main>Walk along until you see Fit Kitchen. This is where St Mary at Hill becomes Rood Lane.
+:: SM-14-3map {"position":"700,1350","size":"100,100"}
+<<set $passage to "SM-14-3map">><<set $nextpassage to "SM-14-4">><<set $map2 = setup.generateDirectionsMap([51.50961653495806, -0.07757412461863525], [51.51128424081383, -0.0834840158340207])>><<audio ":all" stop>>
+<main>
+Walk along until you see Fit Kitchen. This is where St Mary at Hill becomes Rood Lane.
+
+<<button "We're here">><<set $prevpass to $passage>><<goto "SM-14-4">><</button>>
+
 $map2
-*Task: Spy a thing that connects us, no matter how different we are. It can be unusual!
-<<button "Done!">><<set $prevpass to $passage>><<goto "SM-14-4">><</button>>
 
 </main>
 <<include "footer">>
 
-
-:: SM-14-4 {"position":"1050,1350","size":"100,100"}
+:: SM-14-4 {"position":"825,1350","size":"100,100"}
 <<set $passage to "SM-14-4">><<set $nextpassage to "SM-14-5">>
 <<audio ":all" stop>><<audio "SM_14.4" play>>
 <main>
 <div id="mount"></div>
 
-<<timed 0.1s>><<replace "#mount">><<type 70ms>>What is a thing that connects us, no matter how different we are?
+<<timed 0.1s>><<replace "#mount">><<type 70ms>>What is it?
 
 <<textarea "$connection" "">>
 
@@ -1253,7 +1220,7 @@ $map2
 <<include "footer">>
 
 
-:: SM-14-5 {"position":"1175,1350","size":"100,100"}
+:: SM-14-5 {"position":"950,1350","size":"100,100"}
 <<set $passage to "SM-14-5">><<set $nextpassage to "SM-14-5map">><<audio ":all" stop>><<audio "SM_14.5" play>>
 <main>
 <div id="mount"></div>
@@ -1271,6 +1238,11 @@ $map2
 
 
 <<timed 24s>><<replace "#mount">>
+
+Once you arrive at Sky Gardens, don’t head inside. Stop by the trees at the entrance and press continue.
+
+$map2
+
 <<button "Continue">><<set $prevpass to $passage>><<goto "SM-14-5map">><</button>>
 
 <</replace>><</timed>>
@@ -1279,13 +1251,16 @@ $map2
 </main>
 <<include "footer">>
 
+:: SM-14-5map {"position":"950,1350","size":"100,100"}
+<<set $passage to "SM-14-5map">><<set $nextpassage to "SM-15-1">><<set $map2 = setup.generateDirectionsMap([51.50961653495806, -0.07757412461863525], [51.51128424081383, -0.0834840158340207])>><<audio ":all" stop>>
+<main>
 
-:: SM-14-5map {"position":"1300,1350","size":"100,100"}
-<<set $passage to "SM-14-5map">><<set $nextpassage to "SM-15-1">><<set $map2 = setup.generateDirectionsMap([51.510655, -0.083114], [51.510930, -0.083148])>><<audio ":all" stop>>
-<main>Turn right on Rood Lane. You’ll see a large sky scraper on your left. Alongside it is a green wall. Stop there.
-$map2
-*Task: Okay, how about some other ways people could be brought together?If they don't exist yet, create them. Let your imagination run free.
+Turn right on Rood Lane. You’ll see a large sky scraper on your left. Alongside it is a green wall. Stop there.
+
 <<button "Continue">><<set $prevpass to $passage>><<goto "SM-15-1">><</button>>
+
+$map2
+
 </main>
 <<include "footer">>
 
@@ -1317,8 +1292,9 @@ $map2
 
 :: SM-15-2 {"position":"575,1475","size":"100,100"}
 <<set $passage to "SM-15-2">><<set $nextpassage to "SM-16">><<audio ":all" stop>><<audio "SM_15.2" play>>
-<main><div id="feedback" class="feedback"></div>
+<main>
 <div id="mount"></div>
+
 
 <<timed 0.1s>><<replace "#mount">><<type 60ms>>You came up with all that in a few minutes? Incredible! <</type>><</replace>><</timed>>
 
@@ -1368,61 +1344,30 @@ And it was called Re _ _ _ _ _
       <<replace ".u">>
         U
       <</replace>>
-         <<else>>
-      <<timed 0s>><<replace "#feedback">>
-          Not right.. try again!
-      <</replace>><</timed>>
-       <<timed 3s>><<replace "#feedback">>
-      <</replace>><</timed>>
   <</if>>
   <<if $n.toUpperCase() is  "N">>
       <<replace ".n">>
           N
       <</replace>>
-         <<else>>
-      <<timed 0s>><<replace "#feedback">>
-          Not right.. try again!
-      <</replace>><</timed>>
-       <<timed 3s>><<replace "#feedback">>
-      <</replace>><</timed>>
   <</if>>
   <<if $i.toUpperCase() is  "I">>
       <<replace ".i">>
           I
       <</replace>>
-         <<else>>
-      <<timed 0s>><<replace "#feedback">>
-          Not right.. try again!
-      <</replace>><</timed>>
-       <<timed 3s>><<replace "#feedback">>
-      <</replace>><</timed>>
   <</if>>
   <<if $t.toUpperCase() is  "T">>
       <<replace ".t">>
           T
       <</replace>>
-         <<else>>
-      <<timed 0s>><<replace "#feedback">>
-          Not right.. try again!
-      <</replace>><</timed>>
-       <<timed 3s>><<replace "#feedback">>
-      <</replace>><</timed>>
   <</if>>
    <<if $e.toUpperCase() is  "E">>
       <<replace ".e">>
           E
       <</replace>>
-       <<else>>
-      <<timed 0s>><<replace "#feedback">>
-          Not right.. try again!
-      <</replace>><</timed>>
-       <<timed 3s>><<replace "#feedback">>
-      <</replace>><</timed>>
   <</if>>
     <<if $u.toUpperCase() is "U" and $n.toUpperCase() is "N" and $i.toUpperCase() is "I" and $t.toUpperCase() is "T" and $e.toUpperCase() is "E">><<addclass ".wordcontainer" "correct">> 
    	 <<timed 3s>><<set $prevpass to $passage>><<goto "SM-16">>  <</timed>>
   <</if>>
-  
 <</button>>
 
 
@@ -1468,7 +1413,6 @@ And it was called Re _ _ _ _ _
   <</button>>
   </div>
 </div>
-- make sure all boxes are empty to get a clue -
 <</replace>><</timed>>
 
 
@@ -1479,7 +1423,7 @@ And it was called Re _ _ _ _ _
 
 
 :: SM-16 {"position":"450,1600","size":"100,100"}
-<<set $passage to "SM-16">><<set $nextpassage to "SM-18">><<audio ":all" stop>><<audio "SM_16" play>>
+<<set $passage to "SM-16">><<set $nextpassage to "SM-17">><<audio ":all" stop>><<audio "SM_16" play>>
 <main><div id="mount"></div>
 <<timed 0.1s>><<replace "#mount">><<type 60ms>>That's right! Reunite is a key element in every Folkmoot decision.<</type>><</replace>><</timed>>
 
@@ -1505,7 +1449,7 @@ And it was called Re _ _ _ _ _
 
 :: SM-17 {"position":"450,1725","size":"100,100"}
 <<set $passage to "SM-17">><<set $nextpassage to "SM-18">>
-<<audio ":all" stop>><<audio "SM_17" play>> 
+<<audio ":all" stop>>
 <main><div id="mount"></div>
 
 What was it like?
@@ -1525,7 +1469,7 @@ What was it like?
 
 
 :: SM-18 {"position":"450,1850","size":"100,100"}
-<<set $passage to "SM-18">><<set $nextpassage to "SM-19">><<audio ":all" stop>><<audio "SM_18" play>>
+<<set $passage to "SM-18">><<set $nextpassage to "SM-18map">><<audio ":all" stop>><<audio "SM_18" play>>
 <main>
 <div id="mount"></div>
 <<timed 0.1s>><<replace "#mount">><<type 50ms>>My mum said The Sky Garden used to be a beautifully manicured green space, towering above the rest of the city. <</type>><</replace>><</timed>>
@@ -1542,23 +1486,30 @@ What was it like?
 
 <<timed 40s>><<replace "#mount">><<type 60ms>>I have an idea. Let's not disturb our gardeners while they're at work.<</type>><</replace>><</timed>>
 
-<<timed 46s>><<replace "#mount">><<type 50ms>>I've got a task for you while we head to our next stop.<</type>><</replace>><</timed>>
+<<timed 46s>><<replace "#mount">><<type 50ms>>I've got a task for you while we head to our next stop.
 
-<<timed 50s>><<replace "#mount">>
+<<button "Show map">><<set $prevpass to $passage>><<goto "SM-18map">><</button>><</type>><</replace>><</timed>>
 
-<<button "Let's Here it!">><<set $prevpass to $passage>><<goto "SM-19">><</button>>
 
-<</replace>><</timed>>
+</main>
+<<include "footer">>
+
+:: SM-18map {"position":"450,1850","size":"100,100"}
+<<set $passage to "SM-18map">><<set $nextpassage to "SM-19">><<set $map3 = setup.generateDirectionsMap([51.51130895157691, -0.08317379262513992],[51.512331073530795, -0.08256056378193831] )>><<audio ":all" stop>>
+<main>
+Head to Lime Street, EC3V 1LT. Once you've been walking for 1 minute, press Continue.
+
+<<button "Continue">><<set $prevpass to $passage>><<goto "SM-19">><</button>>
+
+$map3
 
 </main>
 <<include "footer">>
 
 
 :: SM-19 {"position":"450,1975","size":"100,100"}
-<<set $passage to "SM-19">><<audio ":all" stop>><<audio "SM_19" play>><<set $nextpassage to "SM-20">>
+<<set $passage to "SM-19">><<audio ":all" stop>><<audio "SM_19" play>><<set $nextpassage to "SM-20">><<set $map4 = setup.generateDirectionsMap([51.51128424081383, -0.0834840158340207],[51.51276230554172, -0.0835858516347241] )>>
 <main>
-- Walk along the green wall to come out to Philpot Lane -
-
 <div id="mount"></div>
 <<timed 0.1s>><<replace "#mount">><<type 60ms>>I'm sure you're aware how crucial the 20's are for humanity. A time when decisive action is needed, from all of us.<</type>><</replace>><</timed>>
 
@@ -1572,6 +1523,8 @@ What was it like?
 
 <<timed 25s>><<replace "#mount">>Decide together and press Continue when you've found it.
 
+$map4
+
 <<button "Continue">><<set $prevpass to $passage>><<goto "SM-20">><</button>><</replace>><</timed>>
 
 </main>
@@ -1581,8 +1534,17 @@ What was it like?
 :: SM-20 {"position":"450,2100","size":"100,100"}
 <<set $passage to "SM-20">><<set $nextpassage to "SM-21">><<audio ":all" stop>><<audio "SM_20" play>>
 <main>
-<div id="mount"></div><<timed 0.1s>><<replace "#mount">><<type 50ms>>What do you like about this bit of greenery? What could be better?<</type>><</replace>><</timed>><<timed 5s>><<replace "#mount">><<type 40ms>>Discuss it together and press Continue when you have some thoughts you'd like to share.<</type>><</replace>><</timed>><<timed 10s>>
-<div class="greenanswer"><<button "Continue">><<replace ".greenanswer">>
+<div id="mount"></div>
+
+<<timed 0.1s>><<replace "#mount">><<type 50ms>>What do you like about this bit of greenery? What could be better?<</type>><</replace>><</timed>>
+
+<<timed 5s>><<replace "#mount">><<type 40ms>>Discuss it together and press Continue when you have some thoughts you'd like to share.<</type>><</replace>><</timed>>
+
+<<timed 10s>>
+
+<div class="greenanswer">
+<<button "Continue">>
+	<<replace ".greenanswer">>
 What we like about the green space:
 <<textarea "$likeaboutgreenspace" "">>
 
@@ -1625,6 +1587,9 @@ What we don't like about green space:
 <<timed 13s>><<replace "#mount">><<type 50ms>>We'll share them when we reach Leadenhall.<</type>><</replace>><</timed>>
 
 <<timed 18s>><<replace "#mount">>
+
+What will you call your green space? How will you make it beneficial to Londoners? Discuss as you head to Lime St, EC3V 1LT. Stop at the entrance to Leadenhall.
+
 <<button "Show map">><<set $prevpass to $passage>><<goto "SM-21map">><</button>>
 
 <</replace>><</timed>>
@@ -1634,14 +1599,15 @@ What we don't like about green space:
 </main>
 <<include "footer">>
 
-
-:: SM-21map {"position":"575,2225","size":"100,100"}
-<<set $passage to "SM-21map">><<set $nextpassage to "SM-22-1">><<set $map4 = setup.generateDirectionsMap([51.511071, -0.084081], [51.51276230554172, -0.0835858516347241] )>><<audio ":all" stop>>
+:: SM-21map {"position":"450,2225","size":"100,100"}
+<<set $passage to "SM-21map">><<set $nextpassage to "SM-22-1">><<set $map4 = setup.generateDirectionsMap([51.51128424081383, -0.0834840158340207], [51.51276230554172, -0.0835858516347241] )>><<audio ":all" stop>>
 <main>
-On Philpot Lane turn Right. Carefully cross Fenchurch St and continue forward as the street changes to Lime St. Up ahead on the left you’ll see some red bollards take a Left there, on to Lime St Passage. You’ll find yourself in a market.
-$map4
-- What will you call your green space? How will you make it beneficial to Londoners?
+Walk along the green wall to come out to Philpot Lane, take a right there. Carefully cross Fenchurch St and continue forward as the street changes to Lime St. Up ahead on the left you’ll see some red bollards take a Left there, on to Lime St Passage. You’ll find yourself in a market.
+
 <<button "We're here">><<set $prevpass to $passage>><<goto "SM-22-1">><</button>>
+
+$map4
+
 </main>
 <<include "footer">>
 
@@ -1800,7 +1766,7 @@ Yep, the second R's Re _ _ _ _
     <</if>>
   <</button>>
 	</div>
-- make sure all boxes are empty to get a clue -
+
 <</replace>><</timed>>
 
 
@@ -1903,7 +1869,7 @@ Yep, the second R's Re _ _ _ _
 
 :: SM-27 {"position":"450,2850","size":"100,100"}
 <<set $passage to "SM-27">><<set $nextpassage to "SM-28">>
-<<audio ":all" stop>> 
+<<audio ":all" stop>>
 <main>
 <div id="mount"></div>
 
@@ -1953,6 +1919,9 @@ Yep, the second R's Re _ _ _ _
 <<timed 95.5s>><<replace "#mount">><<type 50ms>>We'll share the ideas at the next stop.<</type>><</replace>><</timed>>
 
 <<timed 99s>><<replace "#mount">>
+
+Go to Lloyds Building, 113-116 Leadenhall St, London EC3A 4AX. Meet at the entrance and press Continue.
+
 <<button "Show map">><<set $prevpass to $passage>><<goto "SM-28map">><</button>>
 
 <</replace>><</timed>>
@@ -1963,7 +1932,7 @@ Yep, the second R's Re _ _ _ _
 <<include "footer">>
 
 
-:: SM-28map {"position":"575,2975","size":"100,100"}
+:: SM-28map {"position":"450,2975","size":"100,100"}
 <<set $passage to "SM-28map">><<set $nextpassage to "SM-29-1">><<set $map5 = setup.generateDirectionsMap([51.51276230554172, -0.0835858516347241], [51.512866619438405, -0.08200961933725447] )>><<audio ":all" stop>>
 <main>
 
@@ -2204,8 +2173,8 @@ Made equal with Re _ _ _ _ _ _ _ _ _
     
     <</button>>
 	</div>
-  <<audio "SM_28" play>>
-  - make sure all boxes are empty to get a clue -
+  
+  
   <</replace>><</timed>>
 
 
@@ -2319,6 +2288,7 @@ We want a London that is truly free. Where citizens of all backgrounds meet and 
 :: SM-33 {"position":"450,3600","size":"100,100"}
 <<set $passage to "SM-33">><<set $nextpassage to "SM-34">>
 <<audio ":all" stop>><<audio "SM_33" play>>
+/* TODO NEED TO CHECK CAPTIONS  */
 
 <main>
 <div id="mount"></div>
@@ -2342,7 +2312,7 @@ M: They were brilliant.<</type>><</replace>><</timed>>
 
 <<timed 34s>><<replace "#mount">><<type 50ms>>F: Excellent. Though not surprising. This group is clearly a special bunch. <</type>><</replace>><</timed>>
 
-<<timed 39s>><<replace "#mount">><<type 50ms>>F: Sorry for messing about with the space-time continuum, folks. But, would you have believed us if we’d just told you you were tomorrow’s revolutionaries?<</type>><</replace>><</timed>>
+<<timed 39s>><<replace "#mount">><<type 50ms>>Sorry for messing about with the space-time continuum, folks. But, would you have believed us if we’d just told you you were tomorrow’s revolutionaries?<</type>><</replace>><</timed>>
 
 <<timed 49s>><<replace "#mount">><<type 50ms>>M: It had to come from you.
 
@@ -2350,7 +2320,7 @@ F: With the help of a guide of course.<</type>><</replace>><</timed>>
 
 <<timed 55s>><<replace "#mount">><<type 60ms>>M: I just led you to your own ideas. A plan of action for you to use in 2022. And that fourth R to decide on together as you head to your final stop...<</type>><</replace>><</timed>>
 
-<<timed 61s>><<replace "#mount">><<type 50ms>>And an entirely new adventure.<</type>><</replace>><</timed>>
+<<timed 61s>><<replace "#mount">><<type 50ms>>F: And an entirely new adventure.<</type>><</replace>><</timed>>
 
 <<timed 68s>><<replace "#mount">><<type 60ms>>M: It’s been a pleasure guiding you. Hope you take those exciting discussions and ideas and energy with you in 2022. <</type>><</replace>><</timed>>
 
@@ -2371,8 +2341,7 @@ F: With the help of a guide of course.<</type>><</replace>><</timed>>
 
 
 :: SM-34 {"position":"450,3725","size":"100,100"}
-<<set $passage to "SM-34">><<set $nextpassage to "SM-29-1">>
-<<set $nextpassage to $passage>>
+<<set $passage to "SM-34">><<set $nextpassage to $passage>>
  <<audio ":all" stop>>
 <main>
 <h2>Things to play while you walk</h2>
@@ -2392,12 +2361,7 @@ F: With the help of a guide of course.<</type>><</replace>><</timed>>
   <<goto "SM-35C">>
 <</button>>
 
-<<button "We're at the Ned">>
-  <<set $prevpass to $passage>>
-  <<goto "SM-37">>
-<</button>>
 
-<<include "walkmap">>
 
 </main>
 <<include "footer">>
@@ -2407,13 +2371,18 @@ F: With the help of a guide of course.<</type>><</replace>><</timed>>
 <<set $passage to "SM-35A">><<set $nextpassage to "SM-34">>
 <<audio ":all" stop>><<audio "SM_35A" play>><main>
 <h2>Reunite.</h2>
-<<include "walkmap">>
 <div id="mount"></div>
+<<include "walkmap">>
 
-<<timed 2s>><<replace "#mount">><<type 70ms>>
+
+<<timed 0.1s>><<replace "#mount">><<type 70ms>>
+
 Turn to the person beside you. Say hi! Now share two happy memories.<</type>><</replace>><</timed>>
+
 <<timed 8s>><<replace "#mount">><<type 50ms>>Take your time and remember, it doesn't have to be perfect or even deep.<</type>><</replace>><</timed>>
+
 <<timed 14s>><<replace "#mount">>Take your time and remember, it doesn't have to be perfect or even deep.
+
 <<button "Okay, done">>
   <<set $prevpass to $passage>>
   <<goto "SM-34">>
@@ -2432,9 +2401,13 @@ Turn to the person beside you. Say hi! Now share two happy memories.<</type>><</
 <div id="mount"></div>
 <<include "walkmap">>
 <<timed 0.1s>><<replace "#mount">><<type 60ms>>
+
 As a group, list all the natural living objects you see and one positive thing about them.<</type>><</replace>><</timed>>
+
 <<timed 7.5s>><<replace "#mount">><<type 60ms>>Yes, even pigeons! Maybe there's more than you thought?<</type>><</replace>><</timed>>
+
 <<timed 13s>><<replace "#mount">>Yes, even pigeons! Maybe there's more than you thought?
+
 <<button "Okay, done">>
   <<set $prevpass to $passage>>
   <<goto "SM-34">>
@@ -2455,8 +2428,11 @@ As a group, list all the natural living objects you see and one positive thing a
 <<include "walkmap">>
 <<timed 0.1s>><<replace "#mount">><<type 60ms>>
 Remember when I told you the Tower of London was now a communal resource?<</type>><</replace>><</timed>>
+
 <<timed 6s>><<replace "#mount">><<type 60ms>>Take a look at some of the buildings you pass. What else could they be used for?<</type>><</replace>><</timed>>
+
 <<timed 13s>><<replace "#mount">>Take a look at some of the buildings you pass. What else could they be used for?
+
 <<button "Okay, done">>
   <<set $prevpass to $passage>>
   <<goto "SM-34">>
@@ -2470,8 +2446,8 @@ Remember when I told you the Tower of London was now a communal resource?<</type
 <<include "footer">>
 
 
-:: walkmap {"position":"725,3850","size":"100,100"}
-<<set $mapFinal = setup.generateDirectionsMap([51.512866619438405, -0.08200961933725447], [51.513529, -0.090137] )>>
+:: walkmap {"position":"575,3850","size":"100,100"}
+<<set $mapFinal = setup.generateDirectionsMap([51.512866619438405, -0.08200961933725447], [51.51364646520217, -0.0901221047815195] )>>
 $mapFinal
 <<button "Show directions">>
 	<<toggleclass "#text" "hide">>
@@ -2479,6 +2455,37 @@ $mapFinal
 <span id="text" class="hide">//Head the same direction as before through the pedestrian walkway. You’ll come to a main road, Leadenhall St. Take a left here, about 6 minutes up the road.
 When you get to Bank Station, head up Princess St. When you come to the big intersection, Princess St will be the second street on your right. 
 You’ll want to cross Princes St and The Ned will be half way up the road. //</span>
+
+
+
+
+
+
+:: SM-36 {"position":"450,3975","size":"100,100"}
+<<set $passage to "SM-36">><<set $nextpassage to "SM-37">><<audio ":all" stop>><<audio "SM_36" play>>
+<main>
+<<include "walkmap">>
+<div id="mount"></div>
+<<timed 0.1s>><<replace "#mount">><<type 50ms>>Course! You've got enough of your own ideas to discuss.<</type>><</replace>><</timed>>
+
+<<timed 4s>><<replace "#mount">><<type 50ms>>Just press continue when you reach Ned to head to your next adventure.<</type>><</replace>><</timed>>
+
+<<timed 9s>><<replace "#mount">>Just press Continue when you reach Ned to head to your next adventure.
+
+
+$map6
+<<button "We're here">>
+  <<set $prevpass to $passage>>
+  <<goto "SM-37">>
+<</button>>
+
+
+<</replace>><</timed>>
+
+
+
+</main>
+<<include "footer">>
 
 
 :: SM-37 {"position":"450,4100","size":"100,100"}
@@ -2534,7 +2541,8 @@ What is your fourth R?
 
 :: SM-39A {"position":"375,4350","size":"100,100"}
 <<set $passage to "SM-39A">><<set $nextpassage to "SM-40">>
-<<audio ":all" stop>><<audio "SM_39" play>>
+<<audio ":all" stop>>
+<<audio "SM_39" play>>
 
 <main>
 <div id="mount"></div>
@@ -2555,7 +2563,8 @@ What is your fourth R?
 
 :: SM-39B {"position":"525,4350","size":"100,100"}
 <<set $passage to "SM-39B">><<set $nextpassage to "SM-40">>
-<<audio ":all" stop>><<audio "SM_39B" play>> 
+/* <<audio ":all" stop>><<audio "SM_39B" play>> */
+/* TODO NO AUDIO */
 
 <main>
 <div id="mount"></div>
@@ -2577,32 +2586,61 @@ That’s OK - Londinium wasn’t built in a day, and nor is any movement. But wi
 
 
 :: SM-40 {"position":"450,4475","size":"100,100"}
-<<set $passage to "SM-40">><<set $nextpassage to "SM-42">>
+<<set $passage to "SM-40">><<set $nextpassage to "SM-41">>
 <<audio ":all" stop>><<audio "SM_40" play>>
-<main><div id="mount"></div>
-<<timed 0.1s>><<replace "#mount">><<type 50ms>>So... I guess this is it... the end...<</type>><</replace>><</timed>>
+/* TODO CAPTION */
+<main>
+<div id="mount"></div>
 
-<<timed 3s>><<replace "#mount">><<type 50ms>>Oh shit, I’m late for my next tour! Hope these ones know what decade they’re in!<</type>><</replace>><</timed>>
+So... I guess this is it... the end...
 
-<<timed 10s>><<replace "#mount">><<type 50ms>>It's been a dream come true meeting you and sharing ideas. Can’t wait to find out what you do with the next 20 years!<</type>><</replace>><</timed>>
+Oh shit, I’m late for my next tour! Hope these ones know what decade they’re in!
 
-<<timed 20s>><<replace "#mount">>Felix: Quite the character, Mariam Samir. Fantastic things in store for her.
+It's been a dream come true meeting you and sharing ideas. Can’t wait to find out what you do with the next 20 years!
+
+Quite the character, Mariam Samir. Fantastic things in store for her.
+
 <<button "Like what?">>
   <<set $prevpass to $passage>>
   <<goto "SM-41">>
 <</button>>
-<</replace>><</timed>>
 
 </main>
 <<include "footer">>
 
 
-:: SM-42 {"position":"450,4750","size":"100,100"}
-<<set $passage to "SM-42">><<set $nextpassage to "SM-43">><<set $map6 = setup.generateDirectionsMap([], [])>><<audio ":all" stop>><<audio "SM_42" play>>
+:: SM-41 {"position":"450,4600","size":"100,100"}
+<<set $passage to "SM-41">><<set $nextpassage to "end">>
+<<audio ":all" stop>><<audio "SM_41" play>>
+
+/* TODO NO CAPTION */
 <main>
 <div id="mount"></div>
+
 Don’t be silly, of course I’m not telling you. It’s not like I’d reveal her future job contains the initials P and M.
 
+I hope you’ve enjoyed your Maze adventure and been left with food for thought.
+
+Now it’s time to experience something very different - So find and step through the next door to see what more we have in store!
+
+Catch you soon!
+
+
+<<button "end">><<goto "end">><</button>>
+
+
+</main>
+<<include "footer">>
+
+
+
+
+
+
+:: SM-42 {"position":"520,2113","size":"100,100"}
+<<set $passage to "SM-31">><<set $nextpassage to "SM-43">><<set $map6 = setup.generateDirectionsMap([], [])>><<audio ":all" stop>><<audio "SM_42" play>>
+<main>
+<div id="mount"></div>
 Now it’s time to experience something very different -
 
 So let’s find the next door to see what more we have in store!
@@ -2615,10 +2653,9 @@ Once inside the front lobby, show this <<button "key">><<set $prevpass to $passa
 <<include "footer">>
 
 
-:: SM-43 {"position":"450,4875","size":"100,100"}
-<<set $passage to "SM-43">><<set $nextpassage to "SM-32adventures">>
-<<audio ":all" stop>>
-/* <<audio "SM-32" play>> */
+:: SM-43 {"position":"520,2113","size":"100,100"}
+<<set $passage to "SM-43">><<set $nextpassage to "SM-32adventures">><<audio ":all" stop>>
+
 <main>
 <div class="key-wrapper glowing"><img src="./assets/TheNed.png"></div>
 
@@ -2627,8 +2664,7 @@ Once inside the front lobby, show this <<button "key">><<set $prevpass to $passa
 </main>
 <<include "footerkey">>
 
-
-:: SM-43adventures {"position":"575,4875","size":"100,100"}
+:: SM-43adventures {"position":"520,2113","size":"100,100"}
 <<set $passage to "SM-43adventures">><<set $nextpassage to "SM-23A">>
 <<audio ":all" stop>>
 <main><h3>Start another adventure...</h3><div class="choices"><div class="adventure-wrapper"><h3>Animals in the City </h3><div class="adv-item"><div>Family Focused
@@ -2647,8 +2683,7 @@ Once inside the front lobby, show this <<button "key">><<set $prevpass to $passa
 </main>
 <<include "footerkey">>
 
-
-:: SM-44A {"position":"700,5000","size":"100,100"}
+:: SM-44A {"position":"520,2113","size":"100,100"}
 <<set $passage to "SM-33A">><<set $nextpassage to "SM-23A">><<set $map = setup.generateDirectionsMap([51.513762170360934, -0.09012900193060293], [51.51202253520238, -0.09087182883647466])>>
 <main><h2>Animals in the City</h2>
 $map
@@ -2656,8 +2691,7 @@ $map
 </main>
 <<include "footerkey">>
 
-
-:: SM-44B {"position":"575,5000","size":"100,100"}
+:: SM-44B {"position":"520,2113","size":"100,100"}
 <<set $passage to "SM-33A">><<set $nextpassage to "SM-23A">><<set $map = setup.generateDirectionsMap([51.513762170360934, -0.09012900193060293], [51.51703423999644, -0.09001394713067319])>>
 <main><h2>Epic Investment (18+) </h2>
 $map
@@ -2665,13 +2699,10 @@ $map
 </main>
 <<include "footerkey">>
 
-
-:: SM-44C {"position":"450,5000","size":"100,100"}
+:: SM-44C {"position":"520,2113","size":"100,100"}
 <<set $passage to "SM-33A">><<set $nextpassage to "SM-23A">><<set $map = setup.generateDirectionsMap([51.513762170360934, -0.09012900193060293], [51.516979231359244, -0.09272083067021165])>>
 <main><h2>Ghost Hunting with Brian  </h2>
 $map
 
 </main>
 <<include "footerkey">>
-
-

@@ -98,7 +98,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://98D2404A-3A9E-49BD-99D2-23D5E1FCC2A4// --><tw-storydata name="Share Mile" startnode="5" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="98D2404A-3A9E-49BD-99D2-23D5E1FCC2A4" zoom="0.6" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+	<tw-storydata name="Share Mile" startnode="5" creator="Twine" creator-version="2.5.1" format="SugarCube" format-version="2.36.1" ifid="98D2404A-3A9E-49BD-99D2-23D5E1FCC2A4" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
 
 @font-face {
   font-family: "Big John";
@@ -399,41 +399,6 @@ input[type=text]{
   	margin-inline-end:10px;
 }
 
-/* LANDING  */
-main.landing{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 95vh
-}
-
-.landing > h2 {
-  font-family: "Big John";
-  text-align:center;
-  margin-block-end: 0;
-}
-
-.landing > a {
-  display:flex;    
-  justify-content: center;
-  
-}
-
-.landing > a:active{
-  background-color: transparent;
-
-}
-
-.landing > a > img {
-  width: 80%;
-  max-width: 300px;
-}
-
-/* END */
-main.end > h2{
-  margin-block-end: 0;
-}
 
 /* MAP */
 	.map{
@@ -542,11 +507,6 @@ img.dragon{
 
 .correct{
   font-size: 3rem;
-}
-
-.feedback{
-  text-align: right;
-  color: #ffe3b5
 }
 
 
@@ -737,29 +697,25 @@ You have two options:
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="landing" tags="" position="450,50" size="100,100">&lt;&lt;set $passage to &quot;landing&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
-&lt;main class=&quot;landing&quot;&gt;
+&lt;main&gt;
 &lt;h2&gt;Share Mile&lt;/h2&gt;
- &lt;&lt;link &quot;&lt;img src=&#39;./assets/dragon2.gif&#39;&gt;&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-01&quot;&gt;&gt;&lt;&lt;/link&gt;&gt;
 &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-01&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="6" name="end" tags="" position="100,700" size="100,100">&lt;&lt;set $passage to &quot;end&quot;&gt;&gt;&lt;&lt;set $endMap = setup.generateDirectionsMap([51.50919925287139, -0.07808732331249933],[51.51373546299455, -0.09011827297809721])&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
-&lt;main class=&quot;end&quot;&gt;&lt;h2&gt;End location&lt;/h2&gt;
-The Ned Hotel
-27 Poultry
-EC2R 8AJ
-
-&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-42&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="6" name="end" tags="" position="100,700" size="100,100">&lt;&lt;set $passage to &quot;end&quot;&gt;&gt;&lt;&lt;set $endMap = setup.generateDirectionsMap([51.51373546299455, -0.09011827297809721],[51.51373546299455, -0.09011827297809721])&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+&lt;main&gt;
 
 $endMap
-
+&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-42&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footerkey&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="footerend" tags="" position="99,485" size="100,100">&lt;footer&gt;
+&lt;&lt;include &quot;footerend&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="footerend" tags="" position="99,485" size="100,100">&lt;footer&gt;
 &lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Start again&quot;&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
-&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="8" name="footerlost" tags="" position="100,625" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-wrapper &quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Back&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="9" name="footerkey" tags="" position="225,100" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-wrapper&quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;&lt;&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Start again&quot;&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;nav-wrapper&quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Show map&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;end&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;nav-wrapper end&quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Key&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-43&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Try another adventure&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-43adventures&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="10" name="footersimple" tags="" position="100,353" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-item replay&quot;&gt;&lt;&lt;button &quot;Replay&quot;&gt;&gt;&lt;&lt;goto $passage&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;
+&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="8" name="footerlost" tags="" position="100,625" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-wrapper &quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Back&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="9" name="footerkey" tags="" position="225,100" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-wrapper&quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;&lt;&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Start again&quot;&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;nav-wrapper end&quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Key&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-43&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Try another adventure&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-43adventures&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="10" name="footersimple" tags="" position="100,353" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-item replay&quot;&gt;&lt;&lt;button &quot;Replay&quot;&gt;&gt;&lt;&lt;goto $passage&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;
 &lt;div class=&quot;nav-item end&quot;&gt;&lt;&lt;button &quot;Take me to the end&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;lost&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="11" name="SM-01" tags="" position="600,75" size="100,100">&lt;&lt;set $passage to &quot;SM-01&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-02B&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM-01&quot; play&gt;&gt;
 &lt;main&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt; 
+
+
 &lt;&lt;timed 2s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
   Felix, keeper of the Maze, and small dragon, here at your service.
   &lt;&lt;/replace&gt;&gt;
@@ -796,6 +752,7 @@ Now - are you playing this adventure solo, or in a group?
  &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="SM-02A" tags="" position="725,25" size="100,100">&lt;&lt;set $passage to &quot;SM-02A&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-03.1&quot;&gt;&gt;
  &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM-02A&quot; play&gt;&gt;
 &lt;main&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt; 
 The adventure may sometimes refer to a group of people but don’t worry, you by yourself are plenty for a group.
 
 
@@ -805,6 +762,7 @@ The adventure may sometimes refer to a group of people but don’t worry, you by
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="SM-02B" tags="" position="725,150" size="100,100">&lt;&lt;set $passage to &quot;SM-02B&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-03&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM-02B&quot; play&gt;&gt;
 &lt;main&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt; 
 This is perfect for a group! If you’re playing on separate devices try to press your buttons at the same time to stay in sync.  
 
 &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-03&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
@@ -814,6 +772,7 @@ This is perfect for a group! If you’re playing on separate devices try to pres
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="SM-03" tags="" position="875,75" size="100,100">&lt;&lt;set $passage to &quot;SM-03&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-04&quot;&gt;&gt;
  &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM-03&quot; play&gt;&gt;
 &lt;main&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt; 
 You can always use the arrows or the replay button if you need to hear or read anything again. 
 
 I’ll provide maps when needed.
@@ -1248,8 +1207,9 @@ $map2
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="SM-15-2" tags="" position="575,1475" size="100,100">&lt;&lt;set $passage to &quot;SM-15-2&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-16&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM_15.2&quot; play&gt;&gt;
-&lt;main&gt;&lt;div id=&quot;feedback&quot; class=&quot;feedback&quot;&gt;&lt;/div&gt;
+&lt;main&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
 
 &lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 60ms&gt;&gt;You came up with all that in a few minutes? Incredible! &lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
@@ -1299,61 +1259,30 @@ And it was called Re _ _ _ _ _
       &lt;&lt;replace &quot;.u&quot;&gt;&gt;
         U
       &lt;&lt;/replace&gt;&gt;
-         &lt;&lt;else&gt;&gt;
-      &lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
-          Not right.. try again!
-      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
-      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
   &lt;&lt;/if&gt;&gt;
   &lt;&lt;if $n.toUpperCase() is  &quot;N&quot;&gt;&gt;
       &lt;&lt;replace &quot;.n&quot;&gt;&gt;
           N
       &lt;&lt;/replace&gt;&gt;
-         &lt;&lt;else&gt;&gt;
-      &lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
-          Not right.. try again!
-      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
-      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
   &lt;&lt;/if&gt;&gt;
   &lt;&lt;if $i.toUpperCase() is  &quot;I&quot;&gt;&gt;
       &lt;&lt;replace &quot;.i&quot;&gt;&gt;
           I
       &lt;&lt;/replace&gt;&gt;
-         &lt;&lt;else&gt;&gt;
-      &lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
-          Not right.. try again!
-      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
-      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
   &lt;&lt;/if&gt;&gt;
   &lt;&lt;if $t.toUpperCase() is  &quot;T&quot;&gt;&gt;
       &lt;&lt;replace &quot;.t&quot;&gt;&gt;
           T
       &lt;&lt;/replace&gt;&gt;
-         &lt;&lt;else&gt;&gt;
-      &lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
-          Not right.. try again!
-      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
-      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
   &lt;&lt;/if&gt;&gt;
    &lt;&lt;if $e.toUpperCase() is  &quot;E&quot;&gt;&gt;
       &lt;&lt;replace &quot;.e&quot;&gt;&gt;
           E
       &lt;&lt;/replace&gt;&gt;
-       &lt;&lt;else&gt;&gt;
-      &lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
-          Not right.. try again!
-      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
-       &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;
-      &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
   &lt;&lt;/if&gt;&gt;
     &lt;&lt;if $u.toUpperCase() is &quot;U&quot; and $n.toUpperCase() is &quot;N&quot; and $i.toUpperCase() is &quot;I&quot; and $t.toUpperCase() is &quot;T&quot; and $e.toUpperCase() is &quot;E&quot;&gt;&gt;&lt;&lt;addclass &quot;.wordcontainer&quot; &quot;correct&quot;&gt;&gt; 
    	 &lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-16&quot;&gt;&gt;  &lt;&lt;/timed&gt;&gt;
   &lt;&lt;/if&gt;&gt;
-  
 &lt;&lt;/button&gt;&gt;
 
 
@@ -1463,7 +1392,7 @@ What was it like?
 
 &lt;&lt;timed 46s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;I&#39;ve got a task for you while we head to our next stop.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 50s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+&lt;&lt;timed 50s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;
 
 &lt;&lt;button &quot;Let&#39;s Here it!&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SM-19&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
@@ -2232,11 +2161,8 @@ F: With the help of a guide of course.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="63" name="SM-35A" tags="" position="325,3850" size="100,100">&lt;&lt;set $passage to &quot;SM-35A&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-34&quot;&gt;&gt;
-&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM_35A&quot; play&gt;&gt;&lt;main&gt;
-&lt;h2&gt;Reunite.&lt;/h2&gt;
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM_35A&quot; play&gt;&gt;&lt;main&gt;&lt;h2&gt;Reunite.&lt;/h2&gt;&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 &lt;&lt;include &quot;walkmap&quot;&gt;&gt;
-&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-
 &lt;&lt;timed 2s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 70ms&gt;&gt;
 Turn to the person beside you. Say hi! Now share two happy memories.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 8s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Take your time and remember, it doesn&#39;t have to be perfect or even deep.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
@@ -2250,8 +2176,7 @@ Turn to the person beside you. Say hi! Now share two happy memories.&lt;&lt;/typ
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="64" name="SM-35B" tags="" position="450,3850" size="100,100">&lt;&lt;set $passage to &quot;SM-35B&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-34&quot;&gt;&gt;
-&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM_35B&quot; play&gt;&gt;&lt;main&gt;
-&lt;h2&gt;Rewild.&lt;/h2&gt;
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM_35B&quot; play&gt;&gt;&lt;main&gt;&lt;h2&gt;Rewild.&lt;/h2&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 &lt;&lt;include &quot;walkmap&quot;&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 60ms&gt;&gt;
@@ -2268,9 +2193,7 @@ As a group, list all the natural living objects you see and one positive thing a
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="65" name="SM-35C" tags="" position="575,3850" size="100,100">&lt;&lt;set $passage to &quot;SM-35C&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-34&quot;&gt;&gt;
-&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM_35C&quot; play&gt;&gt;&lt;main&gt;
-&lt;h2&gt;Redistribute.&lt;/h2&gt;
-&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM_35C&quot; play&gt;&gt;&lt;main&gt;&lt;h2&gt;Redistribute.&lt;/h2&gt;&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 &lt;&lt;include &quot;walkmap&quot;&gt;&gt;
 &lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 60ms&gt;&gt;
 Remember when I told you the Tower of London was now a communal resource?&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
@@ -2288,12 +2211,9 @@ Remember when I told you the Tower of London was now a communal resource?&lt;&lt
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="66" name="walkmap" tags="" position="725,3850" size="100,100">&lt;&lt;set $mapFinal = setup.generateDirectionsMap([51.512866619438405, -0.08200961933725447], [51.513529, -0.090137] )&gt;&gt;
 $mapFinal
-&lt;&lt;button &quot;Show directions&quot;&gt;&gt;
-	&lt;&lt;toggleclass &quot;#text&quot; &quot;hide&quot;&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;span id=&quot;text&quot; class=&quot;hide&quot;&gt;//Head the same direction as before through the pedestrian walkway. You’ll come to a main road, Leadenhall St. Take a left here, about 6 minutes up the road.
-When you get to Bank Station, head up Princess St. When you come to the big intersection, Princess St will be the second street on your right. 
-You’ll want to cross Princes St and The Ned will be half way up the road. //&lt;/span&gt;</tw-passagedata><tw-passagedata pid="67" name="SM-37" tags="" position="450,4100" size="100,100">&lt;&lt;set $passage to &quot;SM-37&quot;&gt;&gt;&lt;&lt;set $nextpassage to $passage&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM_37&quot; play&gt;&gt;
+
+//Head the same direction as before through the pedestrian walkway. You’ll come to a main road, Leadenhall St. Take a left here, about 6 minutes up the road.
+When you get to Bank Station, head all the way across the circus to Poultry Street. On your right you&#39;ll find The Ned. //</tw-passagedata><tw-passagedata pid="67" name="SM-37" tags="" position="450,4100" size="100,100">&lt;&lt;set $passage to &quot;SM-37&quot;&gt;&gt;&lt;&lt;set $nextpassage to $passage&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM_37&quot; play&gt;&gt;
 &lt;main&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 
@@ -2375,18 +2295,18 @@ That’s OK - Londinium wasn’t built in a day, and nor is any movement. But wi
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="71" name="SM-40" tags="" position="450,4475" size="100,100">&lt;&lt;set $passage to &quot;SM-40&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-42&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM_40&quot; play&gt;&gt;
 &lt;main&gt;&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-&lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;So... I guess this is it... the end...&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 0.1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;So... I guess this is it... the end...
 
 &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Oh shit, I’m late for my next tour! Hope these ones know what decade they’re in!&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 &lt;&lt;timed 10s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;It&#39;s been a dream come true meeting you and sharing ideas. Can’t wait to find out what you do with the next 20 years!&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-&lt;&lt;timed 20s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;Felix: Quite the character, Mariam Samir. Fantastic things in store for her.
+&lt;&lt;timed 20s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;Felix: Quite the character, Mariam Samir. Fantastic things in store for her.&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
 &lt;&lt;button &quot;Like what?&quot;&gt;&gt;
   &lt;&lt;set $prevpass to $passage&gt;&gt;
   &lt;&lt;goto &quot;SM-41&quot;&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="72" name="SM-42" tags="" position="450,4750" size="100,100">&lt;&lt;set $passage to &quot;SM-42&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SM-43&quot;&gt;&gt;&lt;&lt;set $map6 = setup.generateDirectionsMap([], [])&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SM_42&quot; play&gt;&gt;

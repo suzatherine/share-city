@@ -464,6 +464,10 @@ img.dragon{
   color: #ffe3b5
 }
 
+.hide{
+  display:none
+  }
+
 
 .paper{
 background-image: url("./assets/paperbackground.jpg");
@@ -557,7 +561,7 @@ iFrame.classList.add("map")
 iFrame.setAttribute("loading", "lazy")
 iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
 // iFrame.setAttribute("allowfullscreen")
-iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${origin[0]},${origin[1]}&zoom=18&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&mode=walking`)
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyCSbMwR1cUMfnIAh0Pxi0F1N16kvDGZXGU&center=${origin[0]},${origin[1]}&zoom=18&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&mode=walking`)
 const mount = document.getElementById("mapMount")
 // console.log(iFrame)
 return iFrame
@@ -585,66 +589,66 @@ setup.checkForRepeats = (array,element) => {
 
 
 :: StoryInit {"position":"100,100","size":"100,100"}
-<<cacheaudio "SM-01" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_01.mp3">>
-<<cacheaudio "SM-02A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_02_adventurerefer.mp3">>
-<<cacheaudio "SM-02B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_02_perfectgroup.mp3">>
-<<cacheaudio "SM-03" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_03.mp3">>
-<<cacheaudio "SM-04" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM-04.mp3">>
-<<cacheaudio "SM_05" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_05.mp3">>
+<<cacheaudio "SM-01" "https://www.youhavefoundconey.net/tgksnd/SM/SM_01.mp3">>
+<<cacheaudio "SM-02A" "https://www.youhavefoundconey.net/tgksnd/felix/XX_02_adventurerefer.mp3">>
+<<cacheaudio "SM-02B" "https://www.youhavefoundconey.net/tgksnd/felix/XX_02_perfectgroup.mp3">>
+<<cacheaudio "SM-03" "https://www.youhavefoundconey.net/tgksnd/felix/XX_03.mp3">>
+<<cacheaudio "SM-04" "https://www.youhavefoundconey.net/tgksnd/SM/SM-04.mp3">>
+<<cacheaudio "SM_05" "https://www.youhavefoundconey.net/tgksnd/SM/SM_05.mp3">>
 
-<<cacheaudio "SM_06" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM06.mp3">>
-<<cacheaudio "SM_07.1" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_07.1.mp3">>
-<<cacheaudio "SM_07.2" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_07.2.mp3">>
-<<cacheaudio "SM_08.1" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_08.1.mp3">>
-<<cacheaudio "SM_08.2" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_08.2.mp3">>
-<<cacheaudio "SM_09" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_09.mp3">>
-<<cacheaudio "SM_10.1" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM10.1.mp3">>
-<<cacheaudio "SM_10.2" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_10.2.mp3">>
-<<cacheaudio "SM_11" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_11.mp3">>
-<<cacheaudio "SM_12" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM-12.mp3">>
-<<cacheaudio "SM_13" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_13.mp3">>
-<<cacheaudio "SM_14.1" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_14.1.mp3">>
-<<cacheaudio "SM_14.2" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_14.2.mp3">>
-<<cacheaudio "SM_14.3" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_14.3.mp3">>
-<<cacheaudio "SM_14.4" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_14.4.mp3">>
-<<cacheaudio "SM_14.5" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_14.5.mp3">>
-<<cacheaudio "SM_15.1" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_15.1.mp3">>
-<<cacheaudio "SM_15.2" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_15.2.mp3">>
-<<cacheaudio "SM_16" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_16.mp3">>
-<<cacheaudio "SM_17" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_17.mp3">>
-<<cacheaudio "SM_18" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_18.mp3">>
-<<cacheaudio "SM_19" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_19.mp3">>
-<<cacheaudio "SM_20" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_20.mp3">>
+<<cacheaudio "SM_06" "https://www.youhavefoundconey.net/tgksnd/SM/SM06.mp3">>
+<<cacheaudio "SM_07.1" "https://www.youhavefoundconey.net/tgksnd/SM/SM_07.1.mp3">>
+<<cacheaudio "SM_07.2" "https://www.youhavefoundconey.net/tgksnd/SM/SM_07.2.mp3">>
+<<cacheaudio "SM_08.1" "https://www.youhavefoundconey.net/tgksnd/SM/SM_08.1.mp3">>
+<<cacheaudio "SM_08.2" "https://www.youhavefoundconey.net/tgksnd/SM/SM_08.2.mp3">>
+<<cacheaudio "SM_09" "https://www.youhavefoundconey.net/tgksnd/SM/SM_09.mp3">>
+<<cacheaudio "SM_10.1" "https://www.youhavefoundconey.net/tgksnd/SM/SM10.1.mp3">>
+<<cacheaudio "SM_10.2" "https://www.youhavefoundconey.net/tgksnd/SM/SM_10.2.mp3">>
+<<cacheaudio "SM_11" "https://www.youhavefoundconey.net/tgksnd/SM/SM_11.mp3">>
+<<cacheaudio "SM_12" "https://www.youhavefoundconey.net/tgksnd/SM/SM-12.mp3">>
+<<cacheaudio "SM_13" "https://www.youhavefoundconey.net/tgksnd/SM/SM_13.mp3">>
+<<cacheaudio "SM_14.1" "https://www.youhavefoundconey.net/tgksnd/SM/SM_14.1.mp3">>
+<<cacheaudio "SM_14.2" "https://www.youhavefoundconey.net/tgksnd/SM/SM_14.2.mp3">>
+<<cacheaudio "SM_14.3" "https://www.youhavefoundconey.net/tgksnd/SM/SM_14.3.mp3">>
+<<cacheaudio "SM_14.4" "https://www.youhavefoundconey.net/tgksnd/SM/SM_14.4.mp3">>
+<<cacheaudio "SM_14.5" "https://www.youhavefoundconey.net/tgksnd/SM/SM_14.5.mp3">>
+<<cacheaudio "SM_15.1" "https://www.youhavefoundconey.net/tgksnd/SM/SM_15.1.mp3">>
+<<cacheaudio "SM_15.2" "https://www.youhavefoundconey.net/tgksnd/SM/SM_15.2.mp3">>
+<<cacheaudio "SM_16" "https://www.youhavefoundconey.net/tgksnd/SM/SM_16.mp3">>
+<<cacheaudio "SM_17" "https://www.youhavefoundconey.net/tgksnd/SM/SM_17.mp3">>
+<<cacheaudio "SM_18" "https://www.youhavefoundconey.net/tgksnd/SM/SM_18.mp3">>
+<<cacheaudio "SM_19" "https://www.youhavefoundconey.net/tgksnd/SM/SM_19.mp3">>
+<<cacheaudio "SM_20" "https://www.youhavefoundconey.net/tgksnd/SM/SM_20.mp3">>
 
-<<cacheaudio "SM_21.1" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_21.1.mp3">>
-<<cacheaudio "SM_21.2" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_21.2.mp3">>
-<<cacheaudio "SM_22.1" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_22.1.mp3">>
-<<cacheaudio "SM_22.2" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_22.2.mp3">>
-<<cacheaudio "SM_22.3" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_22.3.mp3">>
-<<cacheaudio "SM_23" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_23.mp3">>
-<<cacheaudio "SM_24A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_24A.mp3">>
-<<cacheaudio "SM_25B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_25B.mp3">>
-<<cacheaudio "SM_26" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_26.mp3">>
-/* <<cacheaudio "SM_27" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_27.mp3">> */
-<<cacheaudio "SM_28" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_28.mp3">>
-<<cacheaudio "SM_29.1" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_29.1.mp3">>
-<<cacheaudio "SM_29.2" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_29.2.mp3">>
-<<cacheaudio "SM_30.1" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_30.1.mp3">>
-<<cacheaudio "SM_31" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_31.mp3">>
-<<cacheaudio "SM_32" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_32.mp3">>
-<<cacheaudio "SM_33" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_33.mp3">>
-<<cacheaudio "SM_35A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_35A.mp3">>
-<<cacheaudio "SM_35B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_35B.mp3">>
-<<cacheaudio "SM_35C" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_35C.mp3">>
-<<cacheaudio "SM_36" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_36.mp3">>
-<<cacheaudio "SM_37" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_37.mp3">>
-<<cacheaudio "SM_38" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_38.mp3">>
-<<cacheaudio "SM_39" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_39.mp3">>
-<<cacheaudio "SM_39B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_39B.mp3">>
-<<cacheaudio "SM_40" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_40.mp3">>
-<<cacheaudio "SM_41" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM_41.mp3">>
+<<cacheaudio "SM_21.1" "https://www.youhavefoundconey.net/tgksnd/SM/SM_21.1.mp3">>
+<<cacheaudio "SM_21.2" "https://www.youhavefoundconey.net/tgksnd/SM/SM_21.2.mp3">>
+<<cacheaudio "SM_22.1" "https://www.youhavefoundconey.net/tgksnd/SM/SM_22.1.mp3">>
+<<cacheaudio "SM_22.2" "https://www.youhavefoundconey.net/tgksnd/SM/SM_22.2.mp3">>
+<<cacheaudio "SM_22.3" "https://www.youhavefoundconey.net/tgksnd/SM/SM_22.3.mp3">>
+<<cacheaudio "SM_23" "https://www.youhavefoundconey.net/tgksnd/SM/SM_23.mp3">>
+<<cacheaudio "SM_24A" "https://www.youhavefoundconey.net/tgksnd/SM/SM_24A.mp3">>
+<<cacheaudio "SM_25B" "https://www.youhavefoundconey.net/tgksnd/SM/SM_25B.mp3">>
+<<cacheaudio "SM_26" "https://www.youhavefoundconey.net/tgksnd/SM/SM_26.mp3">>
+/* <<cacheaudio "SM_27" "https://www.youhavefoundconey.net/tgksnd/SM/SM_27.mp3">> */
+<<cacheaudio "SM_28" "https://www.youhavefoundconey.net/tgksnd/SM/SM_28.mp3">>
+<<cacheaudio "SM_29.1" "https://www.youhavefoundconey.net/tgksnd/SM/SM_29.1.mp3">>
+<<cacheaudio "SM_29.2" "https://www.youhavefoundconey.net/tgksnd/SM/SM_29.2.mp3">>
+<<cacheaudio "SM_30.1" "https://www.youhavefoundconey.net/tgksnd/SM/SM_30.1.mp3">>
+<<cacheaudio "SM_31" "https://www.youhavefoundconey.net/tgksnd/SM/SM_31.mp3">>
+<<cacheaudio "SM_32" "https://www.youhavefoundconey.net/tgksnd/SM/SM_32.mp3">>
+<<cacheaudio "SM_33" "https://www.youhavefoundconey.net/tgksnd/SM/SM_33.mp3">>
+<<cacheaudio "SM_35A" "https://www.youhavefoundconey.net/tgksnd/SM/SM_35A.mp3">>
+<<cacheaudio "SM_35B" "https://www.youhavefoundconey.net/tgksnd/SM/SM_35B.mp3">>
+<<cacheaudio "SM_35C" "https://www.youhavefoundconey.net/tgksnd/SM/SM_35C.mp3">>
+<<cacheaudio "SM_36" "https://www.youhavefoundconey.net/tgksnd/SM/SM_36.mp3">>
+<<cacheaudio "SM_37" "https://www.youhavefoundconey.net/tgksnd/SM/SM_37.mp3">>
+<<cacheaudio "SM_38" "https://www.youhavefoundconey.net/tgksnd/SM/SM_38.mp3">>
+<<cacheaudio "SM_39" "https://www.youhavefoundconey.net/tgksnd/SM/SM_39.mp3">>
+<<cacheaudio "SM_39B" "https://www.youhavefoundconey.net/tgksnd/SM/SM_39B.mp3">>
+<<cacheaudio "SM_40" "https://www.youhavefoundconey.net/tgksnd/SM/SM_40.mp3">>
+<<cacheaudio "SM_41" "https://www.youhavefoundconey.net/tgksnd/SM/SM_41.mp3">>
 <<waitforaudio>>
-<<cacheaudio "SM_42" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SM/SM-42.mp3">>
+<<cacheaudio "SM_42" "https://www.youhavefoundconey.net/tgksnd/SM/SM-42.mp3">>
 <<waitforaudio>>
 
 
@@ -2559,9 +2563,9 @@ $mapFinal
 <<button "Show directions">>
 	<<toggleclass "#text" "hide">>
 <</button>>
+
 <span id="text" class="hide">//Head the same direction as before through the pedestrian walkway. You’ll come to a main road, Leadenhall St. Take a left here, about 6 minutes up the road.
-When you get to Bank Station, head up Princess St. When you come to the big intersection, Princess St will be the second street on your right. 
-You’ll want to cross Princes St and The Ned will be half way up the road. //</span>
+When you get to Bank Station, head all the way across the circus to Poultry Street. On your right you’ll find The Ned.  //</span>
 
 
 :: SM-37 {"position":"450,4100","size":"100,100"}
@@ -2645,7 +2649,7 @@ What is your fourth R?
 
 That’s OK - Londinium wasn’t built in a day, and nor is any movement. But with the future in your hands, I have hope we can get there.
 
-<<timed 3s>>
+<<timed 12s>>
   <<set $prevpass to $passage>>
   <<goto "SM-40">>
 <</timed>>
@@ -2672,7 +2676,7 @@ That’s OK - Londinium wasn’t built in a day, and nor is any movement. But wi
 <<timed 20s>><<replace "#mount">>Felix: Quite the character, Mariam Samir. Fantastic things in store for her.
 <<button "Like what?">>
   <<set $prevpass to $passage>>
-  <<goto "SM-41">>
+  <<goto "SM-42">>
 <</button>>
 <</replace>><</timed>>
 
